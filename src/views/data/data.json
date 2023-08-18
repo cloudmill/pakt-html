@@ -1,0 +1,10 @@
+{
+  "title": "test-html",
+
+  "routes": [
+    {
+      "href": "/main",
+      "title": "Главная"
+    }
+  ]
+}

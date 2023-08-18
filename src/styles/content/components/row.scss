@@ -1,0 +1,14 @@
+.row {
+  display: flex;
+
+  &__col {
+    
+    &:nth-child(1) {
+      flex-shrink: 0;
+      width: calc(#{$col-part-d} * 2 - #{$col-gap-d} + #{$col-side-pad});
+    }
+    &:nth-child(2) {
+      width: 100%;
+    }
+  }
+}
