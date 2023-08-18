@@ -2,7 +2,7 @@
 // fonts
 $fs: 16px;
 
-$ff-primary: 'test';
+$ff-primary: 'Inter';
 
 // breakpoints, media
 $breakpoints: (
@@ -40,6 +40,9 @@ $breakpoints: (
 $colors: (
   black: #181D1D,
   white: #fff,
+  borders: #E1E5EA,
+  blue: #0076D8,
+  gray: #929CA5,
 );
 @function color($variant: black) {
   @return map.get($colors, $variant);
@@ -65,3 +68,6 @@ $col-part-d: '(#{$col-width-d} + #{$col-gap-d})';
 $transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
 $transition-duration: .5s;
 $transition: $transition-duration $transition-timing-function;
+
+
+$header-index: 999;

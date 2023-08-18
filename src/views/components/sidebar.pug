@@ -1,3 +1,44 @@
 mixin sidebar 
   sidebar.sidebar 
-    |sidebar
+    .sidebar__container 
+      .sidebar__top
+        nav.sidebar__nav
+          .sidebar__item
+            a.sidebar__item-link.active(href="#")
+              .sidebar__item-icon 
+                +home-svg.sidebar__item-svg 
+              .sidebar__item-text 
+                |Мой ПАКТ
+          .sidebar__item
+            a.sidebar__item-link(href="#")
+              .sidebar__item-icon 
+                +services-svg.sidebar__item-svg 
+              .sidebar__item-text 
+                |Услуги
+          .sidebar__item
+            a.sidebar__item-link(href="#")
+              .sidebar__item-icon 
+                +pie-svg.sidebar__item-svg 
+              .sidebar__item-text 
+                |Контроль расходов
+          .sidebar__item
+            a.sidebar__item-link(href="#")
+              .sidebar__item-icon 
+                +card-svg.sidebar__item-svg 
+              .sidebar__item-text 
+                |Оплата
+        ul.sidebar__list
+          each item in ['Новости', 'Партнерские программы', 'Полезная информация', ]
+            li.sidebar__list-item 
+              a.sidebar__link(href="#")
+                |#{item} 
+      .sidebar__bot
+        a.sidebar__block(href="#") 
+          .sidebar__block-item
+            .sidebar__block-title 
+              |Интернет ускорение до 700 Мбит/с
+            .sidebar__block-text 
+              |Скорость взлетает, цена - тормозит
+          .sidebar__block-item
+            .sidebar__block-icon 
+              +big-arrow-svg.sidebar__block-svg
