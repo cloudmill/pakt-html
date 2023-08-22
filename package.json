@@ -6,7 +6,7 @@
     "script": "rimraf public/dist && webpack --config webpack/webpack.config.script.js --env NODE_ENV=production --mode=production",
     "deploy": "cd public && git add . && git commit -m 'update' && git push",
     "build + deploy": "npm run build && npm run deploy",
-    "set up piblic": "cd public && git init && git remote add origin https://github.com/cloudmill/test-public.git && git add . && git commit -m 'update' && git branch -M main && git push -u origin main"
+    "set up piblic": "cd public && git init && git remote add origin https://github.com/cloudmill/pakt-public.git && git add . && git commit -m 'update' && git branch -M main && git push -u origin main"
   },
   "devDependencies": {
     "@babel/core": "7.14.2",
