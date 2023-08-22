@@ -5,6 +5,10 @@
     {
       "href": "/main",
       "title": "Главная"
+    },
+    {
+      "href": "/login",
+      "title": "Вход"
     }
   ]
 }

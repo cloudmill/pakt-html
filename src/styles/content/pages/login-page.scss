@@ -1,0 +1,115 @@
+.login-page {
+
+  height: 100vh;
+
+  &__row {
+    display: flex;
+    height: 100%;
+  }
+
+  &__col {
+
+    flex-shrink: 0;
+    width: 50%;
+
+    &:nth-child(1) {
+      padding: rem(40px) rem(40px) rem(35px);
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      background-color: color(blue);
+    }
+
+    &:nth-child(2) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: color(white);
+    }
+  }
+
+  &__logo {
+    width: rem(78px);
+    height: rem(36px);
+  }
+  
+  &__title {
+    margin: 0 auto;
+
+    color: color(white);
+    letter-spacing: -0.01em;
+    @include fsl(32px, 130%);
+    @media #{media("<")} {
+      
+    }
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  &__bot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__caption {
+    max-width: rem(333px);
+
+    @include fsl(14px, 130%);
+    color: color(white);
+    opacity: 0.5;
+  }
+
+  &__icons {
+    display: flex;
+  }
+
+  &__item {
+    
+    display: flex;
+    align-items: center;
+
+    &:not(:first-child) {
+      margin-left: rem(32px);
+    }
+  }
+
+  &__svg {
+    --size: #{rem(24px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+
+  &__form {
+    width: rem(320px);
+  }
+  &__form-title {
+    margin-bottom: rem(30px);
+
+    font-weight: 600;
+    @include fsl(22px, 120%);
+    letter-spacing: -0.01em;
+  }
+  &__form-item {
+
+    &:not(:first-child) {
+      margin-top: rem(16px);
+    }
+  }
+  &__form-btn {
+    margin-top: rem(24px);
+  }
+  &__form-link {
+    margin: rem(18px) 0 0;
+
+    display: flex;
+    justify-content: center;
+    
+    @include fsl(14px, 120%);
+  }
+}
