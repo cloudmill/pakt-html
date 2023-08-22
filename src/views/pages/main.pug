@@ -3,4 +3,176 @@ extends ../app
 
 block content
   .main-page
-    |pakt
+    section.section 
+      .container 
+        .main-page__announce
+          .main-page__announce-icon 
+            +hint-svg.main-page__announce-svg 
+          .main-page__announce-text 
+            |Блок под уникальное оповещение общего характера, блок будет отсутствовать, если нет необходимости его показывать.
+    section.main-page__section 
+      .container 
+        .main-page__row 
+          .main-page__col
+            h1.main-page__title 
+              |Здравствуйте, #[br] #[span Валентина Викторовна!]
+            .categories
+              each item in ['Пополнить баланс', 'Контроль расходов', 'Специальные предложения',]
+                .categories__item 
+                  a.categories__btn(href="#")
+                    |#{item}
+          .main-page__col
+            .main-page__balance
+              .main-page__balance-top
+                .main-page__balance-row 
+                  .main-page__balance-label 
+                    |Баланс
+                  .main-page__balance-date 
+                    |На сегодня 17:53
+                .main-page__balance-inner 
+                  .main-page__balance-col
+                    .main-page__balance-money 
+                      |978,56 ₽
+                    .main-page__balance-text 
+                      |Услуги предоставляются
+                  .main-page__balance-col
+                    .main-page__balance-btn 
+                      button.button 
+                        |Пополнить
+              .main-page__balance-bot
+                .main-page__balance-item 
+                  .main-page__balance-icon 
+                    +pay-auto-svg.main-page__balance-svg 
+                  .main-page__balance-content
+                    .main-page__balance-heading 
+                      |Автоплатеж
+                    .main-page__balance-status 
+                      |Активен
+                .main-page__balance-item 
+                  .main-page__balance-icon 
+                    +pay-later-svg.main-page__balance-svg 
+                  .main-page__balance-content
+                    .main-page__balance-heading 
+                      |Условный платеж
+                    .main-page__balance-status 
+                      |Не подключен
+    section.main-page__section 
+      .container
+        h3.main-page__services-title 
+          |Мои услуги
+        .main-page__services-top 
+          .main-page__categories
+            .main-page__categories-item.active
+              |Подключенные
+            .main-page__categories-item
+              |Доступные
+          .main-page__services-address.desktop
+            |Доступные услуги по адресу: #[br] #[span Оптиков 37, ст 1, кв 269]
+        .main-page__services-grid.alt
+          -
+            var ddata = [
+              {
+                title: 'Онлайн ТВ "iPakt"',
+                icon: "screen"
+              },
+              {
+                title: "Интернет",
+                icon: "globe"
+              },
+              {
+                title: "Телевидение",
+                icon: "tv"
+              },
+              {
+                title: "Телефония",
+                icon: "call"
+              },
+              {
+                title: "Видеонаблюдение",
+                icon: "record"
+              },
+              {
+                title: "Умный домофон",
+                icon: "record"
+              },
+            ]
+          each item, i in ddata
+            .main-page__service(class=(i == 0 ? 'main-page__service--alt' : null))
+              .main-page__service-container 
+                .main-page__service-top
+                  .main-page__service-icon
+                    case item.icon 
+                      when 'screen'
+                        +screen-svg.main-page__service-svg 
+                      when 'globe'
+                        +globe-svg.main-page__service-svg 
+                      when 'tv'
+                        +tv-svg.main-page__service-svg 
+                      when 'call'
+                        +call-svg.main-page__service-svg 
+                      when 'record'
+                        +record-svg.main-page__service-svg 
+                  .main-page__service-title 
+                    |#{item.title}
+                  a(href="#").main-page__service-link
+                    |Подробнее 
+                .main-page__service-bot 
+                  .main-page__service-col
+                    .main-page__service-count 
+                      |6 тарифов
+                  .main-page__service-col
+                    a.main-page__service-btn(href="#") 
+                      |Смотреть тарифы
+        .main-page__services-grid
+          -
+            var ddata = [
+              {
+                title: 'Интернет',
+                icon: "globe"
+              },
+              {
+                title: "Телевидение",
+                icon: "tv"
+              },
+              {
+                title: "Телефония",
+                icon: "call"
+              },
+            ]
+          each item in ddata
+            .main-page__service.main-page__service--big
+              .main-page__service-container 
+                .main-page__service-top
+                  .main-page__service-inner
+                    .main-page__service-icon.default
+                      case item.icon 
+                        when 'globe'
+                          +globe-svg.main-page__service-svg 
+                        when 'tv'
+                          +tv-svg.main-page__service-svg 
+                        when 'call'
+                          +call-svg.main-page__service-svg 
+                    .main-page__service-status 
+                      |Активна
+                  .main-page__service-title 
+                    |#{item.title}
+                  ul.main-page__service-list 
+                    li.main-page__service-item 
+                      .main-page__service-label
+                        |Тариф
+                      .main-page__service-text 
+                        |The Best / 100 МБ
+                    li.main-page__service-item 
+                      .main-page__service-label
+                        |Абонимент до:
+                      .main-page__service-text 
+                        |31.10.21
+                .main-page__service-bot 
+                  .main-page__service-col
+                    .main-page__service-label
+                      |Абонентская плата
+                    .main-page__service-price 
+                      |3 900 ₽ / 12 мес.
+                  .main-page__service-col
+                    .main-page__service-settings 
+                      +settings-svg

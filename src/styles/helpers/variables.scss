@@ -42,7 +42,10 @@ $colors: (
   white: #fff,
   borders: #E1E5EA,
   blue: #0076D8,
+  blue-border: rgba(0, 118, 216, 0.20),
+  light-blue: #B7D1EF,
   gray: #929CA5,
+  green: #56BD68,
 );
 @function color($variant: black) {
   @return map.get($colors, $variant);

@@ -1,3 +1,6 @@
 .container {
   padding: 0 $col-pad-d;
+  @media #{media("<")} {
+    padding: 0 $col-pad-m;
+  }
 }

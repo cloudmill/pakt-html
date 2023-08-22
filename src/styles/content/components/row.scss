@@ -1,15 +1,23 @@
 .row {
   display: flex;
+  @media #{media("<")} {
+    display: block;
+  }
 
   &__col {
     
     &:nth-child(1) {
       flex-shrink: 0;
       width: calc(#{$col-part-d} * 2 - #{$col-gap-d} + #{$col-side-pad});
+      @media #{media("<")} {
+        display: none;
+      }
     }
     &:nth-child(2) {
       margin-top: rem(160px);
-      
+      @media #{media("<")} {
+        margin-top: rem(100px);
+      }
       width: 100%;
     }
   }
