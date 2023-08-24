@@ -1,10 +1,12 @@
+.form-item {
+  &:not(:first-child) {
+    margin-top: rem(16px);
+  }
+}
+
 .input {
   padding: rem(16px);
-  @media #{media("<")} {
-    padding: rem(13px) rem(16px);
-
-    height: rem(48px);
-  }
+  
   height: rem(56px);
   width: 100%;
 
@@ -19,10 +21,10 @@
   }
 
   &:hover {
-    border-color: color(green);
+    // border-color: color(green);
   }
   &:focus {
-    border-color: color(green);
+    // border-color: color(green);
   }
   &::placeholder {
     opacity: 0;
@@ -64,6 +66,7 @@
     }
   }
 }
+
 .checkbox {
   $comp: &;
   position: relative;
@@ -80,7 +83,7 @@
 
     &:hover {
       #{$comp}__box {
-        border-color: color(green);
+        border-color: color(blue);
       }
     }
   }
@@ -93,8 +96,8 @@
 
     &:checked {
       ~#{$comp}__box {
-        border-color: color(green);
-        background-color: color(green);
+        border-color: color(blue);
+        background-color: color(blue);
 
         #{$comp}__svg {
           opacity: 1;
@@ -104,25 +107,27 @@
   }
 
   &__box {
-    margin-right: rem(16px);
+    margin-right: rem(12px);
     @media #{media("<")} {
       margin-right: rem(12px);
     }
 
-    width: rem(24px);
-    height: rem(24px);
+    width: rem(20px);
+    height: rem(20px);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
 
     transition: $transition;
-    border: 1px solid color(borders-alt);
+    border: 1px solid color(gray);
+    border-radius: rem(5px);
   }
 
   &__svg {
-    width: rem(20px);
-    height: rem(20px);
+    width: rem(14px);
+    height: rem(10px);
+    flex-shrink: 0;
 
     opacity: 0;
     transition: $transition;
@@ -141,14 +146,16 @@
     transition: $transition;
 
     &:hover {
-      color: color(green);
+      color: color(blue);
     }
   }
 
   &__caption {
-    @media #{media("<")} {
-      @include fsl(12px, 100%);
-    }
+    letter-spacing: -0.01em;
+    line-height: 100%;
+    // @media #{media("<")} {
+    //   @include fsl(12px, 100%);
+    // }
   }
 }
 

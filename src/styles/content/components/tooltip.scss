@@ -1,0 +1,84 @@
+.tooltip {
+  $comp: &;
+
+  &__icon {
+    margin-left: rem(2px);
+    transform: translateY(rem(4px));
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    &:hover {
+      #{$comp}__svg {
+        circle {
+          fill: color(blue);
+        }
+        path {
+          fill: color(white);
+        }
+      }
+    }
+  }
+
+  &__svg {
+    --size: #{rem(20px)};
+    // @media #{media("<")} {
+    //   --size: #{rem(14px)};
+    // }
+
+    width: var(--size);
+    height: var(--size);
+
+    circle,
+    path {
+      transition: $transition;
+    }
+  }
+
+  &__container {
+    display: none;
+  }
+}
+
+.tippy-box {
+  position: relative;
+  background-color: none;
+  color: var(--color-black);
+  border-radius: 0;
+
+  white-space: normal;
+  outline: 0;
+  transition-property: transform,visibility,opacity;
+  background: color(white);
+  border-radius: rem(10px);
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid color(borders-alt);
+
+
+  &[data-theme=big] {
+    .tippy-content {
+      max-width: none;
+    }
+  }
+}
+
+.tippy-content {
+  padding: rem(16px) rem(20px);
+  
+  max-width: rem(219px);
+
+  font-weight: 500;
+  @include fsl(11px, 140%);
+  color: color(black);
+}
+
+.tippy-arrow {
+  display: none;
+
+  &::before {
+    display: none;
+  }
+}

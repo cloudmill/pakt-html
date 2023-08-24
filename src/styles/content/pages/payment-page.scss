@@ -1,0 +1,121 @@
+.payment-page {
+
+  &__container {
+    padding: rem(84px) 0 rem(60px);
+    @media #{media("<")} {
+      padding: rem(80px) 0 rem(30px);
+
+      background-color: color(white);
+    }
+  }
+
+  &__modal {
+    padding: rem(40px) rem(48px) rem(48px);
+    @media #{media("<")} {
+      padding: 0 rem(16px);
+
+      width: auto;
+
+      background-color: transparent;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    width: rem(934px);
+
+    background-color: color(white);
+    border-radius: rem(8px);
+    box-shadow: 0px 28px 68px 0px rgba(0, 31, 56, 0.04);
+  }
+  &__modal-title {
+    margin-bottom: rem(40px);
+    @media #{media("<")} {
+      margin-bottom: rem(20px);
+
+      @include fsl(20px);
+    }
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    @include fsl(32px, 110%);
+  }
+  &__modal-row {
+    display: flex;
+    @media #{media("<")} {
+      display: block;
+    }
+  }
+  &__modal-col {
+    &:nth-child(1) {
+      margin-right: rem(48px);
+      @media #{media("<")} {
+        margin-right: 0;
+        margin-bottom: rem(24px);
+
+        width: auto;
+      }
+      flex-shrink: 0;
+      width: rem(400px);
+    }
+  }
+  &__modal-label {
+    margin-top: rem(10px);
+
+    color: color(gray);
+    @include fsl(14px, 120%);
+
+    &.small {
+      @media #{media("<")} {
+        @include fsl(12px);
+      }
+    }
+
+    a {
+      padding-bottom: rem(2px);
+
+      border-bottom: 1px solid color(borders);
+    }
+  }
+  &__modal-inner {
+    margin-top: rem(24px);
+  }
+  &__modal-bot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__modal-icons {
+    @media #{media("<")} {
+      margin-right: rem(20px);
+    }
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: rem(190px);
+      height: rem(40px);
+      @media #{media("<", m)} {
+        width: rem(113px);
+        height: rem(40px);
+      }
+    }
+  }
+  &__modal-text {
+    color: color(gray);
+    @include fsl(12px, 160%);
+  }
+  &__modal-offset {
+    margin-top: rem(20px);
+    @media #{media("<")} {
+      margin-top: rem(24px);
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+  &__modal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(12px);
+  }
+}

@@ -1,0 +1,67 @@
+extends ../layouts/secondary
+
+
+
+block header
+
+
+
+block content
+  .login-page.payment-page
+    .login-page__container 
+      a.login-page__img(href="#")
+        .login-page__logo.login-page__logo--alt 
+          +picture('logo.png')
+      .payment-page__container
+        .payment-page__modal
+          .payment-page__modal-title 
+            |Оплата услуг П.А.К.Т.
+          .payment-page__modal-row 
+            .payment-page__modal-col
+              .form-item 
+                +input(type = 'text' placeholder='Номер договора')
+              .form-item 
+                +input(type = 'text' placeholder='Сумма')
+                .payment-page__modal-label.small
+                  |Минимальная сумма платежа: 10 руб.
+              .form-item 
+                +input(type = 'email' placeholder='Email')
+              .payment-page__modal-inner 
+                .checkbox
+                  label.checkbox__label
+                    input.checkbox__input(type="checkbox" id='qwe')
+                    .checkbox__box 
+                      +check-svg.checkbox__svg
+                    .checkbox__caption 
+                      |Автоплатеж
+                .payment-page__modal-label.tooltip
+                  |Устанавливая признак «Автоплатеж», Вы принимаете условия #[a(href="#")  пользовательского соглашения]
+                  span.tooltip__icon 
+                    +tooltip-svg.tooltip__svg 
+                  .tooltip__container 
+                    |Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum architecto reprehenderit sed!
+              .payment-page__modal-offset.hidden
+                .payment-page__modal-grid 
+                  +input(type = 'number' placeholder='Сумма')
+                  +input(type = 'text' placeholder='Дата платежа')
+                .payment-page__modal-offset
+                  .payment-page__modal-text 
+                    |Услуга «Автоплатеж» будет подключена только при успешном проведении платежа по указанным параметрам.Безопасность платежей обеспечивается Банком, функционирующим на основе протоколов и технологий, разработанных международными платежными системами. Обработка полученных конфиденциальных данных держателя карты, включая реквизиты карты, производится в процессинговом центре Банка. Таким образом, никто, в том числе ООО «П.А.К.Т.», не может получить персональные и банковские данные Абонента.При создании нового Автоплатежа для Договора предыдущий «Автоплатеж» будет замещен.Если выбранная дата Автоплатежа выходит за рамки месяца (например, 31 февраля) Автоплатеж будет проведен в последний день месяца.В случае недостаточности денежных средств на карте платеж не состоится. Очередной запрос на совершение платежа будет произведен в следующем периоде.
+              .payment-page__modal-inner 
+                button.button
+                  .button__icon 
+                    +spb-svg.button__svg 
+                  .button__text 
+                    |Оплата через СБП 
+              .payment-page__modal-inner 
+                .payment-page__modal-bot 
+                  .payment-page__modal-icons 
+                    +pay-system-svg
+                  button.button.button--outline
+                    .button__icon 
+                      +card-svg.button__svg.blue
+                    .button__text 
+                      |Оплата картой
+            .payment-page__modal-col
+              .payment-page__modal-text 
+                |Для оплаты (ввода реквизитов Вашей карты) Вы будете перенаправлены на платёжный шлюз ПАО СБЕРБАНК. Соединение с платёжным шлюзом и передача информации осуществляется в защищённом режиме с использованием протокола шифрования SSL. В случае если Ваш банк поддерживает технологию безопасного проведения интернет-платежей Verified By Visa, MasterCard SecureCode, MIR Accept, J-Secure для проведения платежа также может потребоваться ввод специального пароля. Настоящий сайт поддерживает 256-битное шифрование. Конфиденциальность сообщаемой персональной информации обеспечивается ПАО СБЕРБАНК. Введённая информация не будет предоставлена третьим лицам за исключением случаев, предусмотренных законодательством РФ. Проведение платежей по банковским картам осуществляется в строгом соответствии с требованиями платёжных систем МИР, Visa Int., MasterCard Europe Sprl, JCB.

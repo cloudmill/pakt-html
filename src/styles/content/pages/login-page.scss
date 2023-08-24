@@ -1,10 +1,14 @@
 .login-page {
 
-  height: 100vh;
-
   &__row {
     display: flex;
-    height: 100%;
+    min-height: 100vh;
+    @media #{media("<")} {
+      position: relative;
+      z-index: 0;
+
+      display: block;
+    }
   }
 
   &__col {
@@ -14,11 +18,13 @@
 
     &:nth-child(1) {
       padding: rem(40px) rem(40px) rem(35px);
-  
+      
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
+      @media #{media("<")} {
+        display: contents;
+      }
       background-color: color(blue);
     }
 
@@ -26,24 +32,50 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @media #{media("<")} {
+        width: 100%;
+        height: 100%;
+      }
+
       background-color: color(white);
     }
   }
 
   &__logo {
+    @media #{media("<")} {
+      position: absolute;
+      z-index: 1;
+      top: rem(16px);
+      left: rem(16px);
+
+      width: rem(49px);
+      height: rem(32px);
+    }
     width: rem(78px);
     height: rem(36px);
+
+    &--alt {
+      @media #{media("<")} {
+        position: static;
+
+        width: rem(78px);
+        height: rem(38px);
+      }
+      @media #{media("<", m)} {
+        width: rem(50px);
+        height: rem(24px);
+      }
+    }
   }
   
   &__title {
     margin: 0 auto;
-
+    @media #{media("<")} {
+      display: none;
+    }
     color: color(white);
     letter-spacing: -0.01em;
     @include fsl(32px, 130%);
-    @media #{media("<")} {
-      
-    }
 
     span {
       font-weight: 600;
@@ -51,6 +83,16 @@
   }
 
   &__bot {
+    @media #{media("<")} {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      bottom: rem(144px);
+      transform: translateX(-50%);
+    }
+    @media #{media("<", m)} {
+      bottom: rem(100px);
+    }
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -58,7 +100,9 @@
 
   &__caption {
     max-width: rem(333px);
-
+    @media #{media("<")} {
+      display: none;
+    }
     @include fsl(14px, 130%);
     color: color(white);
     opacity: 0.5;
@@ -83,10 +127,20 @@
 
     width: var(--size);
     height: var(--size);
+
+    path {
+      @media #{media("<")} {
+        fill: #C3C9CF;
+      }
+    }
   }
 
   &__form {
     width: rem(320px);
+    @media #{media("<", m)} {
+      padding: 0 rem(16px);
+      width: 100%;
+    }
   }
   &__form-title {
     margin-bottom: rem(30px);
@@ -94,11 +148,24 @@
     font-weight: 600;
     @include fsl(22px, 120%);
     letter-spacing: -0.01em;
-  }
-  &__form-item {
+    @media #{media("<")} {
+      margin-bottom: rem(20px);
 
-    &:not(:first-child) {
-      margin-top: rem(16px);
+      @include fsl(18px);
+    }
+
+    &.center {
+      text-align: center;
+      @media #{media("<")} {
+        margin-bottom: rem(30px);
+
+        @include fsl(22px, 120%);
+      }
+      @media #{media("<", m)} {
+        margin-bottom: rem(20px);
+
+        @include fsl(20px);
+      }
     }
   }
   &__form-btn {
@@ -111,5 +178,118 @@
     justify-content: center;
     
     @include fsl(14px, 120%);
+  }
+  &__form-label {
+    margin-bottom: rem(12px);
+
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 0;
+
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media #{media("<", m)} {
+      background-color: color(white);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    left: 50%;
+    top: rem(24px);
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  &__modal {
+    padding: rem(56px) rem(85px);
+    @media #{media("<")} {
+      min-height: rem(388px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    @media #{media("<", m)} {
+      padding: 0 rem(16px);
+      width: 100%;
+
+      border-radius: 0;
+      box-shadow: none;
+    }
+    width: rem(490px);
+
+    box-shadow: 0px 28px 68px 0px rgba(0, 31, 56, 0.04);
+    border-radius: rem(8px);
+    background-color: color(white);
+  }
+  
+  &__tabs {
+    margin-bottom: rem(20px);
+
+    display: flex;
+  }
+  &__tabs-item {
+    padding: rem(10px);
+
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: rem(8px);
+
+    &:not(:first-child) {
+      margin-left: rem(10px);
+    }
+
+    &.active {
+      border-color: color(blue);
+    }
+  }
+
+  &__block {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__list {
+    margin-top: rem(24px);
+  }
+  &__list-item {
+    position: relative;
+    z-index: 0;
+
+    text-indent: rem(20px);
+    color: color(gray);
+    @include fsl(14px, 140%);
+    @media #{media("<")} {
+      @include fsl(12px);
+    }
+    &:not(:first-child) {
+      margin-top: rem(15px);
+      @media #{media("<")} {
+        margin-top: rem(10px);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: rem(6px);
+      left: rem(5px);
+      z-index: 1;
+
+      width: rem(5px);
+      height: rem(5px);
+
+      background-color: color(gray);
+      border-radius: 50%;
+    }
   }
 }

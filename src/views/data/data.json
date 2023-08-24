@@ -3,12 +3,28 @@
 
   "routes": [
     {
-      "href": "/main",
+      "href": "main",
       "title": "Главная"
     },
     {
-      "href": "/login",
+      "href": "login",
       "title": "Вход"
+    },
+    {
+      "href": "pass-recovery",
+      "title": "Восстановление пароля"
+    },
+    {
+      "href": "pass-recovery-2",
+      "title": "Восстановление пароля 2"
+    },
+    {
+      "href": "pass-recovery-3",
+      "title": "Восстановление пароля 3"
+    },
+    {
+      "href": "payment",
+      "title": "Оплата"
     }
   ]
 }

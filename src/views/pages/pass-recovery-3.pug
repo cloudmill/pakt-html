@@ -1,0 +1,28 @@
+extends ../layouts/secondary
+
+
+
+block header
+
+
+
+block content
+  .login-page
+    .login-page__container 
+      a.login-page__img(href="#")
+        .login-page__logo.login-page__logo--alt
+          +picture('logo.png')
+      form.login-page__modal(action="/")
+        .login-page__form-title.center
+          |Восстановление пароля
+        .form-item 
+          +input(type = 'password' placeholder = 'Новый пароль')
+        .form-item 
+          +input(type = 'password' placeholder = 'Повторите пароль')
+        ul.login-page__list
+          each item in ['Пароль должен состоять минимум из 6 символов', 'Пароль не должен состоять из повторяющейся буквы или цифры', 'Пароль должен содержать только заглавные и строчные буквы, а также цифры', 'Пароль не должен содержать спецсимволы', ]
+            li.login-page__list-item 
+              |#{item}
+        .login-page__form-btn 
+          button.button 
+            |Отправить
