@@ -9,14 +9,24 @@
   cursor: pointer;
   border-radius: rem(8px);
   background-color: color(blue);
+  transition: $transition;
   color: color(white);
   font-weight: 600;
   @include fsl(16px, 120%);
+
+  &:hover {
+    background-color: color(blue-hover);
+  }
 
   &--outline {
     color: color(blue);
     border: 1px solid color(blue-border);
     background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+      border-color: color(blue);
+    }
   }
 
   &__icon {

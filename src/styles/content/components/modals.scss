@@ -1,3 +1,95 @@
 .modal {
   
 }
+
+.response-modal {
+  width: rem(490px);
+  display: none;
+  @media #{media("<", m)} {
+    width: calc(100vw - #{rem(32px)});
+  }
+  overflow: visible;
+  border-radius: rem(8px);
+
+  &__container {
+    padding: rem(26px);
+    @media #{media("<", m)} {
+      padding: rem(24px);
+
+      min-height: rem(268px);
+    }
+    min-height: rem(388px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-bottom: rem(24px);
+    @media #{media("<", m)} {
+      margin-bottom: rem(16px);
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__svg {
+    --size: #{rem(40px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+
+  &__title {
+    font-weight: 600;
+    @include fsl(20px, 110%);
+    letter-spacing: -0.01em;
+    @media #{media("<", m)} {
+      @include fsl(16px);
+    }
+  }
+
+  &__button {
+    margin-top: rem(24px);
+    @media #{media("<", m)} {
+      margin-top: rem(16px);
+      width: 100%;
+    }
+    width: rem(182px);
+  }
+
+  &__close {
+    position: absolute;
+    z-index: 1;
+    top: rem(32px);
+    right: rem(32px);
+    @media #{media("<", m)} {
+      top: auto;
+      bottom: calc(100% + #{rem(12px)});
+      right: 0;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    path {
+      @media #{media("<", m)} {
+        fill: color(white);
+      }
+    }
+  }
+  &__close-svg {
+    --size: #{rem(24px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+}
+
+.fancybox-button.fancybox-close-small {
+  display: none;
+}

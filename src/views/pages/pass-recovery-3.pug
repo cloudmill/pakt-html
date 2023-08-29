@@ -12,13 +12,24 @@ block content
       a.login-page__img(href="#")
         .login-page__logo.login-page__logo--alt
           +picture('logo.png')
-      form.login-page__modal(action="/")
+      form.login-page__modal(action="/" data-form='success')
         .login-page__form-title.center
           |Восстановление пароля
         .form-item 
-          +input(type = 'password' placeholder = 'Новый пароль')
+          +input#password(
+            type = 'password' 
+            placeholder = 'Новый пароль' 
+            data-parsley-equalto="#passwordAgain" 
+            data-parsley-minlength="6" 
+            data-input-password='' 
+            data-parsley-priority-enabled='false'
+          )
         .form-item 
-          +input(type = 'password' placeholder = 'Повторите пароль')
+          +input#passwordAgain(
+            type = 'password' 
+            placeholder = 'Повторите пароль'
+            data-parsley-equalto="#password"
+          )
         ul.login-page__list
           each item in ['Пароль должен состоять минимум из 6 символов', 'Пароль не должен состоять из повторяющейся буквы или цифры', 'Пароль должен содержать только заглавные и строчные буквы, а также цифры', 'Пароль не должен содержать спецсимволы', ]
             li.login-page__list-item 
@@ -26,3 +37,4 @@ block content
         .login-page__form-btn 
           button.button 
             |Отправить
+  +response-modal(id='success' title = 'Пароль успешно изменен' btn = 'Перейти в личный кабинет')

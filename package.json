@@ -49,8 +49,11 @@
     "webpack-notifier": "^1.15.0"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "inputmask": "^5.0.8",
     "jquery": "^3.6.4",
     "normalize.css": "^8.0.1",
+    "parsleyjs": "^2.9.2",
     "reset-css": "^5.0.1",
     "tippy.js": "^6.3.7"
   }

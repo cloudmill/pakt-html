@@ -13,7 +13,7 @@ block content
         .login-page__logo.login-page__logo--alt 
           +picture('logo.png')
       .payment-page__container
-        .payment-page__modal
+        form.payment-page__modal(action="/") 
           .payment-page__modal-title 
             |Оплата услуг П.А.К.Т.
           .payment-page__modal-row 
@@ -29,7 +29,7 @@ block content
               .payment-page__modal-inner 
                 .checkbox
                   label.checkbox__label
-                    input.checkbox__input(type="checkbox" id='qwe')
+                    input.checkbox__input(type="checkbox" id='qwe' data-checkbox-payment='')
                     .checkbox__box 
                       +check-svg.checkbox__svg
                     .checkbox__caption 
@@ -40,7 +40,7 @@ block content
                     +tooltip-svg.tooltip__svg 
                   .tooltip__container 
                     |Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum architecto reprehenderit sed!
-              .payment-page__modal-offset.hidden
+              .payment-page__modal-offset.hidden(data-payment-container='')
                 .payment-page__modal-grid 
                   +input(type = 'number' placeholder='Сумма')
                   +input(type = 'text' placeholder='Дата платежа')

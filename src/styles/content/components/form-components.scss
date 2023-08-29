@@ -21,17 +21,17 @@
   }
 
   &:hover {
-    // border-color: color(green);
+    border-color: color(blue);
   }
   &:focus {
-    // border-color: color(green);
+    border-color: color(blue);
   }
   &::placeholder {
     opacity: 0;
   }
-  &.parsley-error {
-    border-color: color(error);
-  }
+  // &.parsley-error {
+  //   border-color: color(error);
+  // }
 }
 
 .input-wrapper {
@@ -248,14 +248,50 @@
 }
 
 .parsley-errors-list {
-  margin-top: rem(6px);
+  margin-top: rem(10px);
   // position: absolute;
   // top: calc(100% + #{rem(4px)});
   @media #{media("<")} {
     position: static;
     margin-top: rem(3px);
   }
-  font-weight: 500;
-  @include fsl(11px, 100%);
+  @include fsl(12px, 100%);
   color: color(error);
+}
+
+.password {
+  position: relative;
+  z-index: 0;
+
+  .input {
+    padding-right: rem(50px);
+  }
+
+  &__icon {
+    position: absolute;
+    top: rem(16px);
+    // top: 50%;
+    right: rem(16px);
+    // transform: translateY(-50%);
+    z-index: 1;
+
+    cursor: pointer;
+
+    &.active {
+      path {
+        fill: color(blue);
+      }
+    }
+  }
+
+  &__svg {
+    --size: #{rem(24px)};
+
+    width: var(--size);
+    height: var(--size);
+    
+    path {
+      transition: $transition;
+    }
+  }
 }

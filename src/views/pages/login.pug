@@ -35,8 +35,10 @@ block content
             |Войти в личный кабинет
           .form-item 
             +input(type = 'text' placeholder = 'Номер договора')
-          .form-item 
+          .form-item.password(data-password='')
             +input(type = 'password' placeholder = 'Пароль')
+            button.password__icon(data-password-btn='' type="button")
+              +eye-svg.password__svg
           .login-page__form-btn 
             button.button 
               |Войти

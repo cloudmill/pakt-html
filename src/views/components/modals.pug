@@ -1,0 +1,13 @@
+
+mixin response-modal 
+  .response-modal(data-response=attributes.id)
+    .response-modal__container 
+      .response-modal__icon
+        +ok-svg.response-modal__svg
+      .response-modal__title
+        |#{attributes.title}
+      .response-modal__button 
+        a.button(href="#")
+          |#{attributes.btn}
+    .response-modal__close(data-fancybox-close='')
+      +cross-alt-svg.response-modal__close-svg
