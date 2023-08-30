@@ -1,0 +1,65 @@
+.tabs {
+  $comp: &;
+  
+  &--wide {
+    @media #{media("<")} {
+      margin-top: 0;
+      margin-left: rem(-20px);
+      padding: 0 $col-pad-m;
+      
+      display: flex;
+      width: calc(100% + #{$col-pad-m} * 2);
+
+      overflow-x: auto;
+      @include scrollbar-hidden;
+    }
+    #{$comp}__list {
+      @media #{media("<")} {
+        flex-shrink: 0;
+        width: auto;
+      }
+    }
+    #{$comp}__item {
+      width: 100%;
+      @media #{media("<")} {
+        padding: rem(10px) rem(16px);
+      }
+    }
+  }
+
+  &__list {
+    padding: rem(4px);
+    display: flex;
+    @media #{media("<")} {
+      width: rem(328px);
+      border-radius: rem(100px);
+    }
+    @media #{media("<", m)} {
+      width: 100%;
+    }
+    border-radius: rem(70px);
+    background-color: #E9E9EC;
+  }
+
+  &__item {
+    padding: rem(10px) rem(16px);
+    @media #{media("<")} {
+      padding: rem(10px) 0;
+
+      display: flex;
+      justify-content: center;
+      width: 50%;
+    }
+    text-align: center;
+    border-radius: rem(100px);
+    cursor: pointer;
+    transition: $transition;
+    font-weight: 500;
+    @include fsl(15px, 120%);
+    white-space: nowrap;
+    
+    &.active {
+      background-color: color(white);
+    }
+  }
+}

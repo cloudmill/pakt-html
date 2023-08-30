@@ -45,6 +45,9 @@
 
 .tippy-box {
   position: relative;
+
+  max-width: none !important;
+
   background-color: none;
   color: var(--color-black);
   border: none;
@@ -57,7 +60,8 @@
 
   &[data-theme=big] {
     .tippy-content {
-      max-width: none;
+      max-width: rem(437px);
+      // max-width: none;
     }
   }
 }

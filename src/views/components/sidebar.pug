@@ -1,28 +1,28 @@
-mixin sidebar 
+mixin sidebar(active)
   sidebar.sidebar 
     .sidebar__container 
       .sidebar__top
         nav.sidebar__nav
           .sidebar__item
-            a.sidebar__item-link.active(href="#")
+            a.sidebar__item-link(href="#" class=(active === 0 ? 'active' : null))
               .sidebar__item-icon 
                 +home-svg.sidebar__item-svg 
               .sidebar__item-text 
                 |Мой ПАКТ
           .sidebar__item
-            a.sidebar__item-link(href="#")
+            a.sidebar__item-link(href="#" class=(active === 1 ? 'active' : null))
               .sidebar__item-icon 
                 +services-svg.sidebar__item-svg 
               .sidebar__item-text 
                 |Услуги
           .sidebar__item
-            a.sidebar__item-link(href="#")
+            a.sidebar__item-link(href="#" class=(active === 2 ? 'active' : null))
               .sidebar__item-icon 
                 +pie-svg.sidebar__item-svg 
               .sidebar__item-text 
                 |Контроль расходов
           .sidebar__item
-            a.sidebar__item-link(href="#")
+            a.sidebar__item-link(href="#" class=(active === 3 ? 'active' : null))
               .sidebar__item-icon 
                 +card-svg.sidebar__item-svg 
               .sidebar__item-text 

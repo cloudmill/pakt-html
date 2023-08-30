@@ -1,0 +1,186 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 1
+
+block content
+  .services-page
+    .services-page__panel 
+      .services-page__panel-text 
+        |Услуги
+    section.section.section--first-panel(data-real-tabs='')
+      .container
+        .tabs.tabs--wide 
+          .tabs__list
+            each item, i in ['Подключенные', 'Доступные', 'Специальные акции и предложения', 'История смены тарифов']
+              .tabs__item(class=(i === 0 ? 'active' : null) data-tabs-item='')
+                |#{item}
+        .services-page__inner 
+          .services-page__block.active(data-tabs-block='')
+            .service-grid
+              -
+                var ddata = [
+                  {
+                    title: 'Интернет',
+                    icon: "globe"
+                  },
+                  {
+                    title: "Телевидение",
+                    icon: "tv"
+                  },
+                  {
+                    title: "Телефония",
+                    icon: "call"
+                  },
+                  {
+                    title: "Видеонаблюдение",
+                    icon: "record",
+                    isRefresh: true
+                  },
+                ]
+              each item in ddata
+                .service-card.service-card--big
+                  .service-card__container 
+                    .service-card__top
+                      .service-card__inner
+                        .service-card__icon.default
+                          case item.icon 
+                            when 'globe'
+                              +globe-svg.service-card__svg 
+                            when 'tv'
+                              +tv-svg.service-card__svg 
+                            when 'call'
+                              +call-svg.service-card__svg 
+                            when 'record'
+                              +record-svg.service-card__svg
+                        .service-card__status 
+                          |Активна
+                      .service-card__title 
+                        |#{item.title}
+                      ul.service-card__list 
+                        if (item.isRefresh)
+                          li.service-card__item 
+                            .service-card__label
+                              |Модуль
+                            .service-card__refresh
+                              .service-card__refresh-icon 
+                                +clock-svg.service-card__refresh-svg
+                              .service-card__text 
+                                |Данные обновляются
+                        else
+                          li.service-card__item 
+                            .service-card__label
+                              |Тариф
+                            .service-card__text 
+                              |The Best / 100 МБ
+                          li.service-card__item 
+                            .service-card__label
+                              |Абонимент до:
+                            .service-card__text 
+                              |31.10.21
+                    .service-card__bot 
+                      .service-card__col
+                        .service-card__label
+                          |Абонентская плата
+                        .service-card__price 
+                          |3 900 ₽ / 12 мес.
+                      .service-card__col
+                        .service-card__settings 
+                          +settings-svg
+          .services-page__block(data-tabs-block='')
+            .service-grid.service-grid--alt
+              -
+                var ddata = [
+                  {
+                    title: 'Онлайн ТВ "iPakt"',
+                    icon: "screen"
+                  },
+                  {
+                    title: "Интернет",
+                    icon: "globe"
+                  },
+                  {
+                    title: "Телевидение",
+                    icon: "tv"
+                  },
+                  {
+                    title: "Телефония",
+                    icon: "call"
+                  },
+                  {
+                    title: "Видеонаблюдение",
+                    icon: "record"
+                  },
+                  {
+                    title: "Умный домофон",
+                    icon: "record"
+                  },
+                ]
+              each item, i in ddata
+                .service-card(class=(i == 0 ? 'service-card--alt' : null))
+                  .service-card__container 
+                    .service-card__top
+                      .service-card__icon
+                        case item.icon 
+                          when 'screen'
+                            +screen-svg.service-card__svg 
+                          when 'globe'
+                            +globe-svg.service-card__svg 
+                          when 'tv'
+                            +tv-svg.service-card__svg 
+                          when 'call'
+                            +call-svg.service-card__svg 
+                          when 'record'
+                            +record-svg.service-card__svg 
+                      .service-card__title 
+                        |#{item.title}
+                      .tooltip.tooltip--big
+                        .service-card__link(data-tooltip-icon='')
+                          |Подробнее 
+                        .tooltip__container 
+                          .service-card__tooltip
+                            .service-card__tooltip-title 
+                              |Умный домофон
+                            .service-card__tooltip-text 
+                              |Удаленный доступ через мобильное приложение к системам контроля безопасности вашего дома 
+                            a.service-card__link(href="#")
+                              |Более подробно на сайте 
+                    .service-card__bot 
+                      .service-card__col
+                        .service-card__count 
+                          |6 тарифов
+                      .service-card__col
+                        a.service-card__btn(href="#") 
+                          |Смотреть тарифы
+          .services-page__block(data-tabs-block='')
+            |3333333
+          .services-page__block(data-tabs-block='')
+            -
+              var labels = ['Дата подключения', 'Категория', 'Тариф', 'Дата смены тарифа',] 
+            .services-page__history
+              h3.section__title 
+                |История смены тарифов
+              .services-page__history-calendar 
+                |CALENDAR 
+              .only-desktop
+                .services-page__history-grid
+                  each item in labels 
+                    .services-page__history-label 
+                      |#{item}
+              - for (i = 0; i < 3; i++)
+                .services-page__history-line
+                  .services-page__history-grid 
+                    each item, j in ['24.01.2021', 'Интернет', '100 Мбит/с', '01.09.2021',]
+                      .services-page__history-item 
+                        .only-mobile
+                          .services-page__history-label 
+                            |#{labels[j]}
+                        .services-page__history-text 
+                          |#{item}
+                  .services-page__history-mobile 
+                    .services-page__history-inner 
+                      .services-page__history-text 
+                        |Интернет
+                    .services-page__history-inner 
+                      .services-page__history-text 
+                        |Базовый пакет

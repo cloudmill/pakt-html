@@ -1,0 +1,116 @@
+.services-page {
+  position: relative;
+  z-index: 0;
+  margin-bottom: rem(150px);
+  @media #{media("<")} {
+    margin-bottom: rem(150px);
+  }
+
+  &__panel {
+    position: absolute;
+    top: rem(72px);
+    left: 0;
+    right: 0;
+    z-index: 100;
+    @media #{media("<")} {
+      top: rem(64px);
+
+      height: rem(40px);
+    }
+    height: rem(52px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: color(white);
+    border-bottom: 1px solid color(borders);
+  }
+  &__panel-text {
+    font-weight: 600;
+    @include fsl(14px, 140%);
+    @media #{media("<")} {
+      @include fsl(12px);
+    }
+  }
+
+  &__inner {
+    margin-top: rem(32px);
+    @media #{media("<")} {
+      margin-top: rem(24px);
+    }
+  }
+
+  &__block {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__history {
+    padding: rem(48px) rem(32px);
+    @media #{media("<")} {
+      padding: rem(15px) rem(16px) rem(32px);
+    }
+    background-color: color(white);
+    border-radius: rem(8px);
+    box-shadow: 0px 28px 68px 0px rgba(0, 31, 56, 0.04);
+  }
+  &__history-calendar {
+    margin: rem(40px) 0 rem(20px);
+    padding-bottom: rem(24px);
+    @media #{media("<")} {
+      margin: rem(20px) 0;
+      padding-bottom: rem(32px);
+    }
+    border-bottom: 1px solid color(borders);
+  }
+  &__history-grid {
+    display: grid;
+    grid-template-columns: 19% 22% 35% 24%;
+    @media #{media("<")} {
+      grid-template-columns: 26% 21% 29% 24%;
+    }
+    @media #{media("<", m)} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__history-label {
+    @media #{media("<")} {
+      margin-bottom: rem(5px);
+    }
+    color: color(gray);
+    @include fsl(14px, 130%);
+  }
+  &__history-line {
+    @media #{media("<")} {
+      padding-bottom: rem(18px);
+
+      border-bottom: 1px solid color(borders);
+    }
+    &:not(:first-child) {
+      margin-top: rem(20px);
+    }
+  }
+  &__history-item {
+    @media #{media("<", m)} {
+      &:nth-child(2),
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+  &__history-mobile {
+    margin-top: rem(20px);
+    @media #{media(">", m)} {
+      display: none;
+    }
+  }
+  &__history-inner {
+
+    &:not(:first-child) {
+      margin-top: rem(12px);
+    }
+  }
+}

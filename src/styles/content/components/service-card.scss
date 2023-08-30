@@ -1,0 +1,236 @@
+.service-card {
+  $comp: &;
+
+  height: rem(268px);
+
+  background-color: color(white);
+  border-radius: rem(8px);
+  box-shadow: 0px 28px 68px 0px rgba(0, 31, 56, 0.04);
+
+  &--alt {
+    background: radial-gradient(155.66% 104.58% at 25.00% 18.28%, #0076D8 0%, #6D19F5 0.01%, #0076D8 44.53%, #EC003E 100%);
+
+    #{$comp}__title {
+      color: color(white);
+    }
+    #{$comp}__link {
+      color: color(light-blue);
+      border-color: rgba(color(white), 0.2);
+    }
+    #{$comp}__count {
+      color: color(light-blue);
+    }
+    #{$comp}__btn {
+      color: color(white);
+      border-color: rgba(color(white), 0.2);
+    }
+  }
+
+  &--big {
+    height: rem(420px);
+    @media #{media("<")} {
+      height: rem(340px);
+    }
+  }
+
+  &__container {
+    padding: rem(32px);
+    @media #{media("<")} {
+      padding: rem(16px) rem(16px) rem(24px);
+    }
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__top {}
+  &__icon {
+    margin-bottom: rem(25px);
+
+    display: flex;
+    align-items: center;
+
+    &.default {
+      margin-bottom: 0;
+    }
+  }
+  &__svg {
+    --size: #{rem(24px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+  &__title {
+    margin-bottom: rem(7px);
+    
+    font-weight: 500;
+    @include fsl(18px, 120%);
+  }
+  &__link {
+    padding-bottom: rem(3px);
+
+    display: inline-block;
+
+    color: color(gray);
+    @include fsl(14px, 110%);
+    border-bottom: 1px solid color(borders);
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      color: color(blue);
+      border-color: color(blue);
+    }
+  }
+  &__bot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__col {}
+  &__count {
+    color: #808F9C;
+    @include fsl(12px, 110%);
+  }
+  &__btn {
+    padding: rem(14px) rem(20px);
+    @media #{media("<")} {
+      padding: rem(10px) rem(16px);
+
+      @include fsl(14px);
+    }
+    display: inline-block;
+
+    font-weight: 500;
+    @include fsl(15px, 120%);
+    color: color(blue);
+    border: 1px solid color(blue-border);
+    border-radius: rem(100px);
+  }
+  &__inner {
+    margin-bottom: rem(25px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__status {
+    padding: 0 rem(8px);
+
+    height: rem(20px);
+    display: flex;
+    align-items: center;
+    @media #{media("<")} {
+      height: rem(24px);
+    }
+
+    border-radius: rem(4px);
+    background-color: rgba(color(green), 0.2);
+    color: color(green);
+    @include fsl(12px, 110%);
+  }
+  &__list {
+    margin-top: rem(18px);
+  }
+  &__item {
+
+    &:not(:first-child) {
+      margin-top: rem(24px);
+    }
+  }
+  &__label {
+    margin-bottom: rem(4px);
+
+    color: color(gray);
+    @include fsl(14px, 110%);
+  }
+  &__text {
+    @include fsl(14px, 110%);
+  }
+  &__price {
+    font-weight: 500;
+    @include fsl(18px, 110%);
+  }
+  &__settings {
+    --size: #{rem(48px)};
+
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid color(blue-border);
+
+    svg {
+      --size: #{rem(24px)};
+
+      width: var(--size);
+      height: var(--size);
+    }
+  }
+
+  &__refresh {
+    display: flex;
+    align-items: center;
+  }
+  &__refresh-icon {
+    margin-right: rem(8px);
+
+    display: flex;
+    align-items: center;
+  }
+  &__refresh-svg {
+    --size: #{rem(16px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+
+  &__tooltip {}
+  &__tooltip-title {
+    margin-bottom: rem(16px);
+
+    font-weight: 600;
+    @include fsl(16px, 130%);
+  }
+  &__tooltip-text {
+    margin-bottom: rem(16px);
+
+    @include fsl(14px, 140%);
+  }
+}
+
+.service-grid {
+  @media #{media("<")} {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: rem(16px);
+  }
+  @media #{media("<", m)} {
+    grid-template-columns: 1fr;
+  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: rem(20px);
+  row-gap: rem(16px);
+
+  &--alt {
+    @media #{media("<", m)} {
+      margin-left: rem(-20px);
+      padding: 0 $col-pad-m;
+      
+      display: flex;
+      width: calc(100% + #{$col-pad-m} * 2);
+
+      overflow-x: auto;
+      @include scrollbar-hidden;
+
+      .service-card {
+        flex-shrink: 0;
+        width: rem(272px);
+      }
+    }
+  }
+}

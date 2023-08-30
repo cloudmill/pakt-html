@@ -3,7 +3,7 @@ extends ../app
 
 block content
   .main-page
-    section.section 
+    section.section.section--first 
       .container 
         .main-page__announce
           .main-page__announce-icon 
@@ -56,123 +56,135 @@ block content
                       |Условный платеж
                     .main-page__balance-status 
                       |Не подключен
-    section.main-page__section 
+    section.section.main-page__section 
       .container
-        h3.main-page__services-title 
+        h3.section__title 
           |Мои услуги
         .main-page__services-top 
-          .main-page__categories
-            .main-page__categories-item.active
-              |Подключенные
-            .main-page__categories-item
-              |Доступные
+          .tabs
+            .tabs__list
+              .tabs__item.active
+                |Подключенные
+              .tabs__item
+                |Доступные
           .main-page__services-address.desktop
             |Доступные услуги по адресу:&nbsp; #[br] #[span Оптиков 37, ст 1, кв 269]
-        .main-page__services-grid.alt
-          -
-            var ddata = [
-              {
-                title: 'Онлайн ТВ "iPakt"',
-                icon: "screen"
-              },
-              {
-                title: "Интернет",
-                icon: "globe"
-              },
-              {
-                title: "Телевидение",
-                icon: "tv"
-              },
-              {
-                title: "Телефония",
-                icon: "call"
-              },
-              {
-                title: "Видеонаблюдение",
-                icon: "record"
-              },
-              {
-                title: "Умный домофон",
-                icon: "record"
-              },
-            ]
-          each item, i in ddata
-            .main-page__service(class=(i == 0 ? 'main-page__service--alt' : null))
-              .main-page__service-container 
-                .main-page__service-top
-                  .main-page__service-icon
-                    case item.icon 
-                      when 'screen'
-                        +screen-svg.main-page__service-svg 
-                      when 'globe'
-                        +globe-svg.main-page__service-svg 
-                      when 'tv'
-                        +tv-svg.main-page__service-svg 
-                      when 'call'
-                        +call-svg.main-page__service-svg 
-                      when 'record'
-                        +record-svg.main-page__service-svg 
-                  .main-page__service-title 
-                    |#{item.title}
-                  a(href="#").main-page__service-link
-                    |Подробнее 
-                .main-page__service-bot 
-                  .main-page__service-col
-                    .main-page__service-count 
-                      |6 тарифов
-                  .main-page__service-col
-                    a.main-page__service-btn(href="#") 
-                      |Смотреть тарифы
-        .main-page__services-grid
-          -
-            var ddata = [
-              {
-                title: 'Интернет',
-                icon: "globe"
-              },
-              {
-                title: "Телевидение",
-                icon: "tv"
-              },
-              {
-                title: "Телефония",
-                icon: "call"
-              },
-            ]
-          each item in ddata
-            .main-page__service.main-page__service--big
-              .main-page__service-container 
-                .main-page__service-top
-                  .main-page__service-inner
-                    .main-page__service-icon.default
+        .main-page__services-inner
+          .service-grid.service-grid--alt
+            -
+              var ddata = [
+                {
+                  title: 'Онлайн ТВ "iPakt"',
+                  icon: "screen"
+                },
+                {
+                  title: "Интернет",
+                  icon: "globe"
+                },
+                {
+                  title: "Телевидение",
+                  icon: "tv"
+                },
+                {
+                  title: "Телефония",
+                  icon: "call"
+                },
+                {
+                  title: "Видеонаблюдение",
+                  icon: "record"
+                },
+                {
+                  title: "Умный домофон",
+                  icon: "record"
+                },
+              ]
+            each item, i in ddata
+              .service-card(class=(i == 0 ? 'service-card--alt' : null))
+                .service-card__container 
+                  .service-card__top
+                    .service-card__icon
                       case item.icon 
+                        when 'screen'
+                          +screen-svg.service-card__svg 
                         when 'globe'
-                          +globe-svg.main-page__service-svg 
+                          +globe-svg.service-card__svg 
                         when 'tv'
-                          +tv-svg.main-page__service-svg 
+                          +tv-svg.service-card__svg 
                         when 'call'
-                          +call-svg.main-page__service-svg 
-                    .main-page__service-status 
-                      |Активна
-                  .main-page__service-title 
-                    |#{item.title}
-                  ul.main-page__service-list 
-                    li.main-page__service-item 
-                      .main-page__service-label
-                        |Тариф
-                      .main-page__service-text 
-                        |The Best / 100 МБ
-                    li.main-page__service-item 
-                      .main-page__service-label
-                        |Абонимент до:
-                      .main-page__service-text 
-                        |31.10.21
-                .main-page__service-bot 
-                  .main-page__service-col
-                    .main-page__service-label
-                      |Абонентская плата
-                    .main-page__service-price 
-                      |3 900 ₽ / 12 мес.
-                  .main-page__service-col
-                    .main-page__service-settings 
-                      +settings-svg
+                          +call-svg.service-card__svg 
+                        when 'record'
+                          +record-svg.service-card__svg 
+                    .service-card__title 
+                      |#{item.title}
+                    .tooltip.tooltip--big
+                      .service-card__link(data-tooltip-icon='')
+                        |Подробнее 
+                      .tooltip__container 
+                        .service-card__tooltip
+                          .service-card__tooltip-title 
+                            |Умный домофон
+                          .service-card__tooltip-text 
+                            |Удаленный доступ через мобильное приложение к системам контроля безопасности вашего дома 
+                          a.service-card__link(href="#")
+                            |Более подробно на сайте 
+                  .service-card__bot 
+                    .service-card__col
+                      .service-card__count 
+                        |6 тарифов
+                    .service-card__col
+                      a.service-card__btn(href="#") 
+                        |Смотреть тарифы
+        .main-page__services-inner
+          .service-grid
+            -
+              var ddata = [
+                {
+                  title: 'Интернет',
+                  icon: "globe"
+                },
+                {
+                  title: "Телевидение",
+                  icon: "tv"
+                },
+                {
+                  title: "Телефония",
+                  icon: "call"
+                },
+              ]
+            each item in ddata
+              .service-card.service-card--big
+                .service-card__container 
+                  .service-card__top
+                    .service-card__inner
+                      .service-card__icon.default
+                        case item.icon 
+                          when 'globe'
+                            +globe-svg.service-card__svg 
+                          when 'tv'
+                            +tv-svg.service-card__svg 
+                          when 'call'
+                            +call-svg.service-card__svg 
+                      .service-card__status 
+                        |Активна
+                    .service-card__title 
+                      |#{item.title}
+                    ul.service-card__list 
+                      li.service-card__item 
+                        .service-card__label
+                          |Тариф
+                        .service-card__text 
+                          |The Best / 100 МБ
+                      li.service-card__item 
+                        .service-card__label
+                          |Абонимент до:
+                        .service-card__text 
+                          |31.10.21
+                  .service-card__bot 
+                    .service-card__col
+                      .service-card__label
+                        |Абонентская плата
+                      .service-card__price 
+                        |3 900 ₽ / 12 мес.
+                    .service-card__col
+                      .service-card__settings 
+                        +settings-svg

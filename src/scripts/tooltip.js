@@ -4,7 +4,7 @@ export function tooltipInit() {
   if ($('.tooltip'.length)) {
     $('.tooltip').each(function() {
       const tooltipContent = $(this).find('.tooltip__container')[0];
-      const tooltipMark = $(this).find('.tooltip__icon');
+      const tooltipMark = $(this).find('[data-tooltip-icon]');
       const isBig = $(this).hasClass('tooltip--big')
 
       tippy(tooltipMark[0],  {
@@ -15,6 +15,7 @@ export function tooltipInit() {
         offset: [0, 14],
         theme: isBig ? 'big' : '',
         delay: 0,
+        interactive: true,
         zIndex: 100000,
       });
     });

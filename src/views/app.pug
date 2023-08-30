@@ -3,6 +3,7 @@
 
 block variables
   - var param = false
+  - var sidebarActive = 0
 
 
 
@@ -36,7 +37,7 @@ html(lang='ru')
       .row
         .row__col
           block sidebar
-            +sidebar
+            +sidebar(sidebarActive)
         .row__col
           main.main
             block content

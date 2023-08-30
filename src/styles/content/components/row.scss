@@ -14,10 +14,7 @@
       }
     }
     &:nth-child(2) {
-      margin-top: rem(160px);
-      @media #{media("<")} {
-        margin-top: rem(100px);
-      }
+      
       width: 100%;
     }
   }

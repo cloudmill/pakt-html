@@ -1,0 +1,24 @@
+.section {
+
+  &--first {
+    margin-top: rem(160px);
+    @media #{media("<")} {
+      margin-top: rem(100px);
+    }
+  }
+  &--first-panel {
+    padding-top: rem(160px);
+    @media #{media("<")} {
+      padding-top: rem(128px);
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    @include fsl(26px, 120%);
+    letter-spacing: -0.01em;
+    @media #{media("<")} {
+      @include fsl(24px);
+    }
+  }
+}
