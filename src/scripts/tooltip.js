@@ -12,7 +12,7 @@ export function tooltipInit() {
         allowHTML: true,
         // trigger: 'click',
         appendTo: $('.main')[0],
-        offset: [0, 4],
+        offset: [0, 14],
         theme: isBig ? 'big' : '',
         delay: 0,
         zIndex: 100000,

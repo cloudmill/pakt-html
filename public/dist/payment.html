@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>test-html</title>
+		<title>pakt-html</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 		<script defer="defer" src="assets/vendor.js"></script>
 		<script defer="defer" src="assets/app.js"></script>
@@ -23,7 +23,7 @@
 							</div>
 						</a>
 						<div class="payment-page__container">
-							<div class="payment-page__modal">
+							<form class="payment-page__modal" action="/">
 								<div class="payment-page__modal-title">Оплата услуг П.А.К.Т.</div>
 								<div class="payment-page__modal-row">
 									<div class="payment-page__modal-col">
@@ -44,7 +44,7 @@
 											</div>
 										</div>
 										<div class="payment-page__modal-inner">
-											<div class="checkbox"><label class="checkbox__label"><input class="checkbox__input" type="checkbox" id="qwe">
+											<div class="checkbox"><label class="checkbox__label"><input class="checkbox__input" type="checkbox" id="qwe" data-checkbox-payment="">
 													<div class="checkbox__box"><svg class="checkbox__svg" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 															<path d="M4.77733 8.26648L1.51149 5.00065C1.35522 4.84442 1.1433 4.75666 0.922327 4.75666C0.701357 4.75666 0.489434 4.84442 0.333161 5.00065C0.176935 5.15692 0.0891724 5.36885 0.0891724 5.58982C0.0891724 5.81079 0.176935 6.02271 0.333161 6.17898L3.59899 9.44481C3.75377 9.59965 3.93753 9.72247 4.13978 9.80627C4.34204 9.89007 4.55882 9.9332 4.77774 9.9332C4.99667 9.9332 5.21345 9.89007 5.41571 9.80627C5.61796 9.72247 5.80172 9.59965 5.95649 9.44481L13.6665 1.73482C13.8227 1.57855 13.9105 1.36662 13.9105 1.14565C13.9105 0.924684 13.8227 0.712761 13.6665 0.556488C13.5102 0.400262 13.2983 0.3125 13.0773 0.3125C12.8564 0.3125 12.6444 0.400262 12.4882 0.556488L4.77733 8.26648Z" fill="white"></path>
 														</svg></div>
@@ -54,7 +54,7 @@
 												<div class="tooltip__container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum architecto reprehenderit sed!</div>
 											</div>
 										</div>
-										<div class="payment-page__modal-offset hidden">
+										<div class="payment-page__modal-offset hidden" data-payment-container="">
 											<div class="payment-page__modal-grid">
 												<div class="input-wrapper" data-input-parent="">
 													<div class="input-wrapper__placeholder">Сумма</div><input class="input" data-input="" required type="number" placeholder="Сумма">
@@ -121,7 +121,7 @@
 										<div class="payment-page__modal-text">Для оплаты (ввода реквизитов Вашей карты) Вы будете перенаправлены на платёжный шлюз ПАО СБЕРБАНК. Соединение с платёжным шлюзом и передача информации осуществляется в защищённом режиме с использованием протокола шифрования SSL. В случае если Ваш банк поддерживает технологию безопасного проведения интернет-платежей Verified By Visa, MasterCard SecureCode, MIR Accept, J-Secure для проведения платежа также может потребоваться ввод специального пароля. Настоящий сайт поддерживает 256-битное шифрование. Конфиденциальность сообщаемой персональной информации обеспечивается ПАО СБЕРБАНК. Введённая информация не будет предоставлена третьим лицам за исключением случаев, предусмотренных законодательством РФ. Проведение платежей по банковским картам осуществляется в строгом соответствии с требованиями платёжных систем МИР, Visa Int., MasterCard Europe Sprl, JCB.</div>
 									</div>
 								</div>
-							</div>
+							</form>
 						</div>
 					</div>
 				</div>

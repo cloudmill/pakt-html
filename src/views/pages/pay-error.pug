@@ -1,0 +1,25 @@
+extends ../layouts/secondary
+
+
+
+block header
+
+
+
+block content
+  .login-page.payment-page
+    a.login-page__img(href="#")
+      .login-page__logo.login-page__logo--alt 
+        +picture('logo.png')
+    .payment-page__container
+      .payment-page__modal
+        .payment-page__response-container
+          .payment-page__modal-title 
+            |Оплата услуг П.А.К.Т.
+          .payment-page__response-icon 
+            +error-svg.payment-page__response-svg 
+          .payment-page__response-text 
+            |Платеж прошел неудачно
+          .payment-page__response-btn 
+            a.button(href="#")
+              |Вернуться назад 

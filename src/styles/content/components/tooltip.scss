@@ -47,16 +47,13 @@
   position: relative;
   background-color: none;
   color: var(--color-black);
-  border-radius: 0;
-
+  border: none;
   white-space: normal;
   outline: 0;
   transition-property: transform,visibility,opacity;
   background: color(white);
-  border-radius: rem(10px);
-  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.12);
-  border: 1px solid color(borders-alt);
-
+  border-radius: rem(8px);
+  box-shadow: 0px 1px 15px 0px rgba(0, 31, 56, 0.11);
 
   &[data-theme=big] {
     .tippy-content {
@@ -66,19 +63,21 @@
 }
 
 .tippy-content {
-  padding: rem(16px) rem(20px);
+  padding: rem(24px);
   
-  max-width: rem(219px);
+  max-width: rem(298px);
 
-  font-weight: 500;
-  @include fsl(11px, 140%);
+  font-weight: 400;
+  @include fsl(14px, 140%);
   color: color(black);
 }
 
 .tippy-arrow {
-  display: none;
 
   &::before {
-    display: none;
+    bottom: rem(-11px) !important;
+
+    border-width: rem(11px) rem(11px) 0 !important;
+    border-top-color: color(white) !important;
   }
 }

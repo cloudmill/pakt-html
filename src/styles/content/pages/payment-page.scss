@@ -4,7 +4,9 @@
     padding: rem(84px) 0 rem(60px);
     @media #{media("<")} {
       padding: rem(80px) 0 rem(30px);
-
+      
+      height: 100vh;
+      
       background-color: color(white);
     }
   }
@@ -117,5 +119,39 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: rem(12px);
+  }
+
+  &__response {
+    margin: 0 auto;
+  }
+  &__response-icon {
+    margin-bottom: rem(24px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__response-svg {
+    --size: #{rem(40px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+  &__response-text {
+    text-align: center;
+    font-weight: 600;
+    @include fsl(20px, 110%);
+    letter-spacing: -0.01em;
+    @media #{media("<", m)} {
+      @include fsl(16px);
+    }
+  }
+  &__response-btn {
+    margin: rem(24px) auto 0;
+    @media #{media("<", m)} {
+      margin: rem(16px) auto 0;
+      width: 100%;
+    }
+    width: rem(296px);
   }
 }

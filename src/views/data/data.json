@@ -25,6 +25,14 @@
     {
       "href": "payment",
       "title": "Оплата"
+    },
+    {
+      "href": "pay-success",
+      "title": "Оплата удачно"
+    },
+    {
+      "href": "pay-error",
+      "title": "Оплата неудачно"
     }
   ]
 }
