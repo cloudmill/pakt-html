@@ -153,7 +153,70 @@ block content
                         a.service-card__btn(href="#") 
                           |Смотреть тарифы
           .services-page__block(data-tabs-block='')
-            |3333333
+            h3.section__title 
+              |Специальные акции и предложения
+            .services-page__categories 
+              .categories
+                each item in ['Все (6)', 'Интернет (1)', 'Телевидение (4)', 'Онлайн ТВ', 'Телефония (1)', 'Облачное видеонаблюдение REC (3)', ]
+                  .categories__item 
+                    .categories__btn
+                      |#{item}
+            .services-page__offer
+              .services-page__offer-container
+                .services-page__offer-title 
+                  |Онлайн ТВ «iPakt» на 5 устройствах
+                .services-page__offer-text 
+                  |Вам доступен сервис онлайн ТВ «iPakt» на 5 устройстсвах. Пакет "Популярный"     
+                .services-page__offer-btn 
+                  button.button.button--black 
+                    |Подключить
+                a.services-page__offer-link(href="#") 
+                  |Подробнее об опции на сайте
+            .services-page__list 
+              .services-page__item
+                .services-page__item-heading 
+                  |Тарифы
+                .services-page__item-grid 
+                  - for (i = 0; i < 7; i++)
+                    .services-page__card
+                      .services-page__card-container
+                        .services-page__card-icon 
+                          +fire-svg.services-page__card-svg
+                        .services-page__card-top
+                          .services-page__card-heading.underline
+                            |2 Мбит
+                          .services-page__card-body 
+                            .services-page__card-list 
+                              .services-page__card-item 
+                                .services-page__card-label 
+                                  |Скорость
+                                .services-page__card-text 
+                                  |2 Мбит/с
+                            //- a.services-page__card-link(href="#")
+                              |Список каналов
+                        .services-page__card-bot 
+                          .services-page__card-price 
+                            |150 ₽ / мес 
+                          .services-page__card-btn 
+                            |Подключить
+              .services-page__item
+                .services-page__item-heading
+                  |Внешний IP-адрес 
+                .services-page__item-grid 
+                  .services-page__card.small
+                    .services-page__card-container
+                      .services-page__card-top
+                        .services-page__card-heading.tooltip
+                          |Внешний IP-адрес
+                          span.tooltip__icon(data-tooltip-icon='')
+                            +tooltip-svg.tooltip__svg 
+                          .tooltip__container 
+                            |Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum architecto reprehenderit sed!
+                      .services-page__card-bot 
+                        .services-page__card-price 
+                          |150 ₽ / мес 
+                        .services-page__card-btn 
+                          |Подключить
           .services-page__block(data-tabs-block='')
             -
               var labels = ['Дата подключения', 'Категория', 'Тариф', 'Дата смены тарифа',] 

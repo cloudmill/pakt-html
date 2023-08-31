@@ -43,5 +43,6 @@
     @include fsl(15px, 120%);
     border-radius: rem(100px);
     border: 1px solid color(blue-border);
+    cursor: pointer;
   }
 }

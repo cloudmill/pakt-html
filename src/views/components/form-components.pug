@@ -17,3 +17,13 @@ mixin checkbox
       else 
         .checkbox__text 
           |Даю согласие на обработку #[a.checkbox__link(href="#") персональных данных]
+
+mixin select
+  .select-wrapper 
+    .select
+      select.select__select(data-select-placeholder=attributes.placeholder style='width: 100%')
+        if (attributes.placeholder)
+          option(value='' disabled selected)
+        each item, i in attributes.options
+          option(value=(attributes.values ? attributes.values[i] : item))
+            |#{item}

@@ -1,4 +1,5 @@
 .payment-page {
+  $comp: &;
 
   &__container {
     padding: rem(84px) 0 rem(60px);
@@ -57,6 +58,25 @@
       }
       flex-shrink: 0;
       width: rem(400px);
+
+      &.active {
+        #{$comp}__modal-wrapper {
+          display: block;
+        }
+        #{$comp}__modal-btn {
+          display: none;
+        }
+        .button--outline {
+          background-color: color(blue);
+          color: color(white);
+
+          svg {
+            path {
+              fill: color(white);
+            }
+          }
+        }
+      }
     }
   }
   &__modal-label {
@@ -110,19 +130,27 @@
     @media #{media("<")} {
       margin-top: rem(24px);
     }
-
-    &.hidden {
-      display: none;
-    }
   }
   &__modal-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: rem(12px);
   }
+  &__modal-wrapper {
+    display: none;
+  }
+  &__modal-label {
+    margin-bottom: rem(16px);
+
+    color: color(gray);
+    @include fsl(14px, 120%);
+  }
 
   &__response {
     margin: 0 auto;
+  }
+  &__response-container {
+
   }
   &__response-icon {
     margin-bottom: rem(24px);

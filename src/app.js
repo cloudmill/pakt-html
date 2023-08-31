@@ -6,6 +6,7 @@ import "./scripts/tooltip";
 import "./scripts/form-validation";
 import "./scripts/form-response";
 import "./scripts/fancymodals";
+import "./scripts/select";
 
 // checkbox payment
 
@@ -18,9 +19,9 @@ import "./scripts/fancymodals";
 
       checkbox.onchange = function() {
         if (this.checked) {
-          container.classList.remove('hidden')
+          container.classList.add('active')
         } else {
-          container.classList.add('hidden')
+          container.classList.remove('active')
         }
       }
     }

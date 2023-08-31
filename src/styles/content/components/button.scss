@@ -29,6 +29,10 @@
     }
   }
 
+  &--black {
+    background-color: #001F38;
+  }
+
   &__icon {
     margin-right: rem(10px);
 
@@ -41,6 +45,10 @@
 
     width: var(--size);
     height: var(--size);
+
+    path {
+      transition: $transition;
+    }
 
     &.blue {
       path {

@@ -39,7 +39,7 @@ $(() => {
   )
 
   // маска на дату
-  Inputmask({ mask: "99.99.9999 - 99.99.9999", showMaskOnHover: false }).mask(
+  Inputmask({ mask: "99.99.9999", showMaskOnHover: false }).mask(
     "[data-mask-date]"
   )
 
@@ -68,6 +68,18 @@ $(() => {
       },
       messages: {
         ru: 'Спецсимволы и цифры запрещены'
+      }
+    })
+
+  // кастом валидатиция на договор
+  window.Parsley
+    .addValidator('contract', {
+      requirementType: 'integer',
+      validateNumber: function(value, requirement) {
+        return 10 === String(value).length;
+      },
+      messages: {
+        ru: 'Неверный формат'
       }
     })
 
