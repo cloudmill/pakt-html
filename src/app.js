@@ -7,6 +7,7 @@ import "./scripts/form-validation";
 import "./scripts/form-response";
 import "./scripts/fancymodals";
 import "./scripts/select";
+import "./scripts/accordion";
 
 // checkbox payment
 
@@ -16,11 +17,14 @@ import "./scripts/select";
 
     if (checkbox) {
       const container = document.querySelector('[data-payment-container]')
+      const inputs = container.querySelectorAll('[data-hidden-input]')
 
       checkbox.onchange = function() {
         if (this.checked) {
+          inputs.forEach(input => input.setAttribute('required', 'true'))
           container.classList.add('active')
         } else {
+          inputs.forEach(input => input.removeAttribute('required'))
           container.classList.remove('active')
         }
       }

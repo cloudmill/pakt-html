@@ -1,0 +1,155 @@
+.connected-page {
+
+
+  &__tabs {
+    
+    border-bottom: 1px solid color(gray-second);
+  }
+  &__tabs-list {
+    margin-bottom: -1px;
+
+    display: flex;
+  }
+  &__tabs-tab {
+    padding-bottom: rem(16px);
+
+    font-weight: 500;
+    @include fsl(15px, 130%);
+    transition: $transition;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: rem(36px);
+    }
+
+    &.active {
+      border-color: color(blue);
+    }
+  }
+
+  &__container {
+    padding: rem(36px) rem(32px) rem(42px);
+
+    background-color: color(white);
+    border-radius: rem(8px);
+    box-shadow: 0px 28px 68px 0px rgba(0, 31, 56, 0.04);
+  }
+
+  &__top {
+    margin-bottom: rem(28px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__top-label {
+    padding: 0 rem(8px);
+
+    height: rem(20px);
+    display: flex;
+    align-items: center;
+
+    color: color(green);
+    background-color: rgba(86, 189, 104, 0.10);
+    border-radius: rem(4px);
+    @include fsl(12px, 120%);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+  }
+  &__svg {
+    --size: #{rem(24px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+
+  &__inner {
+    margin-top: rem(24px);
+  }
+
+  &__heading {
+
+    display: inline-block;
+
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    @include fsl(20px, 110%);
+
+    &.underline {
+      padding-bottom: rem(2px);
+
+      border-bottom: 1px solid color(borders);
+    }
+  }
+
+  &__text {}
+
+  &__row {
+    display: flex;
+  }
+  &__row-col {
+    &:nth-child(1) {
+      padding-right: rem(20px);
+
+      flex-shrink: 0;
+      width: calc(#{$col-part-d} * 4 - #{rem(32px)});
+    }
+    &:nth-child(2) {
+      display: flex;
+    }
+  }
+  &__row-item {
+
+    &:not(:first-child) {
+      margin-left: rem(20px);
+    }
+  }
+
+  &__btn {
+    width: rem(190px);
+  }
+
+  &__block {
+    margin-top: rem(40px);
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+  }
+
+  &__accordion-heading {
+    font-weight: 600;
+  }
+  &__accordion-caption {
+    color: color(gray);
+  }
+  &__accordion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: rem(24px);
+  }
+
+  &__bot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__bot-col {
+    &:nth-child(1) {
+      display: flex;
+    }
+  }
+
+  &__bot-item {
+
+    &:not(:first-child) {
+      margin-left: rem(16px);
+    }
+  }
+}

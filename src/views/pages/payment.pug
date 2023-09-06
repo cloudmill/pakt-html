@@ -19,9 +19,9 @@ block content
           .payment-page__modal-row 
             .payment-page__modal-col(data-payment-container='')
               .form-item 
-                +input(type = 'number' placeholder='Номер договора' data-parsley-contract='')
+                +input(type = 'text' placeholder='Номер договора' data-parsley-contract=''  data-input-number='')
               .form-item 
-                +input(type = 'number' placeholder='Сумма')
+                +input(type = 'text' placeholder='Сумма'  data-input-number='')
                 .payment-page__modal-label.small
                   |Минимальная сумма платежа: 10 руб.
               .form-item 
@@ -42,8 +42,14 @@ block content
                     |Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum architecto reprehenderit sed!
               .payment-page__modal-offset.payment-page__modal-wrapper
                 .payment-page__modal-grid 
-                  +input(type = 'number' placeholder='Сумма')
-                  +input(type = 'text' placeholder='Дата платежа' data-mask-date='')
+                  .input-wrapper(data-input-parent='')
+                    .input-wrapper__placeholder
+                      |Сумма
+                    input.input(type = 'text' data-input='' data-input-number='' data-hidden-input='')
+                  .input-wrapper(data-input-parent='')
+                    .input-wrapper__placeholder
+                      |Дата платежа
+                    input.input(type = 'text' data-input='' data-mask-date='' data-hidden-input='')
                 .payment-page__modal-offset
                   .payment-page__modal-text 
                     |Услуга «Автоплатеж» будет подключена только при успешном проведении платежа по указанным параметрам.Безопасность платежей обеспечивается Банком, функционирующим на основе протоколов и технологий, разработанных международными платежными системами. Обработка полученных конфиденциальных данных держателя карты, включая реквизиты карты, производится в процессинговом центре Банка. Таким образом, никто, в том числе ООО «П.А.К.Т.», не может получить персональные и банковские данные Абонента.При создании нового Автоплатежа для Договора предыдущий «Автоплатеж» будет замещен.Если выбранная дата Автоплатежа выходит за рамки месяца (например, 31 февраля) Автоплатеж будет проведен в последний день месяца.В случае недостаточности денежных средств на карте платеж не состоится. Очередной запрос на совершение платежа будет произведен в следующем периоде.

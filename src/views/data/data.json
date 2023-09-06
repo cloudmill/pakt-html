@@ -11,6 +11,14 @@
       "title": "Услуги"
     },
     {
+      "href": "available",
+      "title": "Доступные"
+    },
+    {
+      "href": "connected-tv",
+      "title": "Подключенные телевидение"
+    },
+    {
       "href": "login",
       "title": "Вход"
     },
@@ -29,6 +37,10 @@
     {
       "href": "payment",
       "title": "Оплата"
+    },
+    {
+      "href": "payment-2",
+      "title": "Оплата с селектом"
     },
     {
       "href": "pay-success",

@@ -34,7 +34,7 @@ block content
           .login-page__form-title 
             |Войти в личный кабинет
           .form-item 
-            +input(type = 'text' placeholder = 'Номер договора')
+            +input(type = 'text' placeholder = 'Номер договора' data-parsley-contract=''  data-input-number='')
           .form-item.password(data-password='')
             +input(type = 'password' placeholder = 'Пароль')
             button.password__icon(data-password-btn='' type="button")

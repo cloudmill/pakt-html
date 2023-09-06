@@ -60,6 +60,9 @@
 
   &:focus-within,
   &.filled {
+    .input {
+      padding: rem(26px) rem(16px) rem(16px);
+    }
     #{$comp}__placeholder {
       top: rem(10px);
       transform: scale(0.6);

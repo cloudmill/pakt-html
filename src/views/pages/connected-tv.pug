@@ -1,0 +1,163 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 1
+
+block content
+  .services-page.connected-page
+    .services-page__panel
+      a.services-page__panel-link(href="#") 
+        .services-page__panel-icon 
+          +arrow-left-svg.services-page__panel-svg 
+        .services-page__panel-label 
+          |Услуги
+      .services-page__panel-text 
+        |Подключенные
+    section.section.section--first-panel(data-real-tabs='')
+      .container
+        .connected-page__tabs
+          .connected-page__tabs-list 
+            .connected-page__tabs-tab.active
+              |Мои опции
+            .connected-page__tabs-tab 
+              |Доступные опции
+        .services-page__inner 
+          .connected-page__container 
+            .connected-page__top
+              .connected-page__icon 
+                +tv-svg.connected-page__svg 
+              .connected-page__top-label 
+                |Активна
+            h3.section__title 
+              |Телевидение
+            .connected-page__inner 
+              .connected-page__row
+                .connected-page__row-col
+                  .services-page__card-label 
+                    |Тариф
+                  .tooltip
+                    .connected-page__heading.underline
+                      |Пакет «Базовый» индивидуальный договор»
+                    span.tooltip__icon(data-tooltip-icon='')
+                      +tooltip-svg.tooltip__svg 
+                    .tooltip__container 
+                      |Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum architecto reprehenderit sed!
+                .connected-page__row-col
+                  .connected-page__row-item 
+                    .services-page__card-label 
+                      |Стоимость
+                    .connected-page__text 
+                      |220 ₽ / мес.
+                  .connected-page__row-item 
+                    .services-page__card-label 
+                      |Дата подключения
+                    .connected-page__text 
+                      |31.01.22 
+            .connected-page__inner
+              .connected-page__btn
+                button.button.button--outline.button--small
+                  |Частотный план
+            .connected-page__block 
+              .connected-page__icon 
+                +tv-svg.connected-page__svg 
+              .connected-page__inner
+                h3.section__title 
+                  |Дополнительные пакеты ЦТВ
+              .connected-page__inner
+                - for (j = 0; j < 4; j++)
+                  .accordion(data-accordion='')
+                    .accordion__top(data-accordion-button='')
+                      .accordion__title 
+                        |Камера 1
+                      .accordion__icon 
+                        +arrow-svg.accordion__svg
+                    .accordion__body(data-accordion-dropdown='')
+                      .accordion__block.small
+                        .connected-page__grid 
+                          .connected-page__grid-item 
+                            .services-page__card-label 
+                              |Тариф
+                            .connected-page__heading.underline
+                              |REC 14 
+                          .connected-page__grid-item 
+                            .services-page__card-label 
+                              |Стоимость
+                            .connected-page__text 
+                              |220 ₽ / мес.
+                          .connected-page__grid-item 
+                            .services-page__card-label 
+                              |Стоимость
+                            .connected-page__text 
+                              |220 ₽ / мес.
+                      .accordion__block
+                        .connected-page__accordion-heading 
+                          |Основные модули
+                        .connected-page__inner 
+                          .connected-page__accordion-caption 
+                            |Основные модули включены в тарифный план:
+                        - for (i = 0; i < 3; i++)
+                          .connected-page__inner 
+                            .services-page__card-label 
+                              |Название
+                            .connected-page__text 
+                              |Детектор звука
+                      .accordion__block
+                        .connected-page__accordion-heading 
+                          |Основные модули
+                        .connected-page__inner 
+                          .connected-page__accordion-grid
+                            - for (i = 0; i < 4; i++)
+                              .connected-page__accordion-item
+                                .services-page__card-label 
+                                  |Оборудование
+                                .connected-page__text 
+                                  |Название камеры
+                        .connected-page__inner.big 
+                          .connected-page__btn
+                            button.button.button--outline.button--small
+                              |Настройка модулей
+                      .accordion__block
+                        .connected-page__accordion-heading 
+                          |Оборудование
+                        .connected-page__inner 
+                          .connected-page__accordion-grid
+                            - for (i = 0; i < 4; i++)
+                              .connected-page__accordion-item
+                                .services-page__card-label 
+                                  |Оборудование
+                                .connected-page__text 
+                                  |Название камеры
+                      .connected-page__inner
+                        .connected-page__bot
+                          .connected-page__bot-col
+                            .connected-page__bot-item
+                              .connected-page__btn
+                                button.button.button--outline.button--small
+                                  |Приостановить
+                            .connected-page__bot-item
+                              .connected-page__btn
+                                button.button.button--outline.button--small
+                                  |Сменить тариф
+                          .connected-page__bot-col
+                            .services-page__card-label 
+                              |Итоговая стоимость
+                            .connected-page__heading
+                              |650 ₽/мес.
+            .connected-page__block 
+              .connected-page__icon 
+                +tv-svg.connected-page__svg 
+              .connected-page__inner
+                h3.section__title 
+                  |Онлайн ТВ «iPakt»
+              .connected-page__inner
+                .connected-page__accordion-grid
+                  - for (i = 0; i < 4; i++)
+                    .connected-page__accordion-item
+                      .services-page__card-label 
+                        |Название пакета
+                      .connected-page__text 
+                        |Дождь
+              .connected-page__inner 
+                .connected-page__btn
+                  button.button.button--outline.button--small
+                    |Редактировать

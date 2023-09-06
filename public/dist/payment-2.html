@@ -17,7 +17,7 @@
 					<div class="login-page__container"><a class="login-page__img" href="#">
 							<div class="login-page__logo login-page__logo--alt">
 								<picture class="picture">
-									<source type="image/webp" srcset="assets/images/logo.webp"><img class="picture__img" src="assets/images/logo.png">
+									<source type="image/webp" srcset="assets/images/logo.webp"><img class="picture__img" src="assets/images/logo.png" alt="">
 								</picture>
 							</div>
 						</a>
@@ -40,7 +40,7 @@
 										</div>
 										<div class="form-item">
 											<div class="input-wrapper" data-input-parent="">
-												<div class="input-wrapper__placeholder">Сумма</div><input class="input" data-input="" required type="number" placeholder="Сумма">
+												<div class="input-wrapper__placeholder">Сумма</div><input class="input" data-input="" required placeholder="Сумма" data-input-number="">
 											</div>
 											<div class="payment-page__modal-label small">Минимальная сумма платежа: 10 руб.</div>
 										</div>
@@ -63,10 +63,10 @@
 										<div class="payment-page__modal-offset payment-page__modal-wrapper">
 											<div class="payment-page__modal-grid">
 												<div class="input-wrapper" data-input-parent="">
-													<div class="input-wrapper__placeholder">Сумма</div><input class="input" data-input="" required type="number" placeholder="Сумма">
+													<div class="input-wrapper__placeholder">Сумма</div><input class="input" data-input="" data-input-number="" data-hidden-input="">
 												</div>
 												<div class="input-wrapper" data-input-parent="">
-													<div class="input-wrapper__placeholder">Дата платежа</div><input class="input" data-input="" required placeholder="Дата платежа" data-mask-date="">
+													<div class="input-wrapper__placeholder">Дата платежа</div><input class="input" data-input="" data-mask-date="" data-hidden-input="">
 												</div>
 											</div>
 											<div class="payment-page__modal-offset">

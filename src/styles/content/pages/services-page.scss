@@ -32,6 +32,42 @@
       @include fsl(12px);
     }
   }
+  &__panel-link {
+    position: absolute;
+    left: rem(40px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    @media #{media("<")} {
+      left: rem(16px);
+      top: rem(6px);
+      transform: none;
+    }
+    display: flex;
+    align-items: center;
+  }
+  &__panel-icon {
+    margin-right: rem(30px);
+    @media #{media("<")} {
+      margin-right: 0;
+    }
+    display: flex;
+    align-items: center;
+  }
+  &__panel-svg {
+    --size: #{rem(24px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+  &__panel-label {
+    font-weight: 500;
+    color: color(blue);
+    @include fsl(14px, 120%);
+    @media #{media("<")} {
+      display: none;
+    }
+  }
 
   &__inner {
     margin-top: rem(32px);
@@ -310,6 +346,10 @@
   }
   &__card-text {
     @include fsl(14px, 110%);
+
+    &.bold {
+      font-weight: 500;
+    }
   }
   &__card-link {
     margin-top: rem(40px);
@@ -349,5 +389,29 @@
     border: 1px solid color(blue-border);
     border-radius: rem(100px);
     cursor: pointer;
+  }
+  &__card-caption {
+    margin-top: rem(6px);
+
+    @include fsl(14px, 120%);
+    color: color(gray);
+  }
+  &__card-row {
+    padding-bottom: rem(10px);
+
+    display: flex;
+    justify-content: space-between;
+
+    border-bottom: 1px solid color(borders);
+
+    &:not(:first-child) {
+      margin-top: rem(10px);
+    }
+  }
+  &__card-col {
+    margin-right: rem(10px);
+
+    flex-shrink: 0;
+    width: rem(139px);
   }
 }
