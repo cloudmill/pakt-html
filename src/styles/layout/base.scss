@@ -32,6 +32,9 @@ html {
   @media (min-width: 1600px) {
     font-size: getVw($fs, 1600px / 100);
   }
+  @media (min-width: 1680px) {
+    font-size: $fs;
+  }
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   // @include styled-scrollbar;
