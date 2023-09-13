@@ -12,10 +12,10 @@ mixin checkbox
       .checkbox__box 
         +check-svg.checkbox__svg
       if (attributes.text)
-        .checkbox__caption 
+        .checkbox__caption(class=(attributes.big ? 'big' : null))
           |#{attributes.text}
       else 
-        .checkbox__text 
+        .checkbox__text
           |Даю согласие на обработку #[a.checkbox__link(href="#") персональных данных]
 
 mixin select

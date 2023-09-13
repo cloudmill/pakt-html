@@ -157,9 +157,9 @@ block content
               |Специальные акции и предложения
             .services-page__categories 
               .categories
-                each item in ['Все (6)', 'Интернет (1)', 'Телевидение (4)', 'Онлайн ТВ', 'Телефония (1)', 'Облачное видеонаблюдение REC (3)', ]
+                each item, i in ['Все (6)', 'Интернет (1)', 'Телевидение (4)', 'Онлайн ТВ', 'Телефония (1)', 'Облачное видеонаблюдение REC (3)', ]
                   .categories__item 
-                    .categories__btn
+                    .categories__btn(class=(i===0 ? 'active' : null))
                       |#{item}
             .services-page__offer
               .services-page__offer-container

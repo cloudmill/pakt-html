@@ -6,6 +6,13 @@
     margin-bottom: rem(150px);
   }
 
+  &.connected-page {
+    @media #{media("<")} {
+      margin-bottom: 0;
+      padding-bottom: rem(100px);
+    }
+  }
+
   &__panel {
     position: absolute;
     top: rem(72px);

@@ -1,0 +1,16 @@
+.body {
+
+  &.fancybox-active {
+    overflow: hidden;
+  }
+
+  &--hidden {
+    overflow: hidden;
+  }
+  &--notransition {
+    opacity: 0;
+    * {
+      transition: none !important;
+    }
+  }
+}

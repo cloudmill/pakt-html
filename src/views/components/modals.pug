@@ -11,3 +11,103 @@ mixin response-modal
           |#{attributes.btn}
     .response-modal__close(data-fancybox-close='')
       +cross-alt-svg.response-modal__close-svg
+
+mixin modules-modal 
+  .modules-modal.modal(data-fancy-modal='modules' data-tv-modal='')
+    if (attributes.empty)
+      .modules-modal__empty
+        .modules-modal__empty-icon 
+          +tv-plus-svg.modules-modal__empty-svg 
+        .modal__title 
+          |Дополнительные модули подключенны
+        .modules-modal__empty-text 
+          |Вы можете в любой момент изменить подписку. Списание абонентской платы происходит ежедневно. 
+    else
+      .modules-modal__container 
+        .modules-modal__title 
+          |#{attributes.title}
+        .modules-modal__grid 
+          - for (i = 0; i < 7; i++)
+            .modules-modal__item 
+              if (attributes.isTv)
+                .modules-modal__item-icon 
+                  +fire-svg.modules-modal__item-svg 
+              .modules-modal__top 
+                +checkbox(text='Развлекательный ' big = true)
+              .modules-modal__inner
+                if (attributes.isTv)
+                  .modules-modal__link.blue(data-tv-button='')
+                    |Список каналов
+                .modules-modal__price 
+                  if (attributes.isTv)
+                    .services-page__card-label 
+                      |Стоимость
+                    .connected-page__text 
+                      |220 ₽ / мес.
+                  else
+                    .services-page__card-label 
+                      |Стоимость
+                    .connected-page__text 
+                      |220 ₽ / мес.
+                if (!attributes.isTv)
+                  .modules-modal__wrapper
+                    .tooltip.tooltip--big
+                      .modules-modal__link(data-tooltip-icon='')
+                        |Подробнее
+                      .tooltip__container 
+                        |Возможность объединять изображения с двух видео источников в одно.
+        .modules-modal__bot
+          .connected-page__bot
+            .connected-page__bot-col
+              .connected-page__bot-item
+                .connected-page__btn
+                  button.button.button--small
+                    |Сохранить
+              .connected-page__bot-item
+                .connected-page__btn
+                  button.button.button--outline.button--small
+                    |Отменить
+            .connected-page__bot-col
+              .services-page__card-label 
+                |Итоговая стоимость
+              .connected-page__heading
+                |500 ₽/мес.
+        .modules-modal__caption 
+          |Я ознакомлен и согласен с условиями #[a(href="#") подключения доп. модулей]
+      if (attributes.isTv)
+        .modules-modal__channels
+          .modules-modal__channels-top
+            .modules-modal__channels-wrapper
+              .modules-modal__arrow(data-tv-button='')
+                +arrow-left-svg.modules-modal__arrow-svg
+            .modules-modal__title 
+              |Развлекательный 
+            .modules-modal__text 
+              |Все популярные каналы и новинки ТВ-проката в одном пакете.
+          .modules-modal__channels-container 
+            .modules-modal__channels-grid
+              - for (i = 0; i < 7; i++)
+                each item in ['АВТО + ', 'ФУТБОЛ', 'БЛОКБАСТЕР', 'ХИТ', 'ДОМ КИНО', 'ПРЕМИУМ', 'AMEDIA HIT', 'КИНОПОКАЗ'] 
+                  .modules-modal__channels-item 
+                    |#{item} #[span hd]
+    .modal__icon(data-fancybox-close='')
+      +cross-alt-svg.modal__svg
+
+mixin service-modal 
+  .modal.service-modal(data-fancy-modal='service')
+    .service-modal__container 
+      .modal__title.left
+        |Услуга уже подключена
+      .service-modal__text 
+        |По указанному Вами адресу уже подключены все выбранные Вами услуги. Если Вы хотите сменить тарифный план, перейдите на страницу Вашей услуги для выбора нового тарифа. 
+      .service-modal__caption 
+        |Продолжить оформление заявки на подключение услуг?
+      .service-modal__btns 
+        .service-modal__item 
+          button.button.button--outline.button--small(data-fancybox-close='')
+            |Отменить
+        .service-modal__item 
+          a.button.button--small(href="#") 
+            |Продолжить
+    .modal__icon(data-fancybox-close='')
+      +cross-alt-svg.modal__svg.small

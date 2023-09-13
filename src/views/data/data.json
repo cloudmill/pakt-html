@@ -19,6 +19,30 @@
       "title": "Подключенные телевидение"
     },
     {
+      "href": "connected-record",
+      "title": "Подключенные видео"
+    },
+    {
+      "href": "connected-phone",
+      "title": "Подключенные телефония"
+    },
+    {
+      "href": "connected-intercome",
+      "title": "Подключенные домофон"
+    },
+    {
+      "href": "connected-internet",
+      "title": "Подключенные интрнет"
+    },
+    {
+      "href": "connected-internet-cats",
+      "title": "Подключенные интрнет категории"
+    },
+    {
+      "href": "connected-internet-stopped",
+      "title": "Подключенные интрнет приостановлен"
+    },
+    {
       "href": "login",
       "title": "Вход"
     },

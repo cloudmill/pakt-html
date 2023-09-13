@@ -1,5 +1,44 @@
 .modal {
   
+  display: none;
+  
+  box-shadow: 0px 28px 68px 0px rgba(0, 31, 56, 0.04);
+  border-radius: rem(8px);
+
+  &__icon {
+    position: absolute;
+    top: rem(32px);
+    right: rem(32px);
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+  }
+
+  &__svg {
+    --size: #{rem(32px)};
+
+    width: var(--size);
+    height: var(--size);
+
+    &.small {
+      --size: #{rem(24px)};
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(24px);
+    text-align: center;
+    @include fsl(20px, 110%);
+    letter-spacing: -0.01em;
+    font-weight: 600;
+
+    &.left {
+      text-align: left;
+    }
+  }
 }
 
 .response-modal {
@@ -87,6 +126,234 @@
 
     width: var(--size);
     height: var(--size);
+  }
+}
+
+.modules-modal {
+  $comp: &;
+
+  width: rem(810px);
+
+  &.active {
+    #{$comp}__container {
+      display: none;
+    }
+    #{$comp}__channels {
+      display: block;
+    }
+  }
+
+  &__container {
+    padding: rem(58px) rem(32px) rem(30px);
+  }
+
+  &__title {
+    margin-bottom: rem(30px);
+
+    font-weight: 600;
+    @include fsl(26px, 120%);
+    letter-spacing: -0.01em;
+    @media #{media("<")} {
+      @include fsl(24px);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(20px);
+  }
+
+  &__item {
+    position: relative;
+    z-index: 0;
+    padding: rem(25px) rem(20px);
+
+    border-radius: rem(8px);
+    border: 1px solid color(borders);
+  }
+  &__item-icon {
+    position: absolute;
+    top: rem(20px);
+    right: rem(20px);
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+  }
+  &__item-svg {
+    --size: #{rem(24px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+
+  &__top {
+    margin-right: rem(24px);
+  }
+
+  &__inner {
+    margin-left: rem(32px);
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__price {
+    margin-top: rem(14px);
+  }
+
+  &__link {
+    margin-top: rem(25px);
+    padding-bottom: rem(2px);
+
+    display: inline-block;
+
+    @include fsl(14px, 120%);
+    color: color(gray);
+    border-bottom: 1px solid color(borders);
+    cursor: pointer;
+
+    &.blue {
+      color: color(blue);
+      border-color: color(blue-border);
+    }
+  }
+
+  &__bot {
+    margin-top: rem(32px);
+    padding-top: rem(32px);
+
+    border-top: 1px solid color(borders);
+  }
+
+  &__caption {
+    margin-top: rem(24px);
+
+    color: color(gray);
+    @include fsl(14px);
+
+    a {
+      padding-bottom: rem(1px);
+
+      display: inline-block;
+
+      border-bottom: 1px solid color(borders);
+    }
+  }
+
+  &__arrow {
+    margin-bottom: rem(32px);
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+  }
+  &__arrow-svg {
+    --size: #{rem(32px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+
+  &__channels {
+    display: none;
+  }
+  &__channels-top {
+    padding: rem(32px);
+
+    transition: $transition;
+    
+    &.active {
+      box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
+    }
+  }
+  &__channels-wrapper {
+    display: flex;
+  }
+  &__channels-container {
+    padding: 0 rem(32px) rem(32px);
+
+    max-height: 62vh;
+
+    overflow: auto;
+    @include styled-scrollbar;
+  }
+  &__channels-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: rem(20px);
+    column-gap: rem(40px);
+  }
+  &__channels-item {
+
+    span {
+      color: color(green);
+      text-transform: uppercase;
+    }
+  }
+
+  &__empty {
+    height: rem(420px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__empty-icon {
+    margin-bottom: rem(24px);
+
+    display: flex;
+    align-items: center;
+  }
+  &__empty-svg {
+    --size: #{rem(40px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+  &__empty-text {
+    max-width: rem(351px);
+    text-align: center;
+
+    @include fsl(14px, 140%);
+  }
+}
+
+.service-modal {
+
+  width: rem(456px);
+
+  &__container {
+    padding: rem(56px) rem(32px) rem(40px);
+  }
+
+  &__text {
+    margin-bottom: rem(26px);
+
+    color: color(gray);
+    letter-spacing: -0.01em;
+    line-height: 150%;
+  }
+
+  &__caption {
+    margin-bottom: rem(35px);
+
+    font-weight: 600;
+  }
+
+  &__btns {
+    display: flex;
+  }
+
+  &__item {
+    width: 100%;
+    &:not(:first-child) {
+      margin-left: rem(16px);
+    }
   }
 }
 

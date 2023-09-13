@@ -1,5 +1,9 @@
 .connected-page {
+  @media #{media("<")} {
+    min-height: 100vh;
 
+    background-color: color(white);
+  }
 
   &__tabs {
     
@@ -30,7 +34,11 @@
 
   &__container {
     padding: rem(36px) rem(32px) rem(42px);
+    @media #{media("<")} {
+      padding: 0;
 
+      box-shadow: none;
+    }
     background-color: color(white);
     border-radius: rem(8px);
     box-shadow: 0px 28px 68px 0px rgba(0, 31, 56, 0.04);
@@ -42,10 +50,27 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-  &__top-label {
-    padding: 0 rem(8px);
+    @media #{media("<")} {
+      justify-content: flex-start;
+    }
+    @media #{media("<", m)} {
+      justify-content: space-between;
+    }
 
+    &.alt {
+      display: block;
+    }
+  }
+
+  &__label {
+    padding: 0 rem(8px);
+    @media #{media("<")} {
+      margin-left: rem(200px);
+      height: rem(24px);
+    }
+    @media #{media("<", m)} {
+      margin-left: 0;
+    }
     height: rem(20px);
     display: flex;
     align-items: center;
@@ -54,6 +79,25 @@
     background-color: rgba(86, 189, 104, 0.10);
     border-radius: rem(4px);
     @include fsl(12px, 120%);
+
+    &.inline {
+      margin-left: rem(4px);
+
+      display: inline-flex;
+    }
+
+    &.alt {
+      @media #{media("<")} {
+        margin-left: 0;
+
+        display: inline-flex;
+      }
+    }
+
+    &.stopped {
+      color: color(yellow);
+      background-color: rgba(242, 201, 76, 0.15);
+    }
   }
 
   &__icon {
@@ -78,6 +122,9 @@
     font-weight: 600;
     letter-spacing: -0.01em;
     @include fsl(20px, 110%);
+    @media #{media("<")} {
+      @include fsl(16px);
+    }
 
     &.underline {
       padding-bottom: rem(2px);
@@ -86,31 +133,76 @@
     }
   }
 
-  &__text {}
+  &__text {
+    @media #{media("<")} {
+      @include fsl(14px, 130%);
+    }
+  }
 
   &__row {
     display: flex;
+    @media #{media("<")} {
+      display: block;
+    }
   }
   &__row-col {
     &:nth-child(1) {
       padding-right: rem(20px);
+      @media #{media("<")} {
+        padding-right: 0;
 
+        width: auto;
+      }
       flex-shrink: 0;
       width: calc(#{$col-part-d} * 4 - #{rem(32px)});
+
+      &.small {
+        @media #{media(">")} {
+          width: calc(#{$col-part-d} * 3 - #{rem(32px)});
+        }
+      }
     }
     &:nth-child(2) {
+      width: 100%;
       display: flex;
+      justify-content: space-between;
+      @media #{media("<")} {
+        margin-top: rem(24px);
+        display: block;
+      }
     }
   }
   &__row-item {
 
     &:not(:first-child) {
       margin-left: rem(20px);
+      @media #{media("<")} {
+        margin-left: 0;
+        margin-top: rem(24px);
+      }
     }
   }
 
   &__btn {
     width: rem(190px);
+    @media #{media("<")} {
+      width: rem(235px);
+    }
+    @media #{media("<", m)} {
+      width: 100%;
+    }
+
+    &.small {
+      @media #{media(">")} {
+        width: rem(140px);
+      }
+    }
+
+    &.big {
+      @media #{media(">")} {
+        width: rem(224px);
+      }
+    }
   }
 
   &__block {
@@ -120,6 +212,10 @@
   &__grid {
     display: grid;
     grid-template-columns: 3fr 2fr 1fr;
+    @media #{media("<")} {
+      grid-template-columns: 1fr;
+      row-gap: rem(24px);
+    }
   }
 
   &__accordion-heading {
@@ -132,17 +228,54 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: rem(24px);
+    @media #{media("<")} {
+      grid-template-columns: 1fr;
+      row-gap: rem(24px);
+    }
+
+    &.small {
+      @media #{media("<")} {
+        row-gap: rem(12px);
+      }
+    }
+  }
+  &__accordion-item {
+
+    &.border {
+      @media #{media("<")} {
+        padding-bottom: rem(12px);
+
+        border-bottom: 1px solid color(borders);
+      }
+    }
   }
 
   &__bot {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media #{media("<")} {
+      flex-direction: column;
+      align-items: stretch;
+    }
   }
 
   &__bot-col {
     &:nth-child(1) {
       display: flex;
+      @media #{media("<", m)} {
+        display: block;
+      }
+    }
+    &:nth-child(2) {
+      @media #{media("<")} {
+        padding-bottom: rem(24px);
+        margin-bottom: rem(24px);
+
+        order: -1;
+
+        border-bottom: 1px solid color(borders);
+      }
     }
   }
 
@@ -150,6 +283,42 @@
 
     &:not(:first-child) {
       margin-left: rem(16px);
+      @media #{media("<", m)} {
+        margin-left: 0;
+        margin-top: rem(16px);
+      }
     }
+  }
+
+  &__wrapper {
+    padding-bottom: rem(32px);
+
+    border-bottom: 1px solid color(borders);
+
+    &:not(:first-child) {
+      margin-top: rem(32px);
+    }
+    
+    &.small {
+      padding-bottom: rem(24px);
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__link {
+    margin-top: rem(4px);
+
+    display: inline-block;
+    color: color(blue);
+  }
+
+  &__layout {
+    padding-bottom: rem(24px);
+
+    border-bottom: 1px solid color(borders);
   }
 }

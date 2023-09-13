@@ -2,7 +2,9 @@
   $comp: &;
   padding-bottom: rem(8px);
   padding-top: rem(8px);
-
+  @media #{media("<")} {
+    padding: rem(14px) 0;
+  }
   border-bottom: 1px solid color(borders);
 
   &:first-child {
@@ -17,6 +19,9 @@
 
   &__top {
     height: rem(54px);
+    @media #{media("<")} {
+      height: auto;
+    }
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,6 +32,9 @@
   &__title {
     font-weight: 500;
     @include fsl(18px, 120%);
+    @media #{media("<")} {
+      @include fsl(16px);
+    }
   }
 
   &__icon {

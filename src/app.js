@@ -31,3 +31,20 @@ import "./scripts/accordion";
     }
   })
 }
+
+// tv modal toggle
+{
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.querySelector('[data-tv-modal]')
+
+    if (modal) {
+      window.addEventListener('click', (e) => {
+        const target = e.target.closest('[data-tv-button]')
+
+        if (target) {
+          modal.classList.toggle('active')
+        }
+      })
+    }
+  })
+}

@@ -111,9 +111,6 @@
 
   &__box {
     margin-right: rem(12px);
-    @media #{media("<")} {
-      margin-right: rem(12px);
-    }
 
     width: rem(20px);
     height: rem(20px);
@@ -159,6 +156,12 @@
     // @media #{media("<")} {
     //   @include fsl(12px, 100%);
     // }
+
+    &.big {
+      font-weight: 500;
+      letter-spacing: 0;
+      @include fsl(18px);
+    }
   }
 }
 
