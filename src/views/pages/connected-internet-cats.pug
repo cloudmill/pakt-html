@@ -5,21 +5,21 @@ block variables
 
 block content
   .services-page.connected-page
-    .services-page__panel
-      a.services-page__panel-link(href="#") 
-        .services-page__panel-icon 
-          +arrow-left-svg.services-page__panel-svg 
-        .services-page__panel-label 
+    .panel
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
           |Услуги
-      .services-page__panel-text 
+      .panel__text 
         |Подключенные
     section.section.section--first-panel(data-real-tabs='')
       .container
-        .connected-page__tabs
-          .connected-page__tabs-list 
-            .connected-page__tabs-tab.active(data-tabs-item='')
+        .sections
+          .sections__list 
+            .sections__tab.active(data-tabs-item='')
               |Мои опции
-            .connected-page__tabs-tab(data-tabs-item='') 
+            .sections__tab(data-tabs-item='') 
               |Доступные опции
         .services-page__inner 
           .services-page__block.active(data-tabs-block='')
@@ -35,7 +35,7 @@ block content
                         button.button.button--outline.button--small
                           |Социальный интернет
                     .connected-page__row-item 
-                      .connected-page__label.alt
+                      .label.alt
                         |Активна
               h3.section__title 
                 |Интернет

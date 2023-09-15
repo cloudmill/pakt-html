@@ -1,0 +1,63 @@
+extends ../app
+
+
+
+block content
+  .profile-page
+    .panel
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
+          |Управление профилем
+      .panel__text 
+        |Настройки рассылок
+    section.section.section--first-panel
+      .container
+        .announce
+          .announce__icon 
+            +hint-svg.announce__svg 
+          .announce__text 
+            |Изменение настроек возможно только в случае валидного и подтвержденного телефона/адреса электронной почты #[br] или через КЦ по телефону 595-81-21
+        .profile-page__inner
+          .section__container.small
+            .profile-page__container.profile-page__news(data-news='')
+              .section__title.profile-page__heading
+                |Подключенные рассылки
+              .profile-page__news-container
+                .profile-page__text 
+                  |Получать предложения, советы и новости:
+                .profile-page__inner 
+                  .profile-page__row 
+                    .profile-page__col
+                      .profile-page__list
+                        each item in ['Эл. почта', 'SMS', 'Telegram']
+                          .profile-page__list-wrapper
+                            .profile-page__list-item 
+                              .profile-page__list-icon
+                                +checked-svg.profile-page__list-svg 
+                              .profile-page__list-text 
+                                |#{item}
+                    .profile-page__col
+                      .profile-page__btn.alt
+                        button.button.button--outline.button--small(data-news-btn='')
+                          |Настроить
+              .profile-page__news-wrapper 
+                each title, i in ['Эл. почта', 'SMS', 'Telegram', ]
+                  .accordion.accordion--alt(data-accordion='')
+                    .accordion__top(data-accordion-button='')
+                      +checkbox(text=title  big = true)
+                      .accordion__icon 
+                        +arrow-svg.accordion__svg
+                    .accordion__body(data-accordion-dropdown='')
+                      .profile-page__news-list
+                        each item in ['уведомления об операциях в ЛК', 'изменение пароля', 'о приближении нулевого баланса', 'напоминание за сутки об окончании обещанного платежа	', ] 
+                          .profile-page__news-item
+                            |#{item}
+                .profile-page__news-bot 
+                  .profile-page__news-btn 
+                    button.button.button--small
+                      |Сохранить
+                  .profile-page__news-btn 
+                    button.button.button--outline.button--small(data-news-btn='')
+                      |Отменить

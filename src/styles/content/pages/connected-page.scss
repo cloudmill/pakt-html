@@ -5,33 +5,6 @@
     background-color: color(white);
   }
 
-  &__tabs {
-    
-    border-bottom: 1px solid color(gray-second);
-  }
-  &__tabs-list {
-    margin-bottom: -1px;
-
-    display: flex;
-  }
-  &__tabs-tab {
-    padding-bottom: rem(16px);
-
-    font-weight: 500;
-    @include fsl(15px, 130%);
-    transition: $transition;
-    border-bottom: 1px solid transparent;
-    cursor: pointer;
-
-    &:not(:first-child) {
-      margin-left: rem(36px);
-    }
-
-    &.active {
-      border-color: color(blue);
-    }
-  }
-
   &__container {
     padding: rem(36px) rem(32px) rem(42px);
     @media #{media("<")} {

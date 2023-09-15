@@ -1,0 +1,355 @@
+.profile-page {
+  $comp: &;
+  position: relative;
+  z-index: 0;
+  margin-bottom: rem(150px);
+  @media #{media("<")} {
+    
+  }
+
+  &__container {
+    padding: rem(48px) rem(40px);
+    @media #{media("<")} {
+      padding: rem(17px) rem(16px) rem(60px);
+    }
+    @media #{media("<", m)} {
+      padding-bottom: rem(26px);
+    }
+
+    &.small {
+      @media #{media("<")} {
+        padding-bottom: rem(32px);
+      }
+      @media #{media("<", m)} {
+        padding-bottom: rem(24px);
+      }
+    }
+  }
+
+  &__top {
+    margin-bottom: rem(45px);
+    @media #{media("<")} {
+      margin-bottom: rem(26px);
+    }
+  }
+  &__top-inner {
+    margin-top: rem(20px);
+    @media #{media("<")} {
+      margin-top: rem(16px);
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    @media #{media("<", m)} {
+      display: block;
+    }
+    &.center {
+      align-items: center;
+    }
+  }
+
+  &__col {
+
+    &:not(:first-child) {
+      @media #{media("<", m)} {
+        margin-top: rem(15px);
+      }
+    }
+  }
+
+  &__caption {
+    margin-top: rem(17px);
+    @media #{media("<")} {
+      margin-top: rem(7px);
+      @include fsl(14px);
+    }
+  }
+
+  &__copy {
+    margin-top: rem(11px);
+  }
+
+  &__btn {
+    width: rem(212px);
+    @media #{media("<")} {
+      display: none;
+    }
+
+    &.alt {
+      @media #{media("<")} {
+        display: block;
+        width: rem(188px);
+      }
+      @media #{media("<", m)} {
+        width: 100%;
+      }
+    }
+  }
+
+  &__block {
+    padding-top: rem(42px);
+    @media #{media("<")} {
+      padding-top: 16px;
+    }
+    border-top: 1px solid color(borders);
+
+    &:not(:last-child) {
+      margin-bottom: rem(67px);
+      @media #{media("<")} {
+        margin-bottom: rem(27px);
+      }
+    }
+  }
+  &__block-grid {
+    margin-top: rem(40px);
+    @media #{media("<")} {
+      margin-top: rem(16px);
+
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media #{media("<", m)} {
+      grid-template-columns: 1fr;
+    }
+    display: grid;
+    grid-template-columns: rem(366px) rem(366px);
+    row-gap: rem(24px);
+  }
+  &__block-item {
+    @media #{media(">", m)} {
+      padding-right: rem(20px);
+    }
+  }
+  &__block-label {
+    margin-top: 0;
+    margin-left: rem(8px);
+
+    display: inline-block;
+  }
+  &__block-wrapper {
+    margin-bottom: rem(24px);
+    @media #{media("<")} {
+      margin-bottom: rem(13px);
+    }
+  }
+  &__block-heading {
+    margin-bottom: rem(6px);
+    @media #{media("<")} {
+      @include fsl(16px);
+    }
+    @include fsl(18px, 150%);
+    font-weight: 500;
+  }
+
+  &__button {
+    margin-top: rem(6px);
+
+    display: inline-block;
+
+    color: color(blue);
+    cursor: pointer;
+  }
+
+  &__icon {
+    margin-bottom: rem(6px);
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__svg {
+    --size: #{rem(24px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+
+  &__wrapper {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__inner {
+    margin-top: rem(24px);
+  }
+
+  &__select {
+    margin-bottom: rem(25px);
+
+    display: flex;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(20px);
+  }
+
+  &__card {
+    border-radius: rem(8px);
+    background: color(white);
+
+    box-shadow: 0px 28px 68px 0px rgba(0, 31, 56, 0.04);
+  }
+  &__card-container {
+    padding: rem(24px);
+
+    min-height: rem(160px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__card-heading {
+    margin-bottom: rem(15px);
+
+    font-weight: 500;
+    @include fsl(18px);
+  }
+  &__card-bot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__card-link {
+    padding: rem(14px) rem(20px);
+
+    border: 1px solid color(blue-border);
+    border-radius: rem(100px);
+    color: color(blue);
+    font-weight: 500;
+    @include fsl(15px, 130%);
+    cursor: pointer;
+  }
+
+  &__show {
+    margin-top: rem(60px);
+
+    display: flex;
+    justify-content: center;
+  }
+
+  &__heading {
+    margin-bottom: rem(30px);
+  }
+
+  &__list {
+    display: flex;
+    @media #{media("<", m)} {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(16px);
+    }
+  }
+  &__list-wrapper {
+    display: flex;
+    &:not(:first-child) {
+      margin-left: rem(16px);
+      @media #{media("<", m)} {
+        margin-left: 0;
+      }
+    }
+  }
+  &__list-item {
+    padding: 0 rem(16px);
+
+    height: rem(48px);
+    display: flex;
+    align-items: center;
+
+    border-radius: rem(8px);
+    border: 1px solid color(borders);
+
+    
+  }
+  &__list-icon {
+    margin-right: rem(12px);
+
+    display: flex;
+    align-items: center;
+  }
+  &__list-svg {
+    --size: #{rem(20px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+  &__list-text {
+    font-weight: 600;
+  }
+
+  &__news {
+
+    &.active {
+      #{$comp}__news-container {
+        display: none;
+      }
+      #{$comp}__news-wrapper {
+        display: block;
+      }
+    }
+  }
+  &__news-container {}
+  &__news-wrapper {
+    display: none;
+  }
+  &__news-list {
+    margin-left: rem(80px);
+    @media #{media("<")} {
+      margin-left: rem(12px);
+    }
+  }
+  &__news-item {
+    position: relative;
+    z-index: 0;
+    padding-left: rem(32px);
+    @media #{media("<")} {
+      @include fsl(14px);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: rem(-1px);
+      z-index: 1;
+
+      width: rem(20px);
+      height: rem(20px);
+
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7.77739 13.2665L4.51156 10.0006C4.35528 9.84442 4.14336 9.75666 3.92239 9.75666C3.70142 9.75666 3.4895 9.84442 3.33322 10.0006C3.177 10.1569 3.08923 10.3688 3.08923 10.5898C3.08923 10.8108 3.177 11.0227 3.33322 11.179L6.59906 14.4448C6.75383 14.5996 6.93759 14.7225 7.13984 14.8063C7.3421 14.8901 7.55888 14.9332 7.7778 14.9332C7.99673 14.9332 8.21351 14.8901 8.41577 14.8063C8.61802 14.7225 8.80178 14.5996 8.95655 14.4448L16.6666 6.73482C16.8228 6.57855 16.9105 6.36662 16.9105 6.14565C16.9105 5.92468 16.8228 5.71276 16.6666 5.55649C16.5103 5.40026 16.2984 5.3125 16.0774 5.3125C15.8564 5.3125 15.6445 5.40026 15.4882 5.55649L7.77739 13.2665Z' fill='%23929CA5'/%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:not(:first-child) {
+      margin-top: rem(20px);
+    }
+  }
+  &__news-bot {
+    margin-top: rem(32px);
+    @media #{media("<", m)} {
+      margin-top: rem(20px);
+
+      display: block;
+    }
+    display: flex;
+  }
+  &__news-btn {
+    width: rem(188px);
+    @media #{media("<", m)} {
+      width: 100%;
+    }
+    &:not(:first-child) {
+      margin-left: rem(16px);
+      @media #{media("<", m)} {
+        margin-left: 0;
+        margin-top: rem(8px);
+      }
+    }
+  }
+}

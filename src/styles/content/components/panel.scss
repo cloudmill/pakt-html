@@ -1,0 +1,67 @@
+.panel {
+  position: absolute;
+  top: rem(72px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  @media #{media("<")} {
+    top: rem(64px);
+
+    height: rem(40px);
+  }
+  height: rem(52px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: color(white);
+  border-bottom: 1px solid color(borders);
+
+  &__text {
+    font-weight: 600;
+    @include fsl(14px, 140%);
+    @media #{media("<")} {
+      @include fsl(12px);
+    }
+  }
+  
+  &__link {
+    position: absolute;
+    left: rem(40px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    @media #{media("<")} {
+      left: rem(16px);
+      top: rem(6px);
+      transform: none;
+    }
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-right: rem(30px);
+    @media #{media("<")} {
+      margin-right: 0;
+    }
+    display: flex;
+    align-items: center;
+  }
+
+  &__svg {
+    --size: #{rem(24px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+
+  &__label {
+    font-weight: 500;
+    color: color(blue);
+    @include fsl(14px, 120%);
+    @media #{media("<")} {
+      display: none;
+    }
+  }
+}

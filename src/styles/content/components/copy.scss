@@ -1,0 +1,29 @@
+.copy {
+  padding: rem(8px);
+
+  display: inline-flex;
+  align-items: center;
+
+  border-radius: rem(8px);
+  background-color: rgba(color(blue), 0.1);
+
+  &__icon {
+    margin-right: rem(4px);
+    
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+  }
+
+  &__svg {
+    --size: #{rem(24px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+
+  &__text {
+    color: color(blue);
+  }
+}

@@ -1,0 +1,86 @@
+extends ../app
+
+
+block content
+  .profile-page
+    .panel
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
+          |Мой ПАКТ
+      .panel__text 
+        |Управление профилем
+    section.section.section--first-panel
+      .container
+        .section__container 
+          .profile-page__container 
+            .profile-page__top
+              .profile-page__row
+                .profile-page__col
+                  h1.section__title 
+                    |Юдина Валентина Викторовна
+                  .profile-page__caption 
+                    |13 Ноября 1987
+                .profile-page__col
+                  .section__label 
+                    |Номер договора
+                  .profile-page__copy 
+                    +copy
+              .profile-page__top-inner
+                .profile-page__row.center 
+                  .profile-page__col
+                    .section__label 
+                      |Адрес подключения
+                    .profile-page__text 
+                      |г. Санкт-Петербург, ул. Оптикова 37 к1, кв 239
+                  .profile-page__col
+                    .profile-page__btn 
+                      a.button.button--outline.button--small(href="#")
+                        |Открыть документы
+            .profile-page__block 
+              .section__heading 
+                |Дополнительная информация
+              .profile-page__block-grid 
+                - for (i = 0; i < 2; i++)
+                  .profile-page__block-item 
+                    .section__label 
+                      |Телефон
+                    .profile-page__text 
+                      |+7 (990) 876-32-21
+                    if (i > 0)
+                      .profile-page__button 
+                        |Изменить
+                .profile-page__block-item 
+                  .section__label 
+                    |Эл. почта
+                  .profile-page__text 
+                    |valentinavi@gmail.com
+                    span.section__label.profile-page__block-label 
+                      |Подтверждено
+                  .profile-page__button 
+                    |Изменить
+            .profile-page__block 
+              .section__heading 
+                |Безопасность
+              .profile-page__block-grid 
+                .profile-page__block-item 
+                  .profile-page__block-wrapper
+                    .profile-page__icon 
+                      +key-svg.profile-page__svg
+                    .profile-page__block-heading 
+                      |Изменение пароля
+                    .section__label.default
+                      |Последня смена пароля: 01.09.2021 18:19:32
+                  .profile-page__button 
+                    |Изменить
+                .profile-page__block-item 
+                  .profile-page__block-wrapper
+                    .profile-page__icon 
+                      +comment-svg.profile-page__svg
+                    .profile-page__block-heading 
+                      |Настройка рассылок
+                    .section__label.default
+                      |CMC, Email,Telegram
+                  .profile-page__button 
+                    |Изменить

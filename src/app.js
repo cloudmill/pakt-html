@@ -48,3 +48,20 @@ import "./scripts/accordion";
     }
   })
 }
+
+// profile news
+{
+  document.addEventListener('DOMContentLoaded', () => {
+    const news = document.querySelector('[data-news]')
+    
+    if (news) {
+      const buttons = document.querySelectorAll('[data-news-btn]')
+
+      buttons.forEach(btn => {
+        btn.onclick = function() {
+          news.classList.toggle('active')
+        }
+      })
+    }
+  })
+}

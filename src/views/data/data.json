@@ -43,6 +43,18 @@
       "title": "Подключенные интрнет приостановлен"
     },
     {
+      "href": "profile",
+      "title": "Профиль"
+    },
+    {
+      "href": "profile-docs",
+      "title": "Профиль документы"
+    },
+    {
+      "href": "profile-news",
+      "title": "Профиль рассылки"
+    },
+    {
       "href": "login",
       "title": "Вход"
     },

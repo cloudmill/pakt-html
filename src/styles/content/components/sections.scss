@@ -1,0 +1,27 @@
+.sections {
+  border-bottom: 1px solid color(gray-second);
+
+  &__list {
+    margin-bottom: -1px;
+
+    display: flex;
+  }
+  
+  &__tab {
+    padding-bottom: rem(16px);
+
+    font-weight: 500;
+    @include fsl(15px, 130%);
+    transition: $transition;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: rem(36px);
+    }
+
+    &.active {
+      border-color: color(blue);
+    }
+  }
+}

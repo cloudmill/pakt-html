@@ -1,0 +1,33 @@
+.announce {
+  padding: rem(30px) rem(32px);
+  @media #{media("<")} {
+    padding: rem(16px);
+  }
+  display: flex;
+  align-items: center;
+
+  border-radius: rem(8px);
+  background: rgba(0, 118, 216, 0.10);
+  
+  &__icon {
+    margin-right: rem(16px);
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__svg {
+    --size: #{rem(24px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+  
+  &__text {
+    color: #0059A3;
+    @include fsl(14px, 120%);
+    @media #{media("<")} {
+      @include fsl(12px);
+    }
+  }
+}

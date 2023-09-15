@@ -1,0 +1,61 @@
+extends ../app
+
+
+
+block content
+  .profile-page
+    .panel
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
+          |Управление профилем
+      .panel__text 
+        |Сопутствующие документы
+    section.section.section--first-panel(data-real-tabs='')
+      .container
+        .sections
+          .sections__list 
+            .sections__tab.active(data-tabs-item='')
+              |Счета
+            .sections__tab(data-tabs-item='') 
+              |Договор
+        .profile-page__inner
+          .profile-page__wrapper.active(data-tabs-block='')
+            .profile-page__select 
+              +select(options=['2023 год', '2022 год', '2021 год', '2020 год', '2019 год'])
+            .profile-page__grid 
+              - for (i = 0; i < 9; i++)
+                .profile-page__card
+                  .profile-page__card-container 
+                    .profile-page__card-heading 
+                      |Счет на оплату интернета
+                    .profile-page__card-bot 
+                      .profile-page__card-col
+                        .section__label.default 
+                          |25.04.2023
+                        .section__label.default 
+                          |231 кб
+                      .profile-page__card-col
+                        a.profile-page__card-link(href="#")
+                          |Скачать 
+            .profile-page__show
+              .profile-page__card-link
+                |Показать еще 
+          .profile-page__wrapper(data-tabs-block='')
+            .profile-page__grid 
+              - for (i = 0; i < 2; i++)
+                .profile-page__card
+                  .profile-page__card-container 
+                    .profile-page__card-heading 
+                      |Счет на оплату интернета
+                    .profile-page__card-bot 
+                      .profile-page__card-col
+                        .section__label.default 
+                          |25.04.2023
+                        .section__label.default 
+                          |231 кб
+                      .profile-page__card-col
+                        a.profile-page__card-link(href="#")
+                          |Скачать 
+                          

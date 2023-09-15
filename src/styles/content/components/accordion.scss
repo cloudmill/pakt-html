@@ -1,7 +1,6 @@
 .accordion {
   $comp: &;
-  padding-bottom: rem(8px);
-  padding-top: rem(8px);
+  padding: rem(8px) 0;
   @media #{media("<")} {
     padding: rem(14px) 0;
   }
@@ -9,6 +8,24 @@
 
   &:first-child {
     border-top: 1px solid color(borders);
+  }
+
+  &--alt {
+    padding: 0;
+
+    border-bottom: none;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    #{$comp}__top {
+      padding-bottom: rem(8px);
+
+      height: rem(62px);
+
+      border-bottom: 1px solid color(borders);
+    }
   }
 
   &.active {
