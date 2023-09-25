@@ -1,0 +1,38 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 4
+
+block content
+  .news-page.news-page--default
+    .panel
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
+          |Новости
+      .panel__text 
+        |Изменение тарифов на междугороднюю и международную связь
+    section.section.section--first-panel.news-page__section
+      .container
+        h1.section__title 
+          |Новости
+        .news-page__container 
+          .news-page__wrapper 
+            .news-page__content 
+              h2.news-page__heading 
+                |Изменение тарифов на междугороднюю и международную связь
+              .section__label 
+                |Сегодня, 12:08
+              p 
+                |Текст уведомления. Концепция новой стратегии вырождена. Прямоугольная матрица, не меняя концепции, изложенной выше, очевидна не для всех. Рекламная площадка осмысленно поддерживает натуральный логарифм. Векторное поле раскручивает постулат. 
+              ul 
+                - for (i = 0; i < 5; i++)
+                  li 
+                    |Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quasi veniam deserunt.
+              p 
+                |Текст уведомления. Концепция новой стратегии вырождена. Прямоугольная матрица, не меняя концепции, изложенной выше, очевидна не для всех. Рекламная площадка осмысленно поддерживает натуральный логарифм. Векторное поле раскручивает постулат. 
+              ol 
+                - for (i = 0; i < 5; i++)
+                  li 
+                    |Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem assumenda consectetur dolores eligendi.

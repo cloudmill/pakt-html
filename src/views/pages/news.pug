@@ -1,0 +1,25 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 4
+
+block content
+  .news-page
+    .panel 
+      .panel__text 
+        |Новости
+    section.section.section--first-panel
+      .container
+        h1.section__title 
+          |Новости
+        .news-page__grid 
+          - for (i = 0; i < 6; i++)
+            a.news-page__card(href="#") 
+              .news-page__card-text 
+                |Изменение тарифов на междугороднюю и международную связь
+              .news-page__card-label 
+                |Сегодня, 12:08
+        .show-more
+          .show-more__button
+            button.button.button--outline.button--small 
+              |Показать еще
