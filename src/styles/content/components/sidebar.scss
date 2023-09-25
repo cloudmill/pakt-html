@@ -76,6 +76,10 @@
   &__link {
     color: color(gray);
     font-weight: 500;
+
+    &.active {
+      color: color(blue);
+    }
   }
 
   &__block {

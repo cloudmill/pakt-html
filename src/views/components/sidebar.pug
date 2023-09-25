@@ -28,9 +28,9 @@ mixin sidebar(active)
               .sidebar__item-text 
                 |Оплата
         ul.sidebar__list
-          each item in ['Новости', 'Партнерские программы', 'Полезная информация', ]
+          each item, i in ['Новости', 'Партнерские программы', 'Полезная информация', ]
             li.sidebar__list-item 
-              a.sidebar__link(href="#")
+              a.sidebar__link(href="#" class=(i+4 === active ? 'active' : null))
                 |#{item} 
       .sidebar__bot
         a.sidebar__block(href="#") 

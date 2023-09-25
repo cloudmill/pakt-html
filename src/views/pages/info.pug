@@ -1,0 +1,30 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 6
+
+block content
+  .info-page
+    .panel 
+      .panel__text 
+        |Полезная информация
+    section.section.section--first-panel
+      .container
+        h1.section__title 
+          |Полезная информация
+        .info-page__grid 
+          a.info-page__item(href="#")
+            .info-page__icon 
+              +database-svg.info-page__svg 
+            .info-page__text 
+              |Описание оборудования
+          a.info-page__item(href="#")
+            .info-page__icon 
+              +file-eps-svg.info-page__svg 
+            .info-page__text 
+              |Частотная сетка
+          a.info-page__item(href="#")
+            .info-page__icon 
+              +browser-svg.info-page__svg 
+            .info-page__text 
+              |Телепрограмма
