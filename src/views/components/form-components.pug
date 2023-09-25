@@ -5,6 +5,12 @@ mixin input
       |#{attributes.placeholder}
     input.input(data-input='' required)&attributes(attributes)
 
+mixin input-second
+  .input-wrapper.input-wrapper--secondary(data-input-parent='')
+    .input-wrapper__placeholder
+      |#{attributes.placeholder}
+    input.input(data-input='' required)&attributes(attributes)
+
 mixin checkbox 
   .checkbox(class=attributes.class)
     label.checkbox__label

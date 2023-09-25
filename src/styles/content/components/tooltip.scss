@@ -10,6 +10,7 @@
     justify-content: center;
 
     cursor: pointer;
+    pointer-events: all;
 
     &:hover {
       #{$comp}__svg {

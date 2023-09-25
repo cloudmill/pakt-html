@@ -37,6 +37,11 @@
     background-color: #001F38;
   }
 
+  &.disabled {
+    background-color: color(gray);
+    pointer-events: none;
+  }
+
   &__icon {
     margin-right: rem(10px);
 

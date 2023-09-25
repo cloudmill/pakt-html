@@ -1,5 +1,11 @@
 .payment-page {
   $comp: &;
+  position: relative;
+  z-index: 0;
+
+  &--page {
+    margin-bottom: rem(100px);
+  }
 
   &__container {
     padding: rem(84px) 0 rem(60px);
@@ -180,5 +186,481 @@
       width: 100%;
     }
     width: rem(296px);
+  }
+
+  &__inner {
+    margin-top: rem(32px);
+    @media #{media("<")} {
+      margin-top: rem(24px);
+    }
+  }
+
+  &__block {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__wrapper {
+    padding: rem(32px);
+    @media #{media("<")} {
+      padding: rem(19px) rem(13px) rem(31px);
+    }
+  }
+
+  &__row {
+    display: flex;
+    @media #{media("<", m)} {
+      display: block;
+    }
+  }
+
+  &__col {
+    &:nth-child(1) {
+      flex-shrink: 0;
+      width: 61%;
+      @media #{media("<")} {
+        width: 57%;
+      }
+      @media #{media("<", m)} {
+        width: auto;
+      }
+    }
+    &:nth-child(2) {
+      margin-left: rem(24px);
+      width: 100%;
+      @media #{media("<")} {
+        margin-left: rem(16px);
+      }
+      @media #{media("<", m)} {
+        margin-left: 0;
+        margin-top: rem(16px);
+      }
+    }
+  }
+
+  &__column {
+    height: 100%;
+  }
+  &__column-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__column-top {
+    margin-bottom: rem(20px);
+    @media #{media("<", m)} {
+      margin-bottom: rem(38px);
+    }
+  }
+
+  &__refill {
+    margin-top: rem(40px);
+    @media #{media("<")} {
+      margin-top: rem(15px);
+    }
+  }
+  &__refill-row {
+    display: flex;
+    @media #{media("<")} {
+      flex-direction: column;
+    }
+  }
+  &__refill-col {
+    &:nth-child(1) {
+      flex-shrink: 0;
+      width: rem(302px);
+      @media #{media("<", m)} {
+        width: auto;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-left: rem(60px);
+      @media #{media("<")} {
+        margin-left: 0;
+        margin-bottom: rem(22px);
+
+        order: -1;
+      }
+    }
+  }
+  &__refill-copy {
+    margin-top: rem(10px);
+  }
+
+  &__link {
+    padding-bottom: rem(2px);
+
+    display: inline-block;
+
+    border-bottom: 1px solid color(borders);
+    @include fsl(14px, 120%);
+    color: color(gray);
+  }
+
+  &__label {
+    margin-bottom: rem(5px);
+
+    @include fsl(14px, 120%);
+    color: color(gray);
+  }
+
+  &__pay {
+    padding: rem(34px) rem(32px);
+    @media #{media("<")} {
+      padding: rem(22px) rem(12px);
+    }
+  }
+  &__pay-offset {
+    margin-top: rem(25px);
+  }
+  &__pay-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__pay-heading {
+    font-weight: 600;
+    @media #{media("<")} {
+      font-weight: 500;
+    }
+  }
+  &__pay-price {
+    letter-spacing: -0.01em;
+    @include fsl(20px, 110%);
+    font-weight: 600;
+    @media #{media("<")} {
+      letter-spacing: 0;
+      @include fsl(16px);
+    }
+  }
+  &__pay-btn {
+    margin-top: rem(34px);
+    @media #{media("<")} {
+      margin-top: rem(16px);
+    }
+  }
+  &__pay-label {
+    @include fsl(14px, 140%);
+    color: color(gray);
+    text-align: center;
+  }
+
+  &__autopay {}
+  &__autopay-top {
+    margin-bottom: rem(40px);
+    @media #{media("<")} {
+      margin-bottom: rem(20px);
+    }
+    display: flex;
+    justify-content: space-between;
+    @media #{media("<", m)} {
+      display: block;
+    }
+  }
+  &__autopay-label {
+    @media #{media("<", m)} {
+      margin-top: rem(20px);
+
+      display: flex;
+    }
+  }
+  &__autopay-grid {
+    padding-bottom: rem(24px);
+
+    display: grid;
+    grid-template-columns: 18% 27% 42% 13%;
+    @media #{media("<")} {
+      padding-bottom: rem(35px);
+      grid-template-columns: repeat(2, 42%);
+      row-gap: rem(31px);
+    }
+    @media #{media("<", m)} {
+      grid-template-columns: 1fr;
+      row-gap: rem(23px);
+    }
+
+    border-bottom: 1px solid color(borders);
+  }
+  &__autopay-item {}
+  &__autopay-price {
+    font-weight: 600;
+  }
+  &__autopay-bot {
+    margin-top: rem(32px);
+    @media #{media("<", m)} {
+      margin-top: rem(24px);
+
+      display: block;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__autopay-wrapper {
+    width: rem(188px);
+    @media #{media("<")} {
+      width: rem(300px);
+    }
+    @media #{media("<", m)} {
+      margin-bottom: rem(24px);
+
+      width: 100%;
+    }
+  }
+  &__autopay-container {
+    padding: rem(52px) 0;
+    @media #{media("<")} {
+      padding: rem(16px) rem(13px);
+      margin: 0 auto;
+
+      width: rem(328px);
+    }
+    @media #{media("<", m)} {
+      width: 100%;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__autopay-icon {
+    margin-bottom: rem(32px);
+    @media #{media("<")} {
+      margin-bottom: rem(8px);
+    }
+    display: flex;
+    align-items: center;
+  }
+  &__autopay-svg {
+    --size: #{rem(40px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+  &__autopay-text {
+    margin-top: rem(8px);
+
+    text-align: center;
+    letter-spacing: -0.01em;
+    line-height: 1.5;
+    color: color(gray);
+
+  }
+  &__autopay-btn {
+    margin-top: rem(32px);
+    @media #{media("<")} {
+      margin-top: rem(24px);
+
+      width: 100%;
+    }
+    width: rem(250px);
+  }
+
+  &__delete {
+    @media #{media("<", m)} {
+      justify-content: center;
+    }
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+  }
+  &__delete-icon {
+    margin-right: rem(8px);
+    @media #{media("<")} {
+      margin-right: rem(4px);
+    }
+    display: flex;
+    align-items: center;
+  }
+  &__delete-svg {
+    --size: #{rem(24px)};
+
+    width: var(--size);
+    height: var(--size);
+
+    path {
+      fill: color(gray);
+    }
+  }
+  &__delete-text {
+    padding-bottom: rem(2px);
+
+    @include fsl(14px);
+    border-bottom: 1px solid color(borders);
+    color: color(gray);
+  }
+
+  &__announce {
+    margin-bottom: rem(24px);
+    @media #{media("<")} {
+      margin-bottom: rem(16px);
+    }
+  }
+
+  &__conditional {}
+  &__conditional-inner {
+    margin: rem(20px) 0 rem(28px);
+    @media #{media("<")} {
+      margin: rem(14px) 0 rem(18px);
+    }
+  }
+  &__conditional-label {
+    color: color(gray);
+    letter-spacing: -0.01em;
+    line-height: 1.5;
+  }
+  &__conditional-wrapper {
+    padding-bottom: rem(32px);
+
+    border-bottom: 1px solid color(borders);
+  }
+  &__conditional-error {
+    margin-bottom: rem(16px);
+    @media #{media("<")} {
+      max-width: rem(270px);
+    }
+    color: color(error);
+    @include fsl(12px, 140%);
+    text-align: center;
+    @media #{media("<", m)} {
+      text-align: left;
+    }
+  }
+  &__conditional-grid {
+    margin-top: rem(40px);
+    @media #{media("<")} {
+      margin-top: rem(20px);
+    }
+    display: grid;
+    grid-template-columns: 3fr 4fr 3fr;
+    @media #{media("<")} {
+      grid-template-columns: 1fr 1.5fr;
+      row-gap: rem(30px);
+    }
+    @media #{media("<", m)} {
+      row-gap: rem(23px);
+      grid-template-columns: 1fr;
+    }
+  }
+  &__conditional-item {
+
+    &:nth-child(3) {
+      @media #{media("<")} {
+        grid-column: span 2;
+      }
+      @media #{media("<", m)} {
+        grid-column: auto;
+      }
+    }
+  }
+  &__conditional-text {
+    margin-top: rem(23px);
+    @media #{media("<")} {
+      margin-top: 0;
+    }
+  }
+  
+  &__bot {
+    margin-top: rem(35px);
+    @media #{media("<")} {
+      margin-top: rem(16px);
+    }
+    display: flex;
+    justify-content: space-between;
+    @media #{media("<", m)} {
+      display: block;
+    }
+  }
+  &__bot-col {
+
+    &:nth-child(2) {
+      flex-shrink: 0;
+      width: rem(290px);
+      @media #{media("<")} {
+        width: rem(300px);
+      }
+      @media #{media("<", m)} {
+        margin-top: rem(24px);
+        width: auto;
+      }
+    }
+  }
+  &__bot-title {
+    margin-bottom: rem(20px);
+    @media #{media("<")} {
+      margin-bottom: rem(16px);
+    }
+    font-weight: 600;
+  }
+  &__bot-inner {
+    display: flex;
+    @media #{media("<")} {
+      display: block;
+    }
+  }
+  &__bot-item {
+
+    &:not(:first-child) {
+      margin-left: rem(60px);
+      @media #{media("<")} {
+        margin-left: 0;
+        margin-top: rem(15px);
+      }
+    }
+  }
+  &__bot-caption {
+    margin-top: rem(18px);
+    @media #{media("<")} {
+      margin-top: rem(13px);
+    }
+  }
+}
+
+.autopay {
+
+  &__copy {
+    margin-top: rem(22px);
+    padding-bottom: rem(32px);
+    @media #{media("<")} {
+      margin-top: rem(14px);
+      padding-bottom: rem(24px);
+
+      max-width: rem(300px);
+    }
+    @media #{media("<", m)} {
+      max-width: auto;
+    }
+    border-bottom: 1px solid color(borders);
+  }
+
+  &__bot {
+    margin-top: rem(48px);
+    @media #{media("<")} {
+      margin-top: rem(15px);
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(20px);
+    @media #{media("<")} {
+      margin-bottom: rem(16px);
+      letter-spacing: -0.01em;
+    }
+    font-weight: 600;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(16px);
+    @media #{media("<", m)} {
+      grid-template-columns: 1fr;
+      row-gap: rem(20px);
+    }
   }
 }

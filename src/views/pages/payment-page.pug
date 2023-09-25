@@ -1,0 +1,155 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 3
+
+block content
+  .payment-page.payment-page--page
+    .panel 
+      .panel__text 
+        |Оплата
+    section.section.section--first-panel(data-real-tabs='')
+      .container
+        .tabs.tabs--wide 
+          .tabs__list
+            each item, i in ['Пополнение баланса', 'Автоплатеж', 'Условный платеж']
+              .tabs__item(class=(i === 0 ? 'active' : null) data-tabs-item='')
+                |#{item}
+        .payment-page__inner 
+          .payment-page__block.active(data-tabs-block='')
+            .payment-page__row
+              .payment-page__col
+                .section__container.payment-page__column
+                  .payment-page__wrapper.payment-page__column-wrapper 
+                    .payment-page__column-top
+                      h2.section__title 
+                        |Пополнение баланса
+                      .payment-page__refill
+                        .payment-page__refill-row 
+                          .payment-page__refill-col
+                            +input-second(type='email' placeholder='Адрес доставки чека')
+                          .payment-page__refill-col
+                            .payment-page__label 
+                              |Номер договора
+                            .payment-page__refill-copy 
+                              +copy
+                    .payment-page__column-bot
+                      a.payment-page__link(href="#") 
+                        |Заявить об ошибочном платеже
+              .payment-page__col
+                .section__container.payment-page__column
+                  .payment-page__pay
+                    +input-second(type='text' placeholder='Сумма пополнения')
+                    .payment-page__pay-offset
+                      .payment-page__pay-row 
+                        .payment-page__pay-heading 
+                          |Итого к оплате:
+                        .payment-page__pay-price 
+                          |500,00 ₽
+                    .payment-page__pay-btn 
+                      button.button
+                        |Пополнить
+                    .payment-page__pay-offset 
+                      .payment-page__pay-label
+                        |Ознакомиться с 
+                        a.payment-page__link(href="#") 
+                          |информацией об оплате
+          .payment-page__block(data-tabs-block='')
+            .payment-page__autopay
+              //- .payment-page__autopay-container 
+                .payment-page__autopay-icon 
+                  +autopay-svg.payment-page__autopay-svg 
+                h3.section__heading
+                  |Автоплатеж ещё не подключен
+                .payment-page__autopay-text 
+                  |Подключите автоплатеж, чтобы пополнять баланс всегда вовремя!
+                .payment-page__autopay-text
+                  a.payment-page__link(href="#") 
+                    |Правила подключения автоплатежа
+                .payment-page__autopay-btn 
+                  a.button(href="#")
+                    |Подключить автоплатеж
+              .section__container
+                .payment-page__wrapper
+                  .payment-page__autopay-top 
+                    h2.section__title 
+                      |Автоплатеж
+                    .payment-page__autopay-label
+                      .label 
+                        |Автоплатеж активен 
+                  .payment-page__autopay-grid 
+                    - for (i = 0; i < 3; i++)
+                      .payment-page__autopay-item 
+                        .payment-page__label 
+                          |Номер договора
+                        .payment-page__text 
+                          |0987654321
+                    .payment-page__autopay-item 
+                      .payment-page__label 
+                        |Сумма списания
+                      .payment-page__autopay-price
+                        |500 ₽
+                  .payment-page__autopay-bot 
+                    .payment-page__autopay-wrapper 
+                      a.button.button--outline.button--small(href="#") 
+                        |Настроить
+                    .payment-page__delete
+                      .payment-page__delete-icon 
+                        +cross-svg.payment-page__delete-svg 
+                      .payment-page__delete-text 
+                        |Удалить автоплатеж
+          .payment-page__block(data-tabs-block='')
+            .announce.payment-page__announce
+              .announce__icon 
+                +hint-svg.announce__svg 
+              .announce__text 
+                |Активировать "Условный платеж" можно не чаще одного раза в месяц и только при условии #[br] погашения предыдущей задолженности
+            .payment-page__conditional
+              .section__container
+                .payment-page__wrapper
+                  h2.section__title 
+                    |Условный платеж
+                  .payment-page__conditional-inner 
+                    .payment-page__conditional-label
+                      |Отсрочка платежа сроком на 7 дней.
+                  .payment-page__conditional-wrapper 
+                    .payment-page__label 
+                      |Номер договора
+                    .payment-page__refill-copy 
+                      +copy
+                  .payment-page__bot
+                    .payment-page__bot-col
+                      .payment-page__bot-title 
+                        |Вам доступно:
+                      .payment-page__bot-inner 
+                        .payment-page__bot-item 
+                          .payment-page__label 
+                            |Номер договора
+                          .payment-page__text 
+                            |0987654321
+                        .payment-page__bot-item 
+                          .payment-page__label 
+                            |Сумма пополнения
+                          .payment-page__text 
+                            |500 ₽
+                    .payment-page__bot-col
+                      .payment-page__conditional-error 
+                        |У вас есть задолженость по условному платежу: 500 ₽
+                      button.button.disabled
+                        |Подключить 
+                      .payment-page__bot-caption
+                        .payment-page__pay-label
+                          |Нажимая «Подключить», я соглашаюсь с 
+                          a.payment-page__link(href="#") 
+                            |условиями подключения 
+              //- .section__container
+                .payment-page__wrapper
+                  h2.section__title 
+                    |Условный платеж
+                  .payment-page__conditional-grid 
+                    - for (i = 0; i < 3; i++)
+                      .payment-page__conditional-item
+                        .payment-page__label 
+                          |Дата подключения
+                        .payment-page__text.payment-page__conditional-text
+                          |20.10.2021 
