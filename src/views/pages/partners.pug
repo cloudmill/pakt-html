@@ -1,0 +1,50 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 7
+
+block content
+  .partners-page
+    .panel 
+      .panel__text 
+        |Партнерская программа
+    section.section.section--first-panel
+      .container
+        .partners-page__container
+          .partners-page__top
+            h1.partners-page__title 
+              |Партнерская программа
+            .partners-page__text 
+              |Отличный способ пополнить свой счет без лишних затрат!
+          .partners-page__steps
+            .partners-page__heading 
+              |Для этого:
+            .partners-page__steps-inner 
+              .partners-page__steps-item 
+                .partners-page__steps-num 
+                  |1
+                .partners-page__steps-text 
+                  |Расскажите Другу про "ПАКТ"
+              .partners-page__steps-item 
+                .partners-page__steps-num 
+                  |2
+                .partners-page__steps-text 
+                  |Уточните у Друга номер договора после подключения
+              .partners-page__steps-item 
+                .partners-page__steps-num 
+                  |3
+                .partners-page__steps-text 
+                  |Заполните форму в срок не позднее 15 дней с момента подключения.
+            .partners-page__steps-caption 
+              |После активации лицевого счета Вашего Друга, на Ваш счет будут перечислены 500 рублей!
+          .partners-page__block
+            .partners-page__heading 
+              |Обращаем внимание!
+            ul.partners-page__list
+              - for (i = 0; i < 5; i++)
+                li.partners-page__list-item 
+                  |Акция действует только при заключении индивидуального договора на услуги "ПАКТ";
+          .partners-page__block
+            .partners-page__button 
+              a.button(href="#")
+                |Участвовать 

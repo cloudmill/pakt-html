@@ -1,0 +1,54 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 7
+
+block content
+  .partners-page
+    .panel 
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
+          |Партнерская программа
+      .panel__text 
+        |Участвовать
+    section.section.section--first-panel.partners-page__section
+      .container
+        .partners-page__part
+          .section__container
+            .partners-page__part-wrapper 
+              h1.section__title 
+                |Участие в партнерской программе
+              .partners-page__part-inner 
+                .partners-page__heading 
+                  |Данные абонента 
+              .partners-page__part-grid 
+                each item in ['Юдина Валентина Викторовна', '0987654321', '+7 (990) 876-32-21', 'г. Санкт-Петербург, ул. Оптикова 37 к1, кв 239']
+                  .partners-page__part-item 
+                    .section__label 
+                      |ФИО
+                    .partners-page__part-text 
+                      |#{item}
+              .partners-page__part-data 
+                .partners-page__heading 
+                  |Для этого:
+                .partners-page__part-input 
+                  +input-second(type='text' placeholder='Номер договора' data-parsley-contract=''  data-input-number='')
+              .partners-page__part-bot 
+                .partners-page__button 
+                  button.button.button--small 
+                    |Отправить
+    //- section.section.section--first-panel.partners-page__section.white
+      .container
+        .partners-page__part
+          .partners-page__part-container 
+            .partners-page__part-icon 
+              +file-svg.partners-page__part-svg 
+            .section__heading.partners-page__part-title 
+              |Заявление поступило в обработку
+            .partners-page__part-btn 
+              a.button(href="#")
+                |Вернуться на главную
+            .partners-page__part-caption 
+              |При возникновении вопросов обращайтесь в контактный центр по номеру:  8 (812) 595-81-21

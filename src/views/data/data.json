@@ -93,6 +93,14 @@
     {
       "href": "pay-error",
       "title": "Оплата неудачно"
+    },
+    {
+      "href": "partners",
+      "title": "Партнерская программа"
+    },
+    {
+      "href": "partners-participate",
+      "title": "Партнерская программа форма"
     }
   ]
 }
