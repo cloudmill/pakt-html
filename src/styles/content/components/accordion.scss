@@ -70,9 +70,11 @@
   }
 
   &__body {
-    margin-top: rem(16px);
-    margin-bottom: rem(32px);
-
+    padding-top: rem(16px);
+    padding-bottom: rem(26px);
+    @media #{media("<")} {
+      padding-bottom: rem(12px);
+    }
     display: none;
   }
 
