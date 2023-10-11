@@ -65,3 +65,25 @@ import "./scripts/accordion";
     }
   })
 }
+
+// feedback modal
+{
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('[data-feedback-link]')
+    const blocks = document.querySelectorAll('[data-feedback-block]')
+    const button = document.querySelector('[data-feedback-back]')
+    
+    links.forEach((item, i) => {
+
+      item.onclick = function() {
+        document.querySelector('[data-feedback-block].active').classList.remove('active')
+        blocks[i+1].classList.add('active')
+      }
+    })
+
+    button.onclick = function() {
+      document.querySelector('[data-feedback-block].active').classList.remove('active')
+      blocks[0].classList.add('active')
+    }
+  })
+}

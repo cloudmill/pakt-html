@@ -15,6 +15,7 @@ include ./components/form-components
 include ./components/sidebar
 include ./components/modals
 include ./components/copy
+include ./components/feedback
 
 include ./components/grid-test
 
@@ -42,6 +43,10 @@ html(lang='ru')
         .row__col
           main.main
             block content
+
+      block feedback
+        +feedback
+        +feedback-modal
 
       block grid-test
         +grid-test

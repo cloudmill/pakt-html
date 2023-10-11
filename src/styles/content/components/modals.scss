@@ -357,6 +357,478 @@
   }
 }
 
+.feedback-modal {
+  $comp: &;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  display: none;
+  width: rem(440px);
+  @media #{media("<")} {
+    width: rem(360px);
+  }
+  @media #{media("<", m)} {
+    width: 100%;
+  }
+  
+  &__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+    margin: rem(40px) rem(40px) 0;
+    @media #{media("<")} {
+      margin: 0;
+      position: relative;
+      z-index: 0;
+
+      height: rem(40px);
+      justify-content: center;
+
+      border-bottom: 1px solid color(borders);
+    }
+    display: flex;
+    align-items: center;
+    @media #{media("<", m)} {
+      flex-shrink: 0;
+    }
+  }
+  &__top-icon {
+    margin-right: rem(31px);
+    @media #{media("<")} {
+      margin-right: 0;
+      position: absolute;
+      left: rem(16px);
+      top: rem(6px);
+    }
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+  }
+  &__top-svg {
+    width: rem(24px);
+    height: rem(24px);
+
+    path {
+      fill: color(black);
+    }
+  }
+  &__top-text {
+    min-width: rem(250px);
+    text-align: center;
+    font-weight: 600;
+    @include fsl(14px, 140%);
+  }
+
+  &__container {
+    margin: 0 rem(40px);
+    @media #{media("<")} {
+      margin: 0 rem(16px);
+    }
+  }
+
+  &__block {
+    display: none;
+    height: 100%;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__list {
+    margin-top: rem(70px);
+    @media #{media("<")} {
+      margin-top: rem(40px);
+    }
+  }
+  &__list-item {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-top: rem(32px);
+    }
+  }
+  &__list-link {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+  }
+  &__list-icon {
+    margin-right: rem(16px);
+
+    display: flex;
+    align-items: center;
+  }
+  &__list-svg {
+    width: rem(24px);
+    height: rem(24px);
+  }
+  &__list-text {
+    font-weight: 500;
+    @include fsl(18px, 140%);
+    @media #{media("<")} {
+      @include fsl(16px);
+    }
+  }
+
+  &__contacts {
+    padding: rem(58px) rem(48px) rem(40px);
+    @media #{media("<")} {
+      padding: rem(50px) rem(16px) rem(32px);
+    }
+    height: 100%;
+    @media #{media("<", m)} {
+      height: auto;
+      min-height: 100%;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__contacts-blocks {}
+  &__contacts-block {
+
+    &:not(:first-child) {
+      margin-top: rem(40px);
+      @media #{media("<")} {
+        margin-top: rem(36px);
+      }
+    }
+  }
+  &__contacts-text {
+    margin-bottom: rem(8px);
+
+    @include fsl(14px, 140%);
+  }
+  &__contacts-wrapper {
+    display: flex;
+  }
+  &__contacts-heading {
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    @include fsl(26px, 150%);
+    @media #{media("<")} {
+      @include fsl(24px);
+    }
+  }
+  &__contacts-label {
+    margin-top: rem(7px);
+
+    color: #677DA7;
+    @include fsl(12px, 140%);
+  }
+  &__contacts-list {
+    margin-top: rem(8px);
+  }
+  &__contacts-item {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-top: rem(4px);
+    }
+  }
+  &__contacts-link {
+    text-decoration: underline;
+  }
+  &__contacts-btn {
+    width: rem(250px);
+    @media #{media("<")} {
+      width: rem(200px);
+    }
+  }
+  &__contacts-bot {
+    margin-top: rem(20px);
+    
+    display: flex;
+    justify-content: center;
+  }
+  &__contacts-icon {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-left: rem(32px);
+    }
+  }
+  &__contacts-svg {
+    width: rem(24px);
+    height: rem(24px);
+
+    path {
+      fill: color(gray);
+    }
+  }
+
+  &__call {
+    padding: rem(111px) rem(40px) rem(34px);
+    @media #{media("<")} {
+      padding: rem(16px) rem(16px) rem(42px);
+    }
+    @media #{media("<", m)} {
+      padding-bottom: rem(50px);
+    }
+    // @media #{media("<", m)} {
+    //   height: auto;
+    //   min-height: 100%;
+    // }
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__call-top {}
+  &__call-form {}
+  &__call-resp {
+    display: none;
+  }
+  &__call-heading {
+    margin-bottom: rem(26px);
+
+    font-weight: 600;
+    @include fsl(20px, 110%);
+    letter-spacing: -0.01em;
+    @media #{media("<")} {
+      margin-bottom: rem(17px);
+      @include fsl(16px);
+    }
+  }
+  &__call-text {
+    letter-spacing: -0.01em;
+    line-height: 150%;
+    @media #{media("<")} {
+      @include fsl(14px);
+    }
+  }
+  &__call-input {
+    margin-top: rem(26px);
+    @media #{media("<")} {
+      margin-top: rem(15px);
+    }
+  }
+  &__call-btns {
+    margin-top: rem(25px);
+
+    display: flex;
+    @media #{media("<")} {
+      display: block;
+    }
+  }
+  &__call-btn {
+    
+    width: calc(50% - #{rem(8px)});
+    @media #{media("<")} {
+      width: 100%;
+    }
+
+    &:not(:first-child) {
+      margin-left: rem(16px);
+      @media #{media("<")} {
+        margin-left: 0;
+        margin-top: rem(8px);
+      }
+    }
+  }
+  &__call-caption {
+    margin-top: rem(24px);
+    @media #{media("<")} {
+      margin-top: rem(14px);
+    }
+
+    text-align: center;
+    color: color(gray);
+    @include fsl(14px, 140%);
+    @media #{media("<")} {
+      @include fsl(12px);
+    }
+  }
+  &__call-link {
+    margin-top: rem(4px);
+
+    display: block;
+    text-decoration: underline;
+    // text-align: center;
+  }
+  &__call-bot {}
+  &__call-item {
+
+    @include fsl(12px, 140%);
+
+    &:not(:first-child) {
+      margin-top: rem(8px);
+    } 
+
+    a {
+      color: color(blue);
+    }
+  }
+
+  &__chat {
+    padding-top: rem(38px);
+    @media #{media("<")} {
+      padding-top: 0;
+    }
+    height: 100%;
+    // @media #{media("<", m)} {
+    //   max-height: calc(100% - #{rem(40px)});
+    // }
+    display: flex;
+    flex-direction: column;
+  }
+  &__chat-body {
+    padding: rem(32px) rem(24px);
+    @media #{media("<")} {
+      padding: rem(12px) rem(16px);
+
+      border-top: none;
+    }
+    height: 100%;
+
+    overflow-y: auto;
+    border-top: 1px solid color(borders);
+  }
+  &__chat-date {
+    margin-bottom: rem(26px);
+
+    text-align: center;
+    color: color(gray);
+    font-weight: 600;
+    @include fsl(12px, 150%);
+  }
+  &__chat-item {
+
+    display: flex;
+    justify-content: flex-end;
+
+    &:not(:last-child) {
+      margin-bottom: rem(40px);
+    }
+
+    &.received {
+      justify-content: flex-start;
+
+      #{$comp}__chat-message {
+
+        color: color(black);
+        background-color: #F7F7F8;
+        border-radius: rem(8px) rem(8px) rem(8px) 0px;
+      }
+    }
+  }
+  &__chat-message {
+    padding: rem(16px);
+
+    max-width: rem(272px);
+
+    background-color: color(blue);
+    color: color(white);
+    border-radius: rem(8px) rem(8px) 0px rem(8px);
+  }
+  &__chat-info {
+    margin-top: rem(8px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &__chat-time {
+    color: color(gray);
+    @include fsl(12px, 150%);
+  }
+  &__chat-icon {
+    margin-left: rem(8px);
+
+    display: none;
+    align-items: center; 
+
+    &.active {
+      display: flex;
+    }
+  }
+  &__chat-svg {
+    width: rem(20px);
+    height: rem(20px);
+  }
+  &__chat-name {
+    margin-bottom: rem(8px);
+
+    color: color(gray);
+    @include fsl(12px, 150%);
+  }
+  &__chat-bot {
+    padding: rem(12px) rem(20px) rem(12px) rem(25px);
+    @media #{media("<")} {
+      padding: rem(12px) rem(16px);
+    }
+    display: flex;
+    align-items: center;
+
+    border-top: 1px solid color(borders);
+  }
+  &__chat-input {
+    padding: 0 rem(16px);
+
+    height: rem(56px);
+    width: 100%;
+
+    border: none;
+
+    &::placeholder {
+      color: color(gray);
+    }
+  }
+
+  &__file {
+    position: relative;
+    z-index: 0;
+
+    flex-shrink: 0;
+
+    cursor: pointer;
+  }
+  &__file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    pointer-events: none;
+    opacity: 0;
+  }
+  &__file-icon {
+    display: flex;
+    align-items: center;
+  }
+  &__file-svg {
+    width: rem(24px);
+    height: rem(24px);
+  }
+
+  &__button {
+    margin-left: rem(16px);
+    @media #{media("<")} {
+      margin-left: rem(8px);
+    }
+    width: rem(48px);
+    height: rem(48px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background-color: color(blue);
+    cursor: pointer;
+  }
+  &__button-svg {
+    width: rem(24px);
+    height: rem(24px);
+  }
+}
+
 .fancybox-button.fancybox-close-small {
   display: none;
 }

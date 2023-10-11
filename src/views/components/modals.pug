@@ -111,3 +111,138 @@ mixin service-modal
             |Продолжить
     .modal__icon(data-fancybox-close='')
       +cross-alt-svg.modal__svg.small
+
+mixin feedback-modal 
+  .feedback-modal(data-fancy-modal='feedback')
+    .feedback-modal__inner
+      .feedback-modal__top 
+        .feedback-modal__top-icon(data-feedback-back='')
+          +arrow-left-svg.feedback-modal__top-svg 
+        .feedback-modal__top-text 
+          |Обратная связь
+      .feedback-modal__block.active(data-feedback-block='')
+        .feedback-modal__container 
+          .feedback-modal__list
+            .feedback-modal__list-item 
+              .feedback-modal__list-link(data-feedback-link='')
+                .feedback-modal__list-icon 
+                  +chat-svg.feedback-modal__list-svg 
+                .feedback-modal__list-text 
+                  |Чат со специалистом
+            .feedback-modal__list-item 
+              .feedback-modal__list-link(data-feedback-link='')
+                .feedback-modal__list-icon 
+                  +phone-svg.feedback-modal__list-svg 
+                .feedback-modal__list-text 
+                  |Обратный звонок
+            .feedback-modal__list-item 
+              a.feedback-modal__list-link(href="#")
+                .feedback-modal__list-icon 
+                  +doc-svg.feedback-modal__list-svg 
+                .feedback-modal__list-text 
+                  |Написать обращение
+            .feedback-modal__list-item 
+              .feedback-modal__list-link(data-feedback-link='')
+                .feedback-modal__list-icon 
+                  +loc-svg.feedback-modal__list-svg 
+                .feedback-modal__list-text 
+                  |Контакты
+      .feedback-modal__block(data-feedback-block='')
+        .feedback-modal__chat
+          .feedback-modal__chat-body
+            .feedback-modal__chat-date 
+              |12 октября 2021
+            .feedback-modal__chat-item 
+              .feedback-modal__chat-wrapper
+                .feedback-modal__chat-message 
+                  |Здравствуйте!
+                .feedback-modal__chat-info 
+                  .feedback-modal__chat-time 
+                    |18:22
+                  .feedback-modal__chat-icon.active
+                    +readed-svg.feedback-modal__chat-svg
+            .feedback-modal__chat-item.received
+              .feedback-modal__chat-wrapper
+                .feedback-modal__chat-name 
+                  |Дарья
+                .feedback-modal__chat-message
+                  |Здравствуйте! Чем я могу Вам помочь?
+                .feedback-modal__chat-info 
+                  .feedback-modal__chat-time 
+                    |18:22
+          form.feedback-modal__chat-bot(action="#")
+            label.feedback-modal__file 
+              input.feedback-modal__file-input(type="file")
+              .feedback-modal__file-icon 
+                +clip-svg.feedback-modal__file-svg
+            input.feedback-modal__chat-input(type="text" placeholder='Напишите сообщение')
+            button.feedback-modal__button
+              +send-svg.feedback-modal__button-svg
+      .feedback-modal__block(data-feedback-block='')
+        .feedback-modal__call
+          .feedback-modal__call-top
+            form.feedback-modal__call-form(action="#")
+              .feedback-modal__call-heading 
+                |Перезвоним в ближайшее время!
+              .feedback-modal__call-text 
+                |Укажите номер, на который можно перезвонить
+              .feedback-modal__call-input 
+                +input-second(type='text' placeholder='Контактный телефон')
+              .feedback-modal__call-btns 
+                .feedback-modal__call-btn 
+                  button.button
+                    |Продолжить
+                .feedback-modal__call-btn 
+                  .button.button--outline
+                    |Отменить
+              .feedback-modal__call-caption 
+                |Нажимая “Продолжить” я соглашаюсь с 
+                a.feedback-modal__call-link(href="#") 
+                  |политикой конфиденциальности
+            .feedback-modal__call-resp 
+              |RESPONSE
+          .feedback-modal__call-bot
+            .feedback-modal__call-item 
+              |Контактый центр: #[a(href="#")  8 (812) 595-81-21]
+            .feedback-modal__call-item 
+              |Техническая поддержка: #[a(href="#")  8 (812) 595-81-21]
+      .feedback-modal__block(data-feedback-block='')
+        .feedback-modal__contacts
+          .feedback-modal__contacts-blocks
+            .feedback-modal__contacts-block 
+              .feedback-modal__contacts-text 
+                |Контактный центр
+              .feedback-modal__contacts-wrapper 
+                a.feedback-modal__contacts-heading(href="#")
+                  |8 (812) 595-81-21
+              .feedback-modal__contacts-label 
+                |Ежедневно  с 09:00 до 21:00
+            .feedback-modal__contacts-block 
+              .feedback-modal__contacts-text 
+                |Техническая поддержка
+              .feedback-modal__contacts-wrapper 
+                a.feedback-modal__contacts-heading(href="#")
+                  |8 (812) 595-81-22
+              .feedback-modal__contacts-label 
+                |Круглосуточно
+            .feedback-modal__contacts-block 
+              .feedback-modal__contacts-text 
+                |Офисы приёма клиентов:
+              .feedback-modal__contacts-label 
+                |Ежедневно с 10-00 до 21-00
+              .feedback-modal__contacts-list 
+                each item in ['пр. Просвещения, 85', 'пр. Художников, 33/4', 'ул. Хошимина, 5/1', 'пр. Мориса Тереза, 74', ]
+                  .feedback-modal__contacts-item 
+                    a.feedback-modal__contacts-link(href="#")
+                      |#{item}
+            .feedback-modal__contacts-block 
+              .feedback-modal__contacts-btn 
+                a.button.button--outlink(href="#")
+                  |Сайт ПАКТ 
+          .feedback-modal__contacts-bot 
+            .feedback-modal__contacts-icon 
+              +vk-svg.feedback-modal__contacts-svg
+            .feedback-modal__contacts-icon 
+              +yt-svg.feedback-modal__contacts-svg
+
+
