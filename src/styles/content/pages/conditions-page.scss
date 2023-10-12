@@ -1,0 +1,49 @@
+.conditions-page {
+  
+  &__section {
+    margin: rem(136px) 0 rem(160px);
+    @media #{media("<")} {
+      margin-top: rem(91px);
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(60px);
+
+    font-weight: 600;
+    @include fsl(32px, 90%);
+    @media #{media("<")} {
+      margin-bottom: rem(23px);
+
+      letter-spacing: -0.01em;
+      @include fsl(24px);
+    }
+  }
+
+  &__content {
+    margin: 0 auto;
+
+    width: rem(1200px);
+    @media #{media("<")} {
+      width: auto;
+    }
+
+    p {
+      @include fsl(16px, 150%);
+    }
+
+    br {
+      margin-top: rem(20px);
+      content: "";
+
+      display: block;
+    }
+  }
+
+  &__block {
+
+    &:not(:first-child) {
+      margin-top: rem(60px);
+    }
+  }
+}
