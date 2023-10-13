@@ -1,0 +1,98 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 2
+
+block content
+  .costs-page
+    .panel
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
+          |Контроль расходов
+      .panel__text 
+        |Детализация звонков
+    section.section.section--first-panel
+      .container
+        .section__container
+          .costs-page__wrapper
+            .costs-page__top 
+              h1.section__title 
+                |Детализация звонков
+            .costs-page__inner
+              .costs-page__inner-col
+                .costs-page__calendar
+                  |CALENDAR
+                .costs-page__balance
+                  .costs-page__balance-text 
+                    |Баланс на 23.05.2023:
+                  .costs-page__price 978,56 ₽
+              .costs-page__inner-col
+            .costs-page__calls
+              .costs-page__calls-row 
+                .costs-page__calls-column
+                  .categories
+                    each item, i in ['+7 (911) 236-66-55', '563-25-33',]
+                      .categories__item
+                        .categories__btn(class=(i===0 ? 'active' : ''))
+                          |#{item}
+                .costs-page__calls-column
+                  .costs-page__price 
+                    |500 ₽
+              .costs-page__calls-table 
+                .costs-page__calls-top 
+                  .costs-page__calls-grid 
+                    .costs-page__calls-col
+                      .section__label.default
+                        |Дата
+                    .costs-page__calls-col
+                      .section__label.default
+                        |Входящий номер
+                    .costs-page__calls-col
+                      .section__label.default
+                        |Исходящий номер
+                    .costs-page__calls-col
+                      .section__label.default
+                        |Код населенного пункта
+                    .costs-page__calls-col
+                      .section__label.default
+                        |Длительность, мин
+                    .costs-page__calls-col
+                      .section__label.default
+                        |Сумма
+                .costs-page__calls-body
+                  - for (i = 0; i < 4; i++)
+                    .costs-page__calls-grid 
+                      .costs-page__calls-col
+                        .section__label.only-mobile
+                          |Дата
+                        .costs-page__calls-text 
+                          |01.09.2021 
+                      .costs-page__calls-col
+                        .section__label.only-mobile
+                          |Входящий номер
+                        .costs-page__calls-text 
+                          |+7 (911) 236-66-55
+                      .costs-page__calls-col
+                        .section__label.only-mobile
+                          |Исходящий номер
+                        .costs-page__calls-text 
+                          |+7 (911) 122-13-32
+                      .costs-page__calls-col
+                        .section__label.only-mobile
+                          |Код населенного пункта
+                        .costs-page__calls-text 
+                          |812
+                      .costs-page__calls-col
+                        .section__label.only-mobile
+                          |Длительность, мин
+                        .costs-page__calls-text 
+                          |2
+                      .costs-page__calls-col
+                        .section__label.only-mobile
+                          |Сумма
+                        .costs-page__calls-text 
+                          |152 ₽
+              .costs-page__accordions-btn.alt
+                |Показать все
