@@ -82,6 +82,10 @@
   }
 
   &__title {
+    @media #{media(">")} {
+      max-width: rem(375px);
+    }
+    text-align: center;
     font-weight: 600;
     @include fsl(20px, 110%);
     letter-spacing: -0.01em;

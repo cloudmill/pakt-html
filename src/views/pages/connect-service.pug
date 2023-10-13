@@ -4,7 +4,7 @@ block variables
   - var sidebarActive = 1
 
 block content
-  .services-page.connected-page
+  .services-page.connected-page.connected-page--default
     .panel
       a.panel__link(href="#") 
         .panel__icon 
@@ -15,3 +15,40 @@ block content
         |Подключение услуг
     section.section.section--first-panel
       .container
+        .section__container 
+          form.connected-page__service(action="/" data-form='success')
+            h1.section__title 
+              |Подключение услуги Телефония
+            .connected-page__service-inner 
+              .connected-page__service-row
+                .connected-page__service-col
+                  .section__label 
+                    |Удобное время для звонка
+                  .connected-page__service-selects 
+                    .connected-page__service-item 
+                      +select(options=['с 10:00', 'с 11:00', 'с 12:00'])
+                    .connected-page__service-item 
+                      +select(options=['до 19:00', 'до 20:00', 'до 21:00'])
+                .connected-page__service-col
+                  +input-second(type='text' placeholder='Номер телефона')
+                  .connected-page__service-icon 
+                    +check-alt-svg.connected-page__service-svg
+            .connected-page__service-inner 
+              .connected-page__bot
+                .connected-page__bot-col
+                  .connected-page__bot-item
+                    .connected-page__btn
+                      button.button.button--outline.button--small(type="button")
+                        |Отменить
+                  .connected-page__bot-item
+                    .connected-page__btn
+                      button.button.button--small
+                        |Продолжить
+                .connected-page__bot-col
+                  .services-page__card-label 
+                    |Итоговая стоимость
+                  .connected-page__heading
+                    |650 ₽/мес.
+            .connected-page__service-caption 
+              |Я ознакомлен с правилами #[a(href="#") подключения услуги Телефония]
+  +request-modal(id='success')

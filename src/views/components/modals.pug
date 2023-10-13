@@ -11,6 +11,19 @@ mixin response-modal
           |#{attributes.btn}
     .response-modal__close(data-fancybox-close='')
       +cross-alt-svg.response-modal__close-svg
+    
+mixin request-modal
+  .response-modal(data-response=attributes.id)
+    .response-modal__container 
+      .response-modal__icon
+        +connect-svg.response-modal__svg
+      .response-modal__title
+        |Заявка на подключение услуги отправлена
+      .response-modal__button 
+        .button(data-fancybox-close='')
+          |Ок
+    .response-modal__close(data-fancybox-close='')
+      +cross-alt-svg.response-modal__close-svg
 
 mixin modules-modal 
   .modules-modal.modal(data-fancy-modal='modules' data-tv-modal='')
