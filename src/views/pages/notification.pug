@@ -1,0 +1,61 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 1
+
+block content
+  .notification-page
+    .panel
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
+          |Услуги
+      .panel__text 
+        |Уведомления
+    section.section.section--first-panel
+      .container
+        .section__container.desktop
+          .notification-page__wrapper 
+            h1.section__title 
+              |Уведомления
+            .notification-page__top
+              .notification-page__top-col
+                .categories
+                  each item, i in ['Все (3)', 'Непрочитанные (1)', 'Прочитанные (2)',]
+                    .categories__item
+                      .categories__btn(class=(i===0 ? 'active' : ''))
+                        |#{item}
+              .notification-page__top-col
+                .notification-page__calendar 
+                  |CALENDAR 
+                .notification-page__top-btn
+                  button.button.button--small 
+                    |Показать
+            .notification-page__list 
+              - for (i = 0; i < 3; i++)
+                .notification-page__item
+                  .notification-page__date
+                    .notification-page__date-icon.red
+                    .notification-page__date-text 
+                      |Сегодня, 12:08 
+                  .notification-page__item-heading 
+                    |Необходимо погасить задолженность по условному платежу
+                  .notification-page__item-text 
+                    |Краткий текст уведомления...
+                  .notification-page__item-label 
+                    .label.alt
+                      |Системное уведомление
+                  .notification-page__item-btn
+                    .notification-page__item-icon 
+                      +envelope-svg.notification-page__item-svg 
+                    .notification-page__item-caption 
+                      |Отметить как непрочитанные
+            .notification-page__bot
+              .notification-page__step
+                .notification-page__step-btn 
+                  +arrow-svg.notification-page__step-svg.left 
+                .notification-page__step-text 
+                  |Страница 1 из 1
+                .notification-page__step-btn 
+                  +arrow-svg.notification-page__step-svg
