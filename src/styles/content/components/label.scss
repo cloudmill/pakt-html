@@ -1,7 +1,7 @@
 .label {
   padding: 0 rem(8px);
   @media #{media("<")} {
-    margin-left: rem(200px);
+    // margin-left: rem(200px);
     height: rem(24px);
   }
   @media #{media("<", m)} {

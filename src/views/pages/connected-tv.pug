@@ -25,12 +25,27 @@ block content
           .services-page__block.active(data-tabs-block='')
             .connected-page__container 
               .connected-page__top
-                .connected-page__icon 
-                  +tv-svg.connected-page__svg 
-                .label 
-                  |Активна
-              h3.section__title 
-                |Телевидение
+                .connected-page__top-col
+                  .connected-page__icon 
+                    +tv-svg.connected-page__svg 
+                .connected-page__top-col.tooltip
+                  .connected-page__contract(data-tooltip-icon='')
+                    .connected-page__contract-icon
+                      +contract-svg.connected-page__contract-svg 
+                    .connected-page__contract-text 
+                      |0987654321
+                  .tooltip__container 
+                    |Договор
+                  .connected-page__top-label
+                    .label
+                      |Активна
+              .connected-page__head
+                .connected-page__head-col
+                  h3.section__title 
+                    |Телевидение
+                .connected-page__head-col
+                  .section__label.default
+                    |Оплата включена в квитанцию ЖКУ
               .connected-page__inner 
                 .connected-page__row
                   .connected-page__row-col
@@ -51,13 +66,16 @@ block content
                         |Стоимость
                       .connected-page__text 
                         |220 ₽ / мес.
+                    .connected-page__row-item.only-mobile
+                      .section__label.default
+                        |Оплата включена в квитанцию ЖКУ
                     .connected-page__row-item 
                       .services-page__card-label 
                         |Дата подключения
                       .connected-page__text 
                         |31.01.22 
               .connected-page__inner
-                .connected-page__row
+                .connected-page__row.alt
                   .connected-page__row-col
                     .connected-page__btn
                       button.button.button--outline.button--small
@@ -92,9 +110,13 @@ block content
                                 .connected-page__text 
                                   |Настрой Кино
                           .connected-page__inner
-                            .connected-page__btn
-                              button.button.button--outline.button--small(data-fancy-button='modules')
-                                |Редактировать
+                            .connected-page__buttons
+                              .connected-page__buttons-item
+                                button.button.button--outline.button--small(data-fancy-button='modules')
+                                  |Редактировать
+                              .connected-page__buttons-item.small
+                                button.button.button--outline.button--small
+                                  |Опции
                         .connected-page__inner 
                           .services-page__card-label 
                             |Оборудование

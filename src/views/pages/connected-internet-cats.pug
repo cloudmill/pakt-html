@@ -24,25 +24,53 @@ block content
         .services-page__inner 
           .services-page__block.active(data-tabs-block='')
             .connected-page__container 
-              .connected-page__top.alt
-                .connected-page__row
-                  .connected-page__row-col.small
-                    .connected-page__icon 
-                      +globe-svg.connected-page__svg 
-                  .connected-page__row-col
-                    .connected-page__row-item 
+              .connected-page__button 
+                a.button.button--outline.button--small(href="#") 
+                  |Социальный интернет
+              .connected-page__top
+                .connected-page__top-col
+                  .connected-page__top-inner
+                    .connected-page__top-item
+                      .connected-page__icon 
+                        +globe-svg.connected-page__svg 
+                    .connected-page__top-item
+                      .connected-page__btn.big
+                        a.button.button--outline.button--small(href="#") 
+                          |Социальный интернет
+                .connected-page__top-col.tooltip
+                  .connected-page__contract(data-tooltip-icon='')
+                    .connected-page__contract-icon
+                      +contract-svg.connected-page__contract-svg 
+                    .connected-page__contract-text 
+                      |0987654321
+                  .tooltip__container 
+                    |Договор
+                  .connected-page__top-label
+                    .label
+                      |Активна
+                //- .connected-page__row
+                //-   .connected-page__row-col
+                //-     .connected-page__icon 
+                //-       +globe-svg.connected-page__svg 
+                //-   .connected-page__row-col
+                //-     .connected-page__row-item 
                       .connected-page__btn.big
                         button.button.button--outline.button--small
                           |Социальный интернет
-                    .connected-page__row-item 
-                      .label.alt
-                        |Активна
-              h3.section__title 
-                |Интернет
+                //-     .connected-page__row-item 
+                //-       .label.alt
+                //-         |Активна
+              .connected-page__head
+                .connected-page__head-col
+                  h3.section__title 
+                    |Интернет
+                .connected-page__head-col
+                  .section__label.default
+                    |Оплата включена в квитанцию ЖКУ
               .connected-page__layout
                 .connected-page__inner 
                   .connected-page__row
-                    .connected-page__row-col.small
+                    .connected-page__row-col
                       .services-page__card-label 
                         |Тариф
                       .connected-page__heading.underline
@@ -53,6 +81,9 @@ block content
                           |Стоимость
                         .connected-page__text 
                           |220 ₽ / мес.
+                      .connected-page__row-item.only-mobile
+                        .section__label.default
+                          |Оплата включена в квитанцию ЖКУ
                       .connected-page__row-item 
                         .services-page__card-label 
                           |Дата подключения
@@ -70,7 +101,7 @@ block content
                         |Название оборудования
                   .connected-page__inner
                     .connected-page__row
-                      .connected-page__row-col.small
+                      .connected-page__row-col
                         .services-page__card-label 
                           |Статус
                         .connected-page__text 

@@ -1,0 +1,17 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 1
+
+block content
+  .services-page.connected-page
+    .panel
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
+          |Доступные
+      .panel__text 
+        |Подключение услуг
+    section.section.section--first-panel
+      .container

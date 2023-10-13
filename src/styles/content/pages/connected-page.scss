@@ -1,4 +1,5 @@
 .connected-page {
+  $comp: &;
   @media #{media("<")} {
     min-height: 100vh;
 
@@ -22,17 +23,103 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
     @media #{media("<")} {
-      justify-content: flex-start;
-    }
-    @media #{media("<", m)} {
       justify-content: space-between;
     }
 
     &.alt {
       display: block;
     }
+  }
+  &__top-col {
+    &:nth-child(1) {
+      flex-shrink: 0;
+      width: calc(#{$col-part-d} * 4 - #{$col-gap-d} - #{rem(32px)});
+      @media #{media("<")} {
+        width: auto;
+      }
+    }
+    &:nth-child(2) {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media #{media("<")} {
+        flex-grow: 0;
+      }
+    }
+  }
+  &__top-label {
+    margin-left: auto;
+    @media #{media("<")} {
+      margin-left: rem(4px);
+    }
+  }
+  &__top-inner {
+    display: flex;
+  }
+  &__top-item {
+    &:nth-child(2) {
+      margin-left: rem(180px);
+      @media #{media("<")} {
+        display: none;
+      }
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    @media #{media("<")} {
+      display: block;
+    }
+  }
+  &__head-col {
+    &:nth-child(1) {
+      flex-shrink: 0;
+      width: calc(#{$col-part-d} * 4 - #{$col-gap-d} - #{rem(32px)});
+      @media #{media("<")} {
+        width: auto;
+      }
+    }
+    &:nth-child(2) {
+      @media #{media("<")} {
+        display: none;
+      }
+
+      &.alt {
+        @media #{media("<")} {
+          margin-top: rem(12px);
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__contract {
+    padding: 0 rem(8px);
+
+    display: flex;
+    align-items: center;
+    height: rem(24px);
+
+    border-radius: rem(4px);
+    background-color: rgba(color(blue), 0.1);
+    cursor: pointer;
+  }
+  &__contract-icon {
+    margin-right: rem(4px);
+
+    display: flex;
+    align-items: center;
+  }
+  &__contract-svg {
+    width: rem(16px);
+    height: rem(16px);
+  }
+  &__contract-text {
+    color: color(blue);
+    @include fsl(14px, 140%);
   }
 
   &__label {
@@ -117,6 +204,31 @@
     @media #{media("<")} {
       display: block;
     }
+
+    &.alt {
+      @media #{media("<")} {
+        display: flex;
+      }
+      #{$comp}__row-col {
+        &:nth-child(1) {
+          @media #{media("<", m)} {
+            width: 100%;
+            flex-shrink: 1;
+          }
+        }
+        &:nth-child(2) {
+          @media #{media("<")} {
+            margin-top: 0;
+            margin-left: rem(16px);
+  
+            width: auto;
+          }
+          @media #{media("<", m)} {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
   &__row-col {
     &:nth-child(1) {
@@ -127,7 +239,7 @@
         width: auto;
       }
       flex-shrink: 0;
-      width: calc(#{$col-part-d} * 4 - #{rem(32px)});
+      width: calc(#{$col-part-d} * 4 - #{rem(32px)} - #{$col-gap-d});
 
       &.small {
         @media #{media(">")} {
@@ -301,5 +413,40 @@
     padding-bottom: rem(24px);
 
     border-bottom: 1px solid color(borders);
+  }
+
+  &__buttons {
+    display: flex;
+  }
+  &__buttons-item {
+
+    width: rem(251px);
+    @media #{media("<")} {
+      width: rem(172px);
+    }
+
+    &:not(:first-child) {
+      margin-left: rem(12px);
+    }
+
+    &.small {
+      width: rem(180px);
+      @media #{media("<")} {
+        width: rem(144px);
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: rem(32px);
+
+    display: none;
+    width: rem(308px);
+    @media #{media("<")} {
+      display: block;
+    }
+    @media #{media("<", m)} {
+      width: 100%;
+    }
   }
 }
