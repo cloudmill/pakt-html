@@ -284,9 +284,17 @@
 
   &__link {
     margin-top: rem(4px);
+    padding-bottom: rem(2px);
 
     display: inline-block;
+    
     color: color(blue);
+    border-bottom: 1px solid transparent;
+    transition: $transition;
+
+    &:hover {
+      border-color: color(blue);
+    }
   }
 
   &__layout {

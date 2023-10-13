@@ -144,11 +144,18 @@
 
   &__button {
     margin-top: rem(6px);
+    padding-bottom: rem(2px);
 
     display: inline-block;
 
     color: color(blue);
     cursor: pointer;
+    transition: $transition;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-color: color(blue);
+    }
   }
 
   &__icon {
@@ -238,6 +245,11 @@
     font-weight: 500;
     @include fsl(15px, 130%);
     cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      border-color: color(blue);
+    }
   }
 
   &__show {

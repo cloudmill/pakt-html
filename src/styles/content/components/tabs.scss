@@ -58,6 +58,10 @@
     @include fsl(15px, 120%);
     white-space: nowrap;
     
+    &:hover {
+      background-color: #E1E1E5;
+    }
+
     &.active {
       background-color: color(white);
     }

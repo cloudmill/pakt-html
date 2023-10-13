@@ -182,15 +182,22 @@
   &__accordions-btn {
     margin-top: rem(24px);
     margin-bottom: rem(24px);
+    padding-bottom: rem(2px);
     @media #{media("<")} {
       margin-top: rem(12px);
     }
 
     display: inline-block;
 
+    border-bottom: 1px solid transparent;
     color: color(blue);
     font-weight: 600;
     cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      border-color: color(blue);
+    }
   }
 
   &__row {

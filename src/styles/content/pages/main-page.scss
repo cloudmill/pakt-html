@@ -192,6 +192,7 @@
       width: 100%;
     }
 
+    transition: $transition;
     border-radius: rem(8px);
     border: 1px solid color(borders);
 
@@ -199,6 +200,10 @@
       @media #{media("<", m)} {
         margin-top: rem(16px);
       }
+    }
+
+    &:hover {
+      border-color: color(blue);
     }
   }
   &__balance-icon {

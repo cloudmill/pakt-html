@@ -49,5 +49,9 @@
     &.active {
       border-color: color(blue);
     }
+
+    &:hover {
+      border-color: color(blue);
+    }
   }
 }

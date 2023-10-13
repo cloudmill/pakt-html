@@ -1,4 +1,5 @@
 .feedback {
+  $comp: &;
   --pad: #{rem(40px)};
   @media #{media("<")} {
     --pad: #{rem(16px)};
@@ -16,6 +17,14 @@
   border: 1px solid color(borders);
   border-radius: rem(8px);
   cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    border-color: color(blue);
+    #{$comp}__text {
+      color: color(blue);
+    }
+  }
 
   &__icon {
     margin-right: rem(10px);
@@ -34,6 +43,7 @@
   &__text {
     font-weight: 600;
     @include fsl(14px, 140%);
+    transition: $transition;
     @media #{media("<")} {
       display: none;
     }

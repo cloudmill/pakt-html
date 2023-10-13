@@ -333,6 +333,11 @@
     border: 1px solid color(blue-border);
     border-radius: rem(100px);
     cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      border-color: color(blue);
+    }
   }
   &__card-caption {
     margin-top: rem(6px);
