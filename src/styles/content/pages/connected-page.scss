@@ -458,27 +458,51 @@
 
   &__service {
     padding: rem(40px) rem(32px) rem(24px);
+    @media #{media("<")} {
+      padding: rem(16px) rem(16px) rem(24px);
+    }
   }
   &__service-inner {
     margin-top: rem(40px);
+    @media #{media("<")} {
+      margin-top: rem(20px);
+    }
   }
   &__service-row {
     padding-bottom: rem(40px);
-
+    @media #{media("<")} {
+      padding-bottom: rem(20px);
+    }
     display: flex;
     align-items: flex-end;
-
+    @media #{media("<", m)} {
+      display: block;
+    }
     border-bottom: 1px solid color(borders);
   }
   &__service-col {
     &:nth-child(1) {
       width: calc(#{$col-part-d} * 3 - #{rem(32px)});
+      @media #{media("<")} {
+        width: rem(300px);
+      }
+      @media #{media("<", m)} {
+        width: 100%;
+      }
     }
 
     &:nth-child(2) {
       position: relative;
       z-index: 0;
+      @media #{media("<")} {
+        margin-left: rem(60px);
+      }
+      @media #{media("<", m)} {
+        margin-top: rem(20px);
+        margin-left: 0;
 
+        width: 100%;
+      }
       width: rem(300px);
     }
   }
@@ -501,14 +525,24 @@
     display: flex;
   }
   &__service-item {
-
+    @media #{media("<", m)} {
+      width: 100%;
+    }
     &:nth-child(2) {
       margin-left: rem(32px);
+      @media #{media("<")} {
+        margin-left: rem(16px);
+      }
     }
   }
   &__service-caption {
     margin-top: rem(24px);
-
+    @media #{media("<")} {
+      margin-top: rem(16px);
+    }
+    @media #{media("<", m)} {
+      text-align: center;
+    }
     color: color(gray);
     @include fsl(14px, 140%);
 

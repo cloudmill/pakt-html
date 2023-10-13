@@ -218,6 +218,22 @@
       grid-template-columns: 1fr;
     }
   }
+  &__item-row {
+    margin-bottom: rem(24px);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(20px);
+    @media #{media("<")} {
+      margin-bottom: rem(20px);
+      gap: rem(16px);
+    }
+    @media #{media("<")} {
+      grid-template-columns: 1fr;
+      row-gap: rem(20px);
+    }
+  }
+  &__item-col {}
 
   &__card {
 
