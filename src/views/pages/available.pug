@@ -38,6 +38,26 @@ block content
           .services-page__item
             .services-page__item-heading 
               |Тарифы
+            .services-page__item-row 
+              - for (i = 0; i < 2; i++)
+                .services-page__item-col
+                  .services-page__card
+                    .services-page__card-container
+                      .services-page__card-top
+                        .services-page__card-heading.underline
+                          |2 Мбит
+                        .services-page__card-body 
+                          .services-page__card-list 
+                            .services-page__card-item 
+                              .services-page__card-label 
+                                |Скорость
+                              .services-page__card-text 
+                                |2 Мбит/с
+                      .services-page__card-bot 
+                        .services-page__card-price 
+                          |150 ₽ / мес 
+                        .services-page__card-btn 
+                          |Подключить
             .services-page__item-grid 
               .services-page__card
                 .services-page__card-container

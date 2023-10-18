@@ -1,4 +1,5 @@
 .header {
+  $comp: &;
   position: fixed;
   z-index: 999;
   left: 0;
@@ -92,6 +93,14 @@
     justify-content: center;
 
     cursor: pointer;
+
+    &:hover {
+      #{$comp}__svg {
+        path {
+          fill: color(blue);
+        }
+      }
+    }
   }
 
   &__svg {
@@ -99,6 +108,10 @@
 
     width: var(--size);
     height: var(--size);
+
+    path {
+      transition: $transition;
+    }
   }
 
   &__profile {
@@ -109,10 +122,22 @@
     height: 100%;
 
     cursor: pointer;
+
+    &:hover {
+      #{$comp}__profile-text {
+        color: color(blue);
+      }
+      #{$comp}__profile-svg {
+        path {
+          fill: color(blue);
+        }
+      }
+    }
   }
   &__profile-text {
     font-weight: 500;
     letter-spacing: -0.01em;
+    transition: $transition;
   }
   &__profile-icon {
     margin-left: rem(10px);
@@ -125,6 +150,10 @@
 
     width: var(--size);
     height: var(--size);
+
+    path {
+      transition: $transition;
+    }
   }
 
   &__mobile {

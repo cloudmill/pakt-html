@@ -182,15 +182,26 @@
   &__accordions-btn {
     margin-top: rem(24px);
     margin-bottom: rem(24px);
+    padding-bottom: rem(2px);
     @media #{media("<")} {
       margin-top: rem(12px);
     }
 
     display: inline-block;
 
+    border-bottom: 1px solid transparent;
     color: color(blue);
     font-weight: 600;
     cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      border-color: color(blue);
+    }
+
+    &.alt {
+      margin-bottom: 0;
+    }
   }
 
   &__row {
@@ -204,4 +215,70 @@
     }
   }
   &__row-col {}
+
+  &__calls {
+    margin-top: rem(36px);
+    padding-top: rem(24px);
+    @media #{media("<")} {
+      margin-top: rem(16px);
+      padding-top: rem(16px);
+    }
+    border-top: 1px solid color(borders);
+  }
+  &__calls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media #{media("<")} {
+      display: block;
+    }
+  }
+  &__calls-column {
+    &:nth-child(2) {
+      @media #{media("<")} {
+        margin-top: rem(16px);
+      }
+    }
+  }
+  &__calls-table {
+    margin-top: rem(52px);
+    @media #{media("<")} {
+      margin-top: rem(24px);
+    }
+  }
+  &__calls-top {
+    margin-bottom: rem(24px);
+    @media #{media("<")} {
+      display: none;
+    }
+  }
+  &__calls-grid {
+    display: grid;
+    grid-template-columns: 15% 18% 18% 16% 16% 17%;
+    @media #{media("<")} {
+      padding-bottom: rem(12px);
+
+      gap: rem(12px);
+      grid-template-columns: repeat(2, 1fr);
+
+      border-bottom: 1px solid color(borders);
+    }
+    @media #{media("<", m)} {
+      grid-template-columns: 1fr;
+    }
+
+    &:not(:first-child) {
+      margin-top: rem(16px);
+      @media #{media("<")} {
+        margin-top: rem(12px);
+      }
+    }
+  }
+  &__calls-col {
+    &:last-child {
+      @media #{media(">")} {
+        justify-self: flex-end;
+      }
+    }
+  }
 }

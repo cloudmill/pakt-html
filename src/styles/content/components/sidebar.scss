@@ -45,6 +45,17 @@
         color: color(blue);
       }
     }
+
+    &:hover {
+      #{$comp}__item-svg {
+        path {
+          fill: color(blue);
+        }
+      }
+      #{$comp}__item-text {
+        color: color(blue);
+      }
+    }
   }
   &__item-icon {
     margin-right: rem(16px);
@@ -57,10 +68,15 @@
 
     width: var(--size);
     height: var(--size);
+
+    path {
+      transition: $transition;
+    }
   }
   &__item-text {
     @include fsl(18px, 110%);
     font-weight: 500;
+    transition: $transition;
   }
 
   &__list {}
@@ -76,7 +92,12 @@
   &__link {
     color: color(gray);
     font-weight: 500;
+    transition: $transition;
 
+    &:hover {
+      color: color(blue);
+    }
+    
     &.active {
       color: color(blue);
     }

@@ -26,7 +26,7 @@ mixin checkbox
 
 mixin select
   .select-wrapper 
-    .select
+    .select(class=attributes.class)
       select.select__select(data-select-placeholder=attributes.placeholder style='width: 100%')
         if (attributes.placeholder)
           option(value='' disabled selected)

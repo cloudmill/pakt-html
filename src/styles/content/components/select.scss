@@ -15,9 +15,10 @@
   &.select--small {
     .select2-container {
       .select2-selection {
-        @media #{media(">")} {
-          padding: rem(11px) rem(20px);
-        }
+        min-width: rem(140px);
+        // @media #{media(">")} {
+        //   padding: rem(11px) rem(20px);
+        // }
       }
     }
   }
@@ -62,7 +63,7 @@
       justify-content: space-between;
 
       border: none;
-      border-bottom: 1px solid color(gray-second);
+      border-bottom: 2px solid color(gray-second);
       transition: $transition;
       border-radius: 0;
       background-color: transparent;
