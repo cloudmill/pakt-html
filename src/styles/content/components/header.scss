@@ -49,16 +49,22 @@
   }
 
   &__logo {
-    display: block;
-    width: rem(78px);
-    height: rem(36px);
     @media #{media("<")} {
       margin-left: rem(27px);
-      width: rem(50px);
-      height: rem(24px);
     }
     @media #{media("<", s)} {
       margin: 0 auto;
+    }
+
+    display: flex;
+    align-items: center;
+  }
+  &__logo-svg {
+    width: rem(63px);
+    height: rem(36px);
+    @media #{media("<")} {
+      width: rem(42px);
+      height: rem(24px);
     }
   }
 
