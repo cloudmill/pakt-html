@@ -1,4 +1,5 @@
 .notification-page {
+  $comp: &;
   position: relative;
   z-index: 0;
   padding-bottom: rem(100px);
@@ -93,6 +94,18 @@
     align-items: center;
 
     cursor: pointer;
+
+    &:hover {
+      #{$comp}__item-svg {
+        path {
+          fill: color(blue);
+        }
+      }
+      #{$comp}__item-caption {
+        color: color(blue);
+        border-color: color(blue);
+      }
+    }
   }
   &__item-icon {
     margin-right: rem(16px);
@@ -103,10 +116,15 @@
   &__item-svg {
     width: rem(24px);
     height: rem(24px);
+
+    path {
+      transition: $transition;
+    }
   }
   &__item-caption {
     padding-bottom: rem(2px);
 
+    transition: $transition;
     border-bottom: 1px solid color(borders);
   }
 

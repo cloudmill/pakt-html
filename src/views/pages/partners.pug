@@ -8,7 +8,7 @@ block content
     .panel 
       .panel__text 
         |Партнерская программа
-    section.section.section--first-panel
+    section.section.partners-page__intro
       .container
         .partners-page__container
           .partners-page__top
@@ -41,9 +41,9 @@ block content
             .partners-page__heading 
               |Обращаем внимание!
             ul.partners-page__list
-              - for (i = 0; i < 5; i++)
+              each item in ['Акция действует только при заключении индивидуального договора на услуги "ПАКТ";', 'Подарочная сумма в размере 500 рублей не зависит от количества подключенных услуг;', 'Одного Друга можно подключить только один раз. Количество друзей неограниченно!', 'В случае если Ваш Друг отказался от услуг в течения 3 месяцев после подписания договора, Ваша подарочная сумма аннулируется!', 'Перечисленные бонусы Вы можете использовать на оплату любых Ваших услуг.', ]
                 li.partners-page__list-item 
-                  |Акция действует только при заключении индивидуального договора на услуги "ПАКТ";
+                  |#{item}
           .partners-page__block
             .partners-page__button 
               a.button(href="#")

@@ -3,6 +3,7 @@
   --pad: #{rem(40px)};
   @media #{media("<")} {
     --pad: #{rem(16px)};
+    // padding: rem(9px) rem(11px);
   }
   position: fixed;
   z-index: 100;

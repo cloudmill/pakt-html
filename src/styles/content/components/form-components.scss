@@ -15,7 +15,7 @@
   font-family: $ff-primary;
   letter-spacing: -0.01em;
   border: 1px solid #C3CBD5;
-  font-weight: 500;
+  font-weight: 400;
   transition: $transition;
   @media #{media("<")} {
     @include fsl(14px)
@@ -40,6 +40,10 @@
     border-radius: 0;
     border: none;
     border-bottom: 1px solid color(gray-second);
+  }
+
+  &--default {
+    padding: 0 rem(16px);
   }
 }
 
@@ -308,11 +312,12 @@
 
 .parsley-errors-list {
   margin-top: rem(10px);
+  margin-left: rem(16px);
   // position: absolute;
   // top: calc(100% + #{rem(4px)});
   @media #{media("<")} {
     position: static;
-    margin-top: rem(3px);
+    margin-top: rem(6px);
   }
   @include fsl(12px, 100%);
   color: color(error);

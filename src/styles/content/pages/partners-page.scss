@@ -2,6 +2,14 @@
   $comp: &;
   position: relative;
   z-index: 0;
+
+  &__intro {
+    padding-top: rem(184px);
+    padding-bottom: rem(130px);
+    @media #{media("<")} {
+      padding-top: rem(123px);
+    }
+  }
   
   &__section {
     padding-bottom: rem(130px);

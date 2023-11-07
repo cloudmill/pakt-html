@@ -5,13 +5,15 @@ extends ../layouts/secondary
 block header
 
 
+block feedback
+
 
 block content
   .login-page.payment-page
     .login-page__container 
       a.login-page__img(href="#")
         .login-page__logo.login-page__logo--alt 
-          +picture('logo.png')
+          +logo-svg
       .payment-page__container
         form.payment-page__modal(action="/") 
           .payment-page__modal-title 
@@ -21,7 +23,7 @@ block content
               .form-item 
                 +input(type = 'text' placeholder='Номер договора' data-parsley-contract=''  data-input-number='')
               .form-item 
-                +input(type = 'text' placeholder='Сумма'  data-input-number='')
+                +input(type = 'text' placeholder='Сумма'  data-input-number='' min="10")
                 .payment-page__modal-label.small
                   |Минимальная сумма платежа: 10 руб.
               .form-item 

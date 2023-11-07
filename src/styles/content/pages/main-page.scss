@@ -47,7 +47,6 @@
   &__row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     @media #{media("<")} {
       display: block;
     }
@@ -72,7 +71,7 @@
   }
 
   &__title {
-    margin-bottom: rem(32px);
+    margin-bottom: rem(24px);
     @media #{media("<")} {
       margin-bottom: rem(18px);
 
@@ -234,46 +233,32 @@
   &__balance-status {
     @include fsl(14px, 110%);
   }
+  &__balance-id {
+    margin-bottom: rem(36px);
+    @media #{media("<")} {
+      margin-bottom: rem(20px);
+    }
+  }
 
   &__services-top {
     margin-top: rem(20px);
-
+    @media #{media("<")} {
+      margin-top: rem(16px);
+      display: block;
+    }
     display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
   &__services-address {
     font-weight: 400;
     color: color(gray);
-    @include fsl(14px, 120%);
+    @include fsl(14px, 125%);
     @media #{media("<")} {
-      text-align: right;
-    }
-    @media #{media("<", m)} {
-      margin-top: rem(16px);
-      text-align: center;
-    }
-
-    &.desktop {
-      @media #{media("<", m)} {
-        display: none;
-      }
-    }
-    &.mobile {
-      @media #{media(">", m)} {
-        display: none;
-      }
+      line-height: 140%;
     }
 
     span {
       color: color(black);
       font-weight: 500;
-    }
-
-    br {
-      @media #{media(">")} {
-        display: none;
-      }
     }
   }
   &__services-inner {

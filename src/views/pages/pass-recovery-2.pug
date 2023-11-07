@@ -11,13 +11,13 @@ block content
     .login-page__container 
       a.login-page__img(href="#")
         .login-page__logo.login-page__logo--alt
-          +picture('logo.png')
+          +logo-svg
       form.login-page__modal(action="/")
         .login-page__form-title.center
           |Восстановление пароля
         .login-page__form-label 
           |Введите код подтверждения
-        +input(type = 'text' data-input-number='')
+        +input.input--default(type = 'text' data-input-number='')
         .login-page__form-btn 
           button.button 
             |Отправить

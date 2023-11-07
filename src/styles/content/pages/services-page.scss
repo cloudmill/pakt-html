@@ -108,8 +108,9 @@
     margin-top: rem(24px);
 
     border-radius: rem(8px);
-    background: radial-gradient(180.72% 132.53% at 25.00% 18.28%, #0076D8 0%, #6D19F5 0.01%, #0076D8 44.53%, #EC003E 100%);
+    // background: radial-gradient(180.72% 132.53% at 25.00% 18.28%, #0076D8 0%, #6D19F5 0.01%, #0076D8 44.53%, #EC003E 100%);
     box-shadow: 0px 28px 68px 0px rgba(0, 31, 56, 0.04);
+    background: radial-gradient(180.72% 132.53% at 25% 18.28%, #0076D8 0%, #6D19F5 0.01%, #0076D8 44.53%, #EC003E 100%);
   }
   &__offer-container {
     padding: rem(58px) 0 rem(49px);

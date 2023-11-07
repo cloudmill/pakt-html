@@ -1,4 +1,5 @@
 .copy {
+  $comp: &;
   padding: rem(8px);
 
   display: inline-flex;
@@ -6,6 +7,21 @@
 
   border-radius: rem(8px);
   background-color: rgba(color(blue), 0.1);
+
+  &--second {
+    padding: 0 rem(8px);
+
+    height: rem(24px);
+
+    border-radius: rem(4px);
+
+    #{$comp}__svg {
+      --size: #{rem(16px)};
+    }
+    #{$comp}__text {
+      @include fsl(14px, 140%);
+    }
+  }
 
   &__icon {
     margin-right: rem(4px);

@@ -244,18 +244,18 @@ mixin feedback-modal
               .feedback-modal__contacts-label 
                 |Ежедневно с 10-00 до 21-00
               .feedback-modal__contacts-list 
-                each item in ['пр. Просвещения, 85', 'пр. Художников, 33/4', 'ул. Хошимина, 5/1', 'пр. Мориса Тереза, 74', ]
+                each item in ['пр. Просвещения, 85', 'пр. Художников, 33/4', 'ул. Хошимина, 5/1', 'пр. Мориса Тереза, 74', 'ул. Сизова, 21', 'ул. Варшавская, 23/3']
                   .feedback-modal__contacts-item 
                     a.feedback-modal__contacts-link(href="#")
                       |#{item}
             .feedback-modal__contacts-block 
               .feedback-modal__contacts-btn 
-                a.button.button--outlink(href="#")
+                a.button.button--outline(href="#")
                   |Сайт ПАКТ 
           .feedback-modal__contacts-bot 
-            .feedback-modal__contacts-icon 
+            a.feedback-modal__contacts-icon(href="#")  
               +vk-svg.feedback-modal__contacts-svg
-            .feedback-modal__contacts-icon 
+            a.feedback-modal__contacts-icon(href="#") 
               +yt-svg.feedback-modal__contacts-svg
 
 

@@ -2,6 +2,9 @@
   $comp: &;
 
   height: rem(268px);
+  @media #{media("<")} {
+    height: rem(206px);
+  }
 
   background-color: color(white);
   border-radius: rem(8px);
@@ -93,9 +96,15 @@
     }
   }
   &__bot {
+    
+  }
+  &__bot-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+  &__bot-text {
+    margin-bottom: rem(12px);
   }
   &__col {}
   &__count {
@@ -157,10 +166,10 @@
     margin-bottom: rem(4px);
 
     color: color(gray);
-    @include fsl(14px, 110%);
+    @include fsl(14px, 140%);
   }
   &__text {
-    @include fsl(14px, 110%);
+    @include fsl(14px, 140%);
   }
   &__price {
     font-weight: 500;
@@ -220,6 +229,13 @@
     margin-bottom: rem(16px);
 
     @include fsl(14px, 140%);
+  }
+
+  &__id {
+    margin: rem(24px) 0;
+    @media #{media("<")} {
+      margin: rem(12px) 0;
+    }
   }
 }
 

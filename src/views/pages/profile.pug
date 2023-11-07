@@ -23,10 +23,7 @@ block content
                   .profile-page__caption 
                     |13 Ноября 1987
                 .profile-page__col
-                  .section__label 
-                    |Номер договора
-                  .profile-page__copy 
-                    +copy
+                  +copy
               .profile-page__top-inner
                 .profile-page__row.center 
                   .profile-page__col
@@ -42,15 +39,18 @@ block content
               .section__heading 
                 |Дополнительная информация
               .profile-page__block-grid 
-                - for (i = 0; i < 2; i++)
-                  .profile-page__block-item 
-                    .section__label 
-                      |Телефон
-                    .profile-page__text 
-                      |+7 (990) 876-32-21
-                    if (i > 0)
-                      .profile-page__button 
-                        |Изменить
+                .profile-page__block-item 
+                  .section__label 
+                    |Телефон
+                  .profile-page__text 
+                    |+7 (990) 876-32-21
+                .profile-page__block-item 
+                  .section__label 
+                    |Дополнительный телефон
+                  .profile-page__text 
+                    |+7 (990) 432-21-88
+                  .profile-page__button 
+                    |Изменить
                 .profile-page__block-item 
                   .section__label 
                     |Эл. почта
@@ -71,7 +71,7 @@ block content
                     .profile-page__block-heading 
                       |Изменение пароля
                     .section__label.default
-                      |Последня смена пароля: 01.09.2021 18:19:32
+                      |Последняя смена пароля: 01.09.2021 18:19:32
                   .profile-page__button 
                     |Изменить
                 .profile-page__block-item 
@@ -81,6 +81,6 @@ block content
                     .profile-page__block-heading 
                       |Настройка рассылок
                     .section__label.default
-                      |CMC, Email,Telegram
+                      |CMC, Email, Telegram
                   .profile-page__button 
-                    |Изменить
+                    |Настроить

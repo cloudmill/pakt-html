@@ -22,24 +22,29 @@ block content
                 var ddata = [
                   {
                     title: 'Интернет',
-                    icon: "globe"
+                    icon: "globe",
+                    id: true,
                   },
                   {
                     title: "Телевидение",
-                    icon: "tv"
+                    icon: "tv",
+                    id: true,
                   },
                   {
                     title: "Телефония",
-                    icon: "call"
+                    icon: "call",
+                    caption: true,
                   },
                   {
                     title: "Видеонаблюдение",
                     icon: "record",
-                    isRefresh: true
+                    isRefresh: true,
+                    noPrice: true,
+                    caption: true,
                   },
                 ]
               each item in ddata
-                .service-card.service-card--big
+                a.service-card.service-card--big(href="#") 
                   .service-card__container 
                     .service-card__top
                       .service-card__inner
@@ -57,6 +62,9 @@ block content
                           |Активна
                       .service-card__title 
                         |#{item.title}
+                      if (item.id)
+                        .service-card__id 
+                          +copy-second
                       ul.service-card__list 
                         if (item.isRefresh)
                           li.service-card__item 
@@ -75,20 +83,26 @@ block content
                               |The Best / 100 МБ
                           li.service-card__item 
                             .service-card__label
-                              |Абонимент до:
+                              |Абонемент до
                             .service-card__text 
                               |31.10.21
-                    .service-card__bot 
-                      .service-card__col
-                        .service-card__label
-                          |Абонентская плата
-                        .service-card__price 
-                          |3 900 ₽ / 12 мес.
-                      .service-card__col
-                        .service-card__settings 
-                          +settings-svg
+                    .service-card__bot
+                      if (item.caption)
+                        .service-card__bot-text 
+                          .section__label 
+                            |Оплата вĸлючена в ĸвитанцию ЖКУ
+                      .service-card__bot-row
+                        .service-card__col
+                          if (!item.noPrice)
+                            .service-card__label
+                              |Абонентская плата
+                            .service-card__price 
+                              |3 900 ₽/12 мес
+                        .service-card__col
+                          .service-card__settings 
+                            +settings-svg
           .services-page__block(data-tabs-block='')
-            .service-grid.service-grid--alt
+            .service-grid
               -
                 var ddata = [
                   {
@@ -117,7 +131,7 @@ block content
                   },
                 ]
               each item, i in ddata
-                .service-card(class=(i == 0 ? 'service-card--alt' : null))
+                a.service-card(class=(i == 0 ? 'service-card--alt' : null) href="#")
                   .service-card__container 
                     .service-card__top
                       .service-card__icon
@@ -143,18 +157,21 @@ block content
                               |Умный домофон
                             .service-card__tooltip-text 
                               |Удаленный доступ через мобильное приложение к системам контроля безопасности вашего дома 
-                            a.service-card__link(href="#")
-                              |Более подробно на сайте 
+                            object
+                              a.service-card__link(href="#")
+                                |Более подробно на сайте 
                     .service-card__bot 
-                      .service-card__col
-                        .service-card__count 
-                          |6 тарифов
-                      .service-card__col
-                        a.service-card__btn(href="#") 
-                          |Смотреть тарифы
+                      .service-card__bot-row
+                        .service-card__col
+                          .service-card__count 
+                            |6 тарифов
+                        .service-card__col
+                          object
+                            a.service-card__btn(href="#") 
+                              |Смотреть тарифы
           .services-page__block(data-tabs-block='')
             h3.section__title 
-              |Специальные акции и предложения
+              |Специальные акции и&nbsp;предложения
             .services-page__categories 
               .categories
                 each item, i in ['Все (6)', 'Интернет (1)', 'Телевидение (4)', 'Онлайн ТВ', 'Телефония (1)', 'Облачное видеонаблюдение REC (3)', ]
@@ -175,7 +192,7 @@ block content
             .services-page__list 
               .services-page__item
                 .services-page__item-heading 
-                  |Тарифы
+                  |Интернет
                 .services-page__item-grid 
                   - for (i = 0; i < 7; i++)
                     .services-page__card

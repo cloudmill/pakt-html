@@ -463,6 +463,17 @@
     align-items: center;
 
     cursor: pointer;
+
+    &:hover {
+      #{$comp}__list-svg {
+        path {
+          fill: color(blue);
+        }
+      }
+      #{$comp}__list-text {
+        color: color(blue);
+      }
+    }
   }
   &__list-icon {
     margin-right: rem(16px);
@@ -473,9 +484,14 @@
   &__list-svg {
     width: rem(24px);
     height: rem(24px);
+
+    path {
+      transition: $transition;
+    }
   }
   &__list-text {
     font-weight: 500;
+    transition: $transition;
     @include fsl(18px, 140%);
     @media #{media("<")} {
       @include fsl(16px);

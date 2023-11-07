@@ -24,12 +24,26 @@ block content
                 .partners-page__heading 
                   |Данные абонента 
               .partners-page__part-grid 
-                each item in ['Юдина Валентина Викторовна', '0987654321', '+7 (990) 876-32-21', 'г. Санкт-Петербург, ул. Оптикова 37 к1, кв 239']
-                  .partners-page__part-item 
-                    .section__label 
-                      |ФИО
-                    .partners-page__part-text 
-                      |#{item}
+                .partners-page__part-item 
+                  .section__label 
+                    |ФИО
+                  .partners-page__part-text 
+                    |Юдина Валентина Викторовна
+                .partners-page__part-item 
+                  .section__label 
+                    |Номер договора
+                  .partners-page__part-text 
+                    |0987654321
+                .partners-page__part-item 
+                  .section__label 
+                    |Номер телефона
+                  .partners-page__part-text 
+                    |+7 (990) 876-32-21
+                .partners-page__part-item 
+                  .section__label 
+                    |Адрес подключения
+                  .partners-page__part-text 
+                    |г. Санкт-Петербург, ул. Оптикова 37 к1, кв 239
               .partners-page__part-data 
                 .partners-page__heading 
                   |Для этого:
@@ -37,9 +51,9 @@ block content
                   +input-second(type='text' placeholder='Номер договора' data-parsley-contract=''  data-input-number='')
               .partners-page__part-bot 
                 .partners-page__button 
-                  button.button.button--small 
+                  button.button.button--small.button--small--alt
                     |Отправить
-    //- section.section.section--first-panel.partners-page__section.white
+    section.section.section--first-panel.partners-page__section.white
       .container
         .partners-page__part
           .partners-page__part-container 

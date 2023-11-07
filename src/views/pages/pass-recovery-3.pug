@@ -11,7 +11,7 @@ block content
     .login-page__container 
       a.login-page__img(href="#")
         .login-page__logo.login-page__logo--alt
-          +picture('logo.png')
+          +logo-svg
       form.login-page__modal(action="/" data-form='success')
         .login-page__form-title.center
           |Восстановление пароля
@@ -31,7 +31,7 @@ block content
             data-parsley-equalto="#password"
           )
         ul.login-page__list
-          each item in ['Пароль должен состоять минимум из 6 символов', 'Пароль не должен состоять из повторяющейся буквы или цифры', 'Пароль должен содержать только заглавные и строчные буквы, а также цифры', 'Пароль не должен содержать спецсимволы', ]
+          each item in ['Пароль должен состоять минимум из 6 символов', 'Пароль должен содержать только заглавные и строчные буквы, а также цифры', 'Пароль не должен содержать спецсимволы', 'Пароль не должен состоять из повторяющейся буквы или цифры',]
             li.login-page__list-item 
               |#{item}
         .login-page__form-btn 

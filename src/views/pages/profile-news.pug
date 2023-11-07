@@ -18,7 +18,7 @@ block content
           .announce__icon 
             +hint-svg.announce__svg 
           .announce__text 
-            |Изменение настроек возможно только в случае валидного и подтвержденного телефона/адреса электронной почты #[br] или через КЦ по телефону 595-81-21
+            |Изменение настроек возможно только в случае валидного и подтвержденного телефона/адреса электронной почты&nbsp;#[br] или через КЦ по телефону 595-81-21
         .profile-page__inner
           .section__container.small
             .profile-page__container.profile-page__news(data-news='')
@@ -51,7 +51,7 @@ block content
                         +arrow-svg.accordion__svg
                     .accordion__body(data-accordion-dropdown='')
                       .profile-page__news-list
-                        each item in ['уведомления об операциях в ЛК', 'изменение пароля', 'о приближении нулевого баланса', 'напоминание за сутки об окончании обещанного платежа	', ] 
+                        each item in ['уведомления об операциях в ЛК', 'изменение пароля', 'о приближении нулевого баланса', 'напоминание за сутки об окончании обещанного платежа', 'ежемесячный счет	', 'рассылка СП и Акций', 'подписка на новости сайта' ] 
                           .profile-page__news-item
                             |#{item}
                 .profile-page__news-bot 

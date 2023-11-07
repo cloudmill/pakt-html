@@ -4,6 +4,7 @@ extends ../layouts/secondary
 
 block header
 
+block feedback
 
 
 block content
@@ -11,7 +12,7 @@ block content
     .login-page__container 
       a.login-page__img(href="#")
         .login-page__logo.login-page__logo--alt 
-          +picture('logo.png')
+          +logo-svg
       .payment-page__container
         form.payment-page__modal(action="/") 
           .payment-page__modal-title 

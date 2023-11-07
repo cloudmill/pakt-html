@@ -7,6 +7,10 @@
     
   }
 
+  &__tabs {
+    display: flex;
+  }
+
   &__container {
     padding: rem(48px) rem(40px);
     @media #{media("<")} {
@@ -47,6 +51,15 @@
     }
     &.center {
       align-items: center;
+      @media #{media("<")} {
+        display: block;
+
+        #{$comp}__col {
+          &:not(:first-child) {
+            margin-top: rem(15px);
+          }
+        }
+      }
     }
   }
 
@@ -74,12 +87,14 @@
   &__btn {
     width: rem(212px);
     @media #{media("<")} {
-      display: none;
+      width: rem(300px);
     }
-
+    @media #{media("<", m)} {
+      width: 100%;
+    }
+  
     &.alt {
       @media #{media("<")} {
-        display: block;
         width: rem(188px);
       }
       @media #{media("<", m)} {
@@ -110,6 +125,7 @@
       grid-template-columns: repeat(2, 1fr);
     }
     @media #{media("<", m)} {
+      margin-top: rem(32px);
       grid-template-columns: 1fr;
     }
     display: grid;
@@ -122,9 +138,14 @@
     }
   }
   &__block-label {
-    margin-top: 0;
+    margin-bottom: 0;
     margin-left: rem(8px);
+    @media #{media("<", m)} {
+      margin-left: 0;
+      margin-top: rem(8px);
 
+      display: block;
+    }
     display: inline-block;
   }
   &__block-wrapper {
@@ -216,6 +237,7 @@
 
       min-height: rem(130px);
     }
+    height: 100%;
     min-height: rem(160px);
     display: flex;
     flex-direction: column;
@@ -261,6 +283,10 @@
 
   &__heading {
     margin-bottom: rem(30px);
+    @media #{media("<")} {
+      margin-bottom: rem(20px);
+      max-width: rem(240px);
+    }
   }
 
   &__list {

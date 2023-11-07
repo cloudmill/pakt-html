@@ -14,12 +14,13 @@ block content
         |Сопутствующие документы
     section.section.section--first-panel(data-real-tabs='')
       .container
-        .sections
-          .sections__list 
-            .sections__tab.active(data-tabs-item='')
-              |Счета
-            .sections__tab(data-tabs-item='') 
-              |Договор
+        .profile-page__tabs
+          .sections
+            .sections__list 
+              .sections__tab.active(data-tabs-item='')
+                |Основные
+              .sections__tab(data-tabs-item='') 
+                |Прочие
         .profile-page__inner
           .profile-page__wrapper.active(data-tabs-block='')
             .profile-page__select 
@@ -43,6 +44,8 @@ block content
               .profile-page__card-link
                 |Показать еще 
           .profile-page__wrapper(data-tabs-block='')
+            .profile-page__select 
+              +select(options=['2023 год', '2022 год', '2021 год', '2020 год', '2019 год'])
             .profile-page__grid 
               - for (i = 0; i < 2; i++)
                 .profile-page__card

@@ -167,14 +167,24 @@
   position: relative;
   z-index: 0;
   padding-right: rem(84px);
-
+  @media #{media("<")} {
+    padding: 0 rem(45px);
+  }
   height: rem(48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   background-color: color(blue);
 
   &__text {
     text-align: center;
     color: color(white);
+    font-weight: 500;
+    @include fsl(12px, 160%);
+    @media #{media("<")} {
+      @include fsl(9px);
+    }
   }
 
   &__icon {
@@ -183,7 +193,9 @@
     top: 50%;
     right: rem(40px);
     transform: translateY(-50%);
-
+    @media #{media("<")} {
+      right: rem(15px);
+    }
     display: flex;
     align-items: center;
 

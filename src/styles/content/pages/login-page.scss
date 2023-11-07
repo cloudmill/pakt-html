@@ -33,10 +33,16 @@
       align-items: center;
       justify-content: center;
       @media #{media("<")} {
+        padding-top: rem(300px);
+        
         width: 100%;
         min-height: 100vh;
+        align-items: flex-start;
       }
+      @media #{media("<", m)} {
+        padding-top: rem(120px);
 
+      }
       background-color: color(white);
     }
   }
@@ -48,22 +54,25 @@
       top: rem(16px);
       left: rem(16px);
 
-      width: rem(49px);
-      height: rem(32px);
+      // width: rem(42px);
+      // height: rem(24px);
     }
-    width: rem(78px);
-    height: rem(36px);
+    // width: rem(63px);
+    // height: rem(36px);
+
+    svg {
+      width: rem(63px);
+      height: rem(36px);
+
+      @media #{media("<")} {
+        width: rem(42px);
+      height: rem(24px);
+      }
+    }
 
     &--alt {
       @media #{media("<")} {
         position: static;
-
-        width: rem(78px);
-        height: rem(38px);
-      }
-      @media #{media("<", m)} {
-        width: rem(50px);
-        height: rem(24px);
       }
     }
   }
@@ -87,12 +96,12 @@
       position: absolute;
       z-index: 1;
       left: 50%;
-      bottom: rem(144px);
+      bottom: rem(26px);
       transform: translateX(-50%);
     }
-    @media #{media("<", m)} {
-      bottom: rem(100px);
-    }
+    // @media #{media("<", m)} {
+    //   bottom: rem(100px);
+    // }
     display: flex;
     align-items: center;
     justify-content: space-between;
