@@ -15,6 +15,14 @@
     align-items: center;
 
     cursor: pointer;
+
+    &.alt {
+      @media #{media("<")} {
+        right: 0;
+        top: auto;
+        bottom: calc(100% + #{rem(8px)});
+      }
+    }
   }
 
   &__svg {
@@ -361,6 +369,97 @@
   }
 }
 
+.change-modal {
+
+  width: rem(450px);
+  @media #{media("<")} {
+    width: rem(328px);
+  }
+  @media #{media("<", s)} {
+    width: calc(100% - #{rem(32px)});
+  }
+
+  background-color: color(white);
+
+  &__container {
+    padding: rem(56px) rem(32px) rem(32px);
+    @media #{media("<")} {
+      padding: rem(40px) rem(32px);
+    }
+  }
+
+  &__form {
+    margin-top: rem(36px);
+    @media #{media("<")} {
+      margin-top: rem(24px);
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &__inner {
+    margin-top: rem(35px);
+    @media #{media("<")} {
+      margin-top: rem(20px);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    @media #{media("<")} {
+      display: block;
+    }
+  }
+
+  &__item {
+    width: 100%;
+
+    &:not(:first-child) {
+      margin-left: rem(16px);
+    }
+  }
+
+  &__response {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__text {
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    @media #{media("<")} {
+      @include fsl(14px, 140%);
+    }
+    a {
+      color: color(blue);
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    width: rem(185px);
+  }
+
+  &__caption {
+    margin-top: rem(67px);
+    @media #{media("<")} {
+      margin-top: rem(20px);
+      @include fsl(12px);
+    }
+    font-weight: 400;
+    text-align: center;
+    color: color(gray);
+    @include fsl(14px, 160%);
+  }
+}
+
 .feedback-modal {
   $comp: &;
   position: absolute;
@@ -558,9 +657,9 @@
     text-decoration: underline;
   }
   &__contacts-btn {
-    width: rem(250px);
+    width: rem(249px);
     @media #{media("<")} {
-      width: rem(200px);
+      width: rem(210px);
     }
   }
   &__contacts-bot {
@@ -673,6 +772,9 @@
     display: block;
     text-decoration: underline;
     // text-align: center;
+    @media #{media("<")} {
+      display: inline;
+    }
   }
   &__call-bot {}
   &__call-item {

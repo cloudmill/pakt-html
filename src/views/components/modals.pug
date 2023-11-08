@@ -258,4 +258,28 @@ mixin feedback-modal
             a.feedback-modal__contacts-icon(href="#") 
               +yt-svg.feedback-modal__contacts-svg
 
-
+mixin change-mail-modal 
+  .change-modal.modal(data-fancy-modal='change')
+    .change-modal__container(data-response-container='')
+      .modal__title 
+        |Изменить адрес email
+      form.change-modal__form(action="/" data-form='change-email')
+        +input(type = 'email' placeholder = 'Эл. почта')
+        .change-modal__btns.change-modal__inner
+          .change-modal__item 
+            button.button
+              |Продолжить
+          .change-modal__item 
+            .button.button--outline(data-fancybox-close='')
+              |Отменить
+      .change-modal__response(data-response='change-email')
+        .change-modal__text 
+          |На адрес #[a(href="mailto:valentinavi@gmail.com")  valentinavi@gmail.com] отправлено письмо с подтверждением. Пройдите по ссылке в письме для подтверждения изменения адреса эл.почты
+        .change-modal__inner 
+          .change-modal__button 
+            .button(data-fancybox-close='')
+              |Готово
+      .change-modal__caption 
+        |Если у вас отсутствует доступ к номеру или почте, обратитесь в КЦ по тел.: 8 (812) 595-81-21
+    .modal__icon.alt(data-fancybox-close='')
+      +cross-alt-svg.modal__svg.small

@@ -36,21 +36,22 @@ block content
               - for (i = 0; i < 3; i++)
                 .notification-page__item
                   .notification-page__date
-                    .notification-page__date-icon.red
+                    .notification-page__date-icon(class=(i!==0 ? 'red' : ''))
                     .notification-page__date-text 
                       |Сегодня, 12:08 
                   .notification-page__item-heading 
                     |Необходимо погасить задолженность по условному платежу
                   .notification-page__item-text 
                     |Краткий текст уведомления...
-                  .notification-page__item-label 
-                    .label.alt
-                      |Системное уведомление
-                  .notification-page__item-btn
-                    .notification-page__item-icon 
-                      +envelope-svg.notification-page__item-svg 
-                    .notification-page__item-caption 
-                      |Отметить как непрочитанные
+                  if (i!==0)
+                    .notification-page__item-label 
+                      .label.alt
+                        |Системное уведомление
+                    .notification-page__item-btn
+                      .notification-page__item-icon 
+                        +envelope-svg.notification-page__item-svg 
+                      .notification-page__item-caption 
+                        |Отметить как непрочитанные
             .notification-page__bot
               .notification-page__step
                 .notification-page__step-btn 

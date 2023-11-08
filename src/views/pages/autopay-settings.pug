@@ -1,0 +1,63 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 3
+
+block content
+  .payment-page.payment-page--page
+    .panel 
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
+          |Назад
+      .panel__text 
+        |Настройка автоплатежа
+    section.section.section--first-panel(data-real-tabs='')
+      .container
+        .payment-page__row
+          .payment-page__col.autopay
+            .section__container.payment-page__column
+              .payment-page__wrapper
+                .payment-page__column-top
+                  h2.section__title 
+                    |Настройка автоплатежа
+                  .autopay__copy 
+                    .payment-page__label 
+                      |Номер договора
+                    .payment-page__refill-copy 
+                      +copy
+                  .autopay__bot 
+                    .autopay__title 
+                      |Выбор даты и суммы списания
+                    .autopay__grid 
+                      .autopay__item 
+                        //- +input-second(type='text' placeholder='День пополнения')
+                        .input-wrapper.input-wrapper--secondary(data-input-parent='')
+                          .input-wrapper__placeholder.tooltip
+                            |День пополнения
+                            span.tooltip__icon(data-tooltip-icon='')
+                              +tooltip-svg.tooltip__svg 
+                            .tooltip__container 
+                              |Число месяца, при наступлении которого счёт будет автоматически пополняться
+                          input.input(data-input='' type='text' required)
+                      .autopay__item 
+                        +input-second(type='text' placeholder='Сумма списания')
+          .payment-page__col
+            .section__container.payment-page__column
+              .payment-page__pay
+                .payment-page__pay-row 
+                  .payment-page__pay-heading 
+                    |Сумма платежа:
+                  .payment-page__pay-price 
+                    |500,00 ₽
+                .payment-page__pay-offset
+                  +input-second(type='text' placeholder='Дата списания')
+                .payment-page__pay-offset
+                  .payment-page__pay-heading 
+                    |Адрес отправки чека
+                .payment-page__pay-offset
+                  +input-second(type='text' placeholder='Способ доставки чека')
+                .payment-page__pay-offset
+                  button.button
+                    |Подключить автоплатеж
