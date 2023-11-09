@@ -11,9 +11,9 @@
   box-shadow: 0px 28px 68px 0px rgba(0, 31, 56, 0.04);
 
   &:hover {
-    // #{$comp}__btn {
-    //   border-color: color(blue);
-    // }
+    #{$comp}__btn {
+      border-color: color(blue);
+    }
   }
 
   &--alt {
@@ -34,6 +34,12 @@
       border-color: rgba(color(white), 0.2);
 
       &:hover {
+        border-color: color(white);
+      }
+    }
+
+    &:hover {
+      #{$comp}__btn {
         border-color: color(white);
       }
     }
@@ -253,7 +259,7 @@
   row-gap: rem(16px);
 
   &--alt {
-    @media #{media("<", m)} {
+    @media #{media("<")} {
       margin-left: rem(-20px);
       padding: 0 $col-pad-m;
       
@@ -265,6 +271,11 @@
 
       .service-card {
         flex-shrink: 0;
+        width: rem(297px);
+      }
+    }
+    @media #{media("<", m)} {
+      .service-card {
         width: rem(272px);
       }
     }

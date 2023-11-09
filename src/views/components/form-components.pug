@@ -6,7 +6,7 @@ mixin input
     input.input(data-input='' required)&attributes(attributes)
 
 mixin input-second
-  .input-wrapper.input-wrapper--secondary(data-input-parent='')
+  .input-wrapper.input-wrapper--secondary(data-input-parent='' class=attributes.class)
     .input-wrapper__placeholder
       |#{attributes.placeholder}
     input.input(data-input='' required)&attributes(attributes)

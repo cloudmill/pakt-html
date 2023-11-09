@@ -53,20 +53,18 @@
       z-index: 1;
       top: rem(16px);
       left: rem(16px);
-
-      // width: rem(42px);
-      // height: rem(24px);
     }
-    // width: rem(63px);
-    // height: rem(36px);
+
+    display: flex;
 
     svg {
       width: rem(63px);
       height: rem(36px);
+      display: block;
 
       @media #{media("<")} {
         width: rem(42px);
-      height: rem(24px);
+        height: rem(24px);
       }
     }
 

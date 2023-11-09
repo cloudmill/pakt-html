@@ -19,7 +19,7 @@ button::-moz-focus-inner {border: 0;}
 html {
   // font-size: $fs;
   @media (min-width: 320px) {
-    font-size: getVw($fs, 340px / 100);
+    font-size: getVw($fs, 375px / 100);
   }
   @each $breakpoint in (375px, 576px, 768px, 1024px) {
     @media (min-width: #{$breakpoint}) {

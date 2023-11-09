@@ -20,6 +20,13 @@
     margin-left: rem(4px);
 
     display: inline-flex;
+
+    &--mobile {
+      @media #{media("<")} {
+        margin-top: rem(8px);
+        margin-left: 0;
+      }
+    }
   }
 
   &.alt {

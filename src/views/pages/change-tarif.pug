@@ -1,0 +1,161 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 1
+
+block content
+  .services-page.connected-page.connected-page--default
+    .panel
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
+          |Интернет
+      .panel__text 
+        |Смена тарифа
+    section.section.section--first-panel
+      .container
+        .section__container.services-page__change(data-tarif='')
+          .services-page__change-top 
+            .section__title 
+              |Смена тарифа услуги Интернет
+          .services-page__change-list 
+            .services-page__change-item(data-tarif-item='')
+              .services-page__change-num 
+                |1
+                +service-ok-svg.services-page__change-svg
+              .services-page__change-text 
+                |Выбор тарифа
+            .services-page__change-item.locked(data-tarif-item='')
+              .services-page__change-num 
+                |2
+                +service-ok-svg.services-page__change-svg
+              .services-page__change-text 
+                |Дата изменения
+            .services-page__change-item.locked(data-tarif-item='')
+              .services-page__change-num 
+                |3
+                +service-ok-svg.services-page__change-svg
+              .services-page__change-text 
+                |Информация о заявке
+          .services-page__change-body 
+            .services-page__change-block.active(data-tarif-block='')
+              .connected-page__accordion-heading 
+                |Текущий тарифный план
+              .services-page__delay-wrapper.connected-page__inner 
+                .services-page__change-grid 
+                  .services-page__change-wrapper 
+                    .services-page__card-label 
+                      |Тариф
+                    .connected-page__text 
+                      |Домашний интернет до 100 Мбит/с
+                  .services-page__change-wrapper 
+                    .services-page__card-label 
+                      |Абонентская плата
+                    .connected-page__text 
+                      |500 ₽/мес
+              .services-page__delay-wrapper.connected-page__inner 
+                .services-page__change-grid 
+                  .services-page__change-wrapper 
+                    .section__label.default
+                      |Доступные тарифы
+                    .services-page__change-inner 
+                      +select(options=['30 Мбит - 250 ₽/мес', '30 Мбит - 250 ₽/мес', '30 Мбит - 250 ₽/мес'])
+                    .services-page__change-bot 
+                      .checkbox
+                        label.checkbox__label
+                          input.checkbox__input(type="checkbox" id='qwe' data-checkbox-payment='' checked)
+                          .checkbox__box 
+                            +check-svg.checkbox__svg
+                          .checkbox__caption 
+                            |Абонемент
+                  .services-page__change-wrapper 
+                    .services-page__delay-tooltip.tooltip.tooltip--alt
+                      .section__label.default
+                        |Подключить абонемент
+                      span.tooltip__icon(data-tooltip-icon='')
+                        +tooltip-svg.tooltip__svg 
+                      .tooltip__container 
+                        |Число месяца, при наступлении которого счёт будет
+                    .services-page__change-inner 
+                      +select(options=['30 Мбит - 250 ₽/мес', '30 Мбит - 250 ₽/мес', '30 Мбит - 250 ₽/мес'])
+                    .services-page__change-bot 
+                      .services-page__change-caption 
+                        |Я ознакомлен с правилами #[a(href="#") подключения абонементов]
+              .services-page__delay-bot.alt
+                .services-page__delay-btn
+                  a.button.button--outline.button--small.button--small--alt(href="#")
+                    |Изменить сразу
+                .services-page__delay-btn 
+                  .button.button--small.button--small--alt(data-tarif-next='')
+                    |Запланировать
+            .services-page__change-block(data-tarif-block='')
+              .connected-page__accordion-heading 
+                |Новый тарифный план
+              .services-page__delay-wrapper.connected-page__inner 
+                .services-page__change-grid 
+                  .services-page__change-wrapper 
+                    .services-page__card-label 
+                      |Абонемент
+                    .connected-page__text 
+                      |6 мес - 3 900 ₽ (30 Мбит/с)
+                  .services-page__change-wrapper 
+                    .services-page__card-label 
+                      |Абонентская плата
+                    .connected-page__text 
+                      |500 ₽/мес
+              .connected-page__inner 
+                .services-page__change-grid 
+                  .services-page__change-wrapper 
+                    .services-page__delay-tooltip.tooltip.tooltip--alt
+                      .section__label.default
+                        |Дата
+                      span.tooltip__icon(data-tooltip-icon='')
+                        +tooltip-svg.tooltip__svg 
+                      .tooltip__container 
+                        |Число месяца, при наступлении которого счёт будет
+                    .services-page__change-inner 
+                      |CALENDAR
+              .services-page__delay-bot.alt.services-page__change-offset
+                .services-page__delay-btn
+                  .button.button--outline.button--small.button--small--alt(data-fancy-button='confirm')
+                    |Отменить
+                .services-page__delay-btn 
+                  .button.button--small.button--small--alt(data-tarif-next='')
+                    |Продолжить
+            .services-page__change-block(data-tarif-block='')
+              .connected-page__accordion-heading 
+                |Проверьте данные заявки
+              .services-page__delay-wrapper.connected-page__inner 
+                .services-page__change-grid 
+                  - for (i = 0; i < 6; i++)
+                    .services-page__change-wrapper 
+                      .services-page__card-label 
+                        |Абонемент
+                      .connected-page__text 
+                        |6 мес - 3 900 ₽ (30 Мбит/с)
+                .connected-page__inner
+                  .announce
+                    .announce__icon 
+                      +hint-svg.announce__svg 
+                    .announce__text 
+                      |Списание абонентской платы по  выбранному ТП начнётся с даты  запуска нового тарифа
+              .services-page__delay-bot.alt
+                .services-page__delay-btn
+                  .button.button--outline.button--small.button--small--alt
+                    |Отменить
+                .services-page__delay-btn 
+                  .button.button--wide.button--small.button--small--alt(data-tarif-next='')
+                    |Подтвердить смену
+            .services-page__change-block(data-tarif-block='')
+              .partners-page__part
+                .partners-page__part-container.alt
+                  .partners-page__part-icon 
+                    +file-alt-svg.partners-page__part-svg 
+                  .section__heading.partners-page__part-title 
+                    |Заявка отправлена. С вами свяжется оператор в указанное время.
+                  .partners-page__part-btn 
+                    a.button(href="#")
+                      |Вернуться к услугам
+
+  +confirm-modal

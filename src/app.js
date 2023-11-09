@@ -87,3 +87,27 @@ import "./scripts/accordion";
     }
   })
 }
+
+// tarif change
+{
+  document.addEventListener('DOMContentLoaded', () => {
+    const tarifPage = document.querySelector('[data-tarif]')
+
+    if (tarifPage) {
+      const buttons = tarifPage.querySelectorAll('[data-tarif-next]')
+      const blocks = tarifPage.querySelectorAll('[data-tarif-block]')
+      const items = tarifPage.querySelectorAll('[data-tarif-item]')
+
+      buttons.forEach((item, i) => {
+        item.onclick = function() {
+          if (i+1 !== items.length) {
+            items[i+1].classList.remove('locked')
+          }
+          items[i].classList.add('active')
+          blocks[i].classList.remove('active')
+          blocks[i+1].classList.add('active')
+        }
+      })
+    }
+  })
+}

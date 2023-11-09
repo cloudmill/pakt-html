@@ -40,9 +40,6 @@ export function fancyOpen(btn) {
         dateModal.classList.remove('active')
       }
       break;
-    case 'container':
-      options.animationEffect = 'right-left'
-      break;
     default:
       options = {
         ...defaults,

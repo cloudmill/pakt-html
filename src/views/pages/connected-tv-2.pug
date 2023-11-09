@@ -29,11 +29,6 @@ block content
                   .connected-page__icon 
                     +tv-svg.connected-page__svg 
                 .connected-page__top-col.tooltip
-                  .connected-page__contract(data-tooltip-icon='')
-                    .connected-page__contract-icon
-                      +contract-svg.connected-page__contract-svg 
-                    .connected-page__contract-text 
-                      |0987654321
                   .tooltip__container 
                     |Договор
                   .connected-page__top-label
@@ -43,9 +38,20 @@ block content
                 .connected-page__head-col
                   h3.section__title 
                     |Телевидение
-                .connected-page__head-col
-                  .section__label.default
-                    |Оплата включена в квитанцию ЖКУ
+              .connected-page__inner 
+                .connected-page__head
+                  .connected-page__head-col
+                    .connected-page__flex.tooltip
+                      .connected-page__contract(data-tooltip-icon='')
+                        .connected-page__contract-icon
+                          +contract-svg.connected-page__contract-svg 
+                        .connected-page__contract-text 
+                          |0987654321
+                      .tooltip__container 
+                        |Договор
+                  .connected-page__head-col
+                    .section__label.default
+                      |Оплата включена в квитанцию ЖКУ
               .connected-page__inner 
                 .connected-page__row
                   .connected-page__row-col
@@ -56,8 +62,6 @@ block content
                         |Пакет «Базовый» индивидуальный договор»
                         span.tooltip__icon(data-tooltip-icon='')
                           +tooltip-svg.tooltip__svg 
-                      span.label.inline.inline--mobile
-                        |Подключен
                       .tooltip__container 
                         |Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum architecto reprehenderit sed!
                   .connected-page__row-col
@@ -101,6 +105,14 @@ block content
                         .accordion__icon 
                           +arrow-svg.accordion__svg
                       .accordion__body(data-accordion-dropdown='')
+                        .connected-page__flex.tooltip
+                          .connected-page__contract(data-tooltip-icon='')
+                            .connected-page__contract-icon
+                              +contract-svg.connected-page__contract-svg 
+                            .connected-page__contract-text 
+                              |0987654321
+                          .tooltip__container 
+                            |Договор
                         .connected-page__inner 
                           .connected-page__accordion-grid
                             - for (i = 0; i < 4; i++)
@@ -147,6 +159,14 @@ block content
                 .connected-page__inner
                   h3.section__title 
                     |Онлайн ТВ «iPakt»
+                .connected-page__flex.connected-page__inner.tooltip
+                  .connected-page__contract(data-tooltip-icon='')
+                    .connected-page__contract-icon
+                      +contract-svg.connected-page__contract-svg 
+                    .connected-page__contract-text 
+                      |0987654321
+                  .tooltip__container 
+                    |Договор
                 .connected-page__inner
                   .connected-page__accordion-grid.small
                     - for (i = 0; i < 4; i++)

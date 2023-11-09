@@ -37,7 +37,7 @@
   }
 }
 
-@mixin styled-scrollbar($scrollbar-bg: #E3E3E3, $size: 4px) {
+@mixin styled-scrollbar($scrollbar-bg: #E1E5EA, $size: 4px) {
   scrollbar-track-color: $scrollbar-bg;
   scrollbar-darkshadow-color: $scrollbar-bg;
   scrollbar-3dlight-color: $scrollbar-bg;

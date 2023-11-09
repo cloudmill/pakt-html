@@ -109,7 +109,7 @@ mixin modules-modal
 mixin service-modal 
   .modal.service-modal(data-fancy-modal='service')
     .service-modal__container 
-      .modal__title.left
+      .modal__title
         |Услуга уже подключена
       .service-modal__text 
         |По указанному Вами адресу уже подключены все выбранные Вами услуги. Если Вы хотите сменить тарифный план, перейдите на страницу Вашей услуги для выбора нового тарифа. 
@@ -283,3 +283,173 @@ mixin change-mail-modal
         |Если у вас отсутствует доступ к номеру или почте, обратитесь в КЦ по тел.: 8 (812) 595-81-21
     .modal__icon.alt(data-fancybox-close='')
       +cross-alt-svg.modal__svg.small
+
+mixin confirm-modal 
+  .confirm-modal.modal(data-fancy-modal='confirm')
+    .confirm-modal__container
+      .modal__title.confirm-modal__title
+        |У вас уже есть запланированная задача. Удалить?
+      .confirm-modal__btns 
+        .confirm-modal__item 
+          button.button.button--outline(data-fancybox-close='')
+            |Нет
+        .confirm-modal__item 
+          button.button(data-fancybox-close='')
+            |Да
+    .modal__icon.alt(data-fancybox-close='')
+      +cross-alt-svg.modal__svg.small
+
+mixin phone-modal 
+  .phone-modal.side-modal(data-fancy-modal='phone')
+    .side-modal__top 
+      .side-modal__icon(data-fancybox-close='')
+        +arrow-left-svg.side-modal__svg 
+      .side-modal__text 
+        |Телефоны служб
+    .phone-modal__container 
+      .phone-modal__item 
+        .phone-modal__text 
+          |Контактный центр
+        .phone-modal__title 
+          |8 (812) 595-81-21
+        .phone-modal__caption 
+          |Ежедневно  с 09:00 до 21:00
+      .phone-modal__item 
+        .phone-modal__text 
+          |Техническая поддержка
+        .phone-modal__title 
+          |8 (812) 595-81-22
+        .phone-modal__caption 
+          |Круглосуточно
+      .phone-modal__item 
+        .phone-modal__btn 
+          button.button.button--outline(data-fancy-button='')
+            |Обратный звонок
+
+mixin notification-modal
+  .notification-modal.side-modal(data-fancy-modal='notification')
+    .side-modal__top 
+      .side-modal__icon(data-fancybox-close='')
+        +arrow-left-svg.side-modal__svg 
+      .side-modal__text 
+        |Уведомления
+    .notification-modal__container
+      .notification-modal__item 
+        .notification-modal__info 
+          .notification-modal__icon 
+          .notification-modal__date 
+            |Сегодня, 12:08
+        .notification-modal__title 
+          |Необходимо погасить долг по условному платежу
+        .notification-modal__text
+          |Сумма долга составляет: 500 ₽
+      .notification-modal__item 
+        .notification-modal__info 
+          .notification-modal__icon 
+          .notification-modal__date 
+            |04.10.2021, 18:47
+        .notification-modal__title 
+          |Заголовок уведомления
+        .notification-modal__text
+          |Краткий текст уведомления
+      .notification-modal__bot 
+        .notification-modal__bot-text 
+          |Чтобы посмотреть все уведомления, перейдите в раздел 
+        .notification-modal__wrapper 
+          a.notification-modal__link(href="#") 
+            |«Уведомления»
+    .notification-modal__empty
+      .notification-modal__empty-icon 
+        +blue-bell-svg.notification-modal__empty-svg 
+      .notification-modal__empty-title 
+        |У Вас нет новых уведомлений
+      .notification-modal__bot-text 
+        |Чтобы посмотреть все уведомления, перейдите в раздел 
+      .notification-modal__wrapper 
+        a.notification-modal__link(href="#") 
+          |«Уведомления»
+
+mixin profile-modal
+  .profile-modal.side-modal(data-fancy-modal='profile')
+    .side-modal__top 
+      .side-modal__icon(data-fancybox-close='')
+        +arrow-left-svg.side-modal__svg 
+      .side-modal__text 
+        |Профиль
+    .profile-modal__inner
+      .profile-modal__top 
+        .profile-modal__title 
+          |Валентина Викторовна
+        .profile-modal__row 
+          .profile-modal__col
+            .profile-modal__text 
+              |Ваш баланс
+            .profile-modal__balance
+              |978,56 ₽
+          .profile-modal__col
+            a.profile-modal__link(href="#")
+              |Пополнить
+      .profile-modal__body 
+        .profile-modal__item 
+          a.profile-modal__item-link(href="#") 
+            .profile-modal__icon 
+              +user-svg.profile-modal__svg 
+            .profile-modal__item-text 
+              |Управление профилем
+        .profile-modal__item 
+          a.profile-modal__item-link(href="#") 
+            .profile-modal__icon 
+              +exit-svg.profile-modal__svg 
+            .profile-modal__item-text 
+              |Выйти
+
+mixin menu-modal 
+  .menu-modal(data-fancy-modal='menu')
+    .menu-modal__top  
+      .menu-modal__icon(data-fancybox-close='')
+        +cross-svg.menu-modal__svg 
+    .sidebar 
+      .sidebar__container 
+        .sidebar__top
+          nav.sidebar__nav
+            .sidebar__item
+              a.sidebar__item-link.active(href="#")
+                .sidebar__item-icon 
+                  +home-svg.sidebar__item-svg 
+                .sidebar__item-text 
+                  |Мой ПАКТ
+            .sidebar__item
+              a.sidebar__item-link(href="#")
+                .sidebar__item-icon 
+                  +services-svg.sidebar__item-svg 
+                .sidebar__item-text 
+                  |Услуги
+            .sidebar__item
+              a.sidebar__item-link(href="#")
+                .sidebar__item-icon 
+                  +pie-svg.sidebar__item-svg 
+                .sidebar__item-text 
+                  |Контроль расходов
+            .sidebar__item
+              a.sidebar__item-link(href="#")
+                .sidebar__item-icon 
+                  +card-svg.sidebar__item-svg 
+                .sidebar__item-text 
+                  |Оплата
+          ul.sidebar__list
+            each item, i in ['Новости', 'Партнерские программы', 'Полезная информация', ]
+              li.sidebar__list-item 
+                a.sidebar__link(href="#")
+                  |#{item} 
+        .sidebar__bot
+          a.sidebar__block(href="#") 
+            .sidebar__block-item
+              .sidebar__block-title 
+                |Интернет ускорение до 700 Мбит/с
+              .sidebar__block-text 
+                |Скорость взлетает, цена - тормозит
+            .sidebar__block-item
+              .sidebar__block-icon 
+                +big-arrow-svg.sidebar__block-svg
+
+  

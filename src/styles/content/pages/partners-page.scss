@@ -250,6 +250,24 @@
     border-radius: rem(8px);
     background: color(white);
     box-shadow: 0px 28px 68px 0px rgba(0, 31, 56, 0.04);
+
+    &.alt {
+      margin-top: 0;
+      
+      height: rem(400px);
+      @media #{media("<")} {
+        height: rem(300px);
+      }
+      box-shadow: none;
+
+      #{$comp}__part-title {
+        max-width: rem(437px);
+        text-align: center;
+        @media #{media("<")} {
+          max-width: rem(300px);
+        }
+      }
+    }
   }
   &__part-icon {
     margin-bottom: rem(24px);

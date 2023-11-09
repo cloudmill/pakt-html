@@ -72,6 +72,61 @@ block content
                 |Специальные предложения
         .main-page__services-inner
           .block.active(data-tabs-block='')
+            .service-grid
+              -
+                var ddata = [
+                  {
+                    title: 'Интернет',
+                    icon: "globe"
+                  },
+                  {
+                    title: "Телевидение",
+                    icon: "tv"
+                  },
+                  {
+                    title: "Телефония",
+                    icon: "call"
+                  },
+                ]
+              each item in ddata
+                a.service-card.service-card--big(href="#") 
+                  .service-card__container 
+                    .service-card__top
+                      .service-card__inner
+                        .service-card__icon.default
+                          case item.icon 
+                            when 'globe'
+                              +globe-svg.service-card__svg 
+                            when 'tv'
+                              +tv-svg.service-card__svg 
+                            when 'call'
+                              +call-svg.service-card__svg 
+                        .service-card__status 
+                          |Активна
+                      .service-card__title 
+                        |#{item.title}
+                      ul.service-card__list 
+                        li.service-card__item 
+                          .service-card__label
+                            |Тариф
+                          .service-card__text 
+                            |The Best / 100 МБ
+                        li.service-card__item 
+                          .service-card__label
+                            |Абонимент до:
+                          .service-card__text 
+                            |31.10.21
+                    .service-card__bot 
+                      .service-card__bot-row
+                        .service-card__col
+                          .service-card__label
+                            |Абонентская плата
+                          .service-card__price 
+                            |3 900 ₽ / 12 мес.
+                        .service-card__col
+                          .service-card__settings 
+                            +settings-svg
+          .block(data-tabs-block='')
             .service-grid.service-grid--alt
               -
                 var ddata = [
@@ -139,58 +194,3 @@ block content
                           object
                             a.service-card__btn(href="#") 
                               |Смотреть тарифы
-          .block(data-tabs-block='')
-            .service-grid
-              -
-                var ddata = [
-                  {
-                    title: 'Интернет',
-                    icon: "globe"
-                  },
-                  {
-                    title: "Телевидение",
-                    icon: "tv"
-                  },
-                  {
-                    title: "Телефония",
-                    icon: "call"
-                  },
-                ]
-              each item in ddata
-                a.service-card.service-card--big(href="#") 
-                  .service-card__container 
-                    .service-card__top
-                      .service-card__inner
-                        .service-card__icon.default
-                          case item.icon 
-                            when 'globe'
-                              +globe-svg.service-card__svg 
-                            when 'tv'
-                              +tv-svg.service-card__svg 
-                            when 'call'
-                              +call-svg.service-card__svg 
-                        .service-card__status 
-                          |Активна
-                      .service-card__title 
-                        |#{item.title}
-                      ul.service-card__list 
-                        li.service-card__item 
-                          .service-card__label
-                            |Тариф
-                          .service-card__text 
-                            |The Best / 100 МБ
-                        li.service-card__item 
-                          .service-card__label
-                            |Абонимент до:
-                          .service-card__text 
-                            |31.10.21
-                    .service-card__bot 
-                      .service-card__bot-row
-                        .service-card__col
-                          .service-card__label
-                            |Абонентская плата
-                          .service-card__price 
-                            |3 900 ₽ / 12 мес.
-                        .service-card__col
-                          .service-card__settings 
-                            +settings-svg

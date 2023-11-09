@@ -13,6 +13,7 @@
   color: color(white);
   font-weight: 600;
   @include fsl(16px, 120%);
+  white-space: nowrap;
 
   &:hover {
     background-color: color(blue-hover);
@@ -41,6 +42,12 @@
 
   &--black {
     background-color: #001F38;
+  }
+
+  &--wide {
+    @media #{media("<")} {
+      padding: 0 rem(15px);
+    }
   }
 
   &.disabled {

@@ -1,0 +1,101 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 1
+
+block content
+  .services-page.connected-page.connected-page--default
+    .panel
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
+          |Оплата
+      .panel__text 
+        |Заявление на приостановку
+    section.section.section--first-panel
+      .container
+        .section__container
+          .services-page__delay
+            h1.section__title 
+              |Заявление на&nbsp;приостановку
+            .connected-page__inner 
+              .connected-page__accordion-heading 
+                |Данные абонента 
+              .connected-page__inner 
+                .services-page__delay-wrapper 
+                  .services-page__delay-inner 
+                    .services-page__delay-item 
+                      .services-page__card-label 
+                        |Услуга
+                      .connected-page__text 
+                        |Название услуги
+                  .services-page__delay-inner.connected-page__inner 
+                    .services-page__delay-item 
+                      .services-page__card-label 
+                        |ФИО
+                      .connected-page__text 
+                        |Юдина Валентина Викторовна
+                    .services-page__delay-item 
+                      .services-page__card-label 
+                        |Номер договора
+                      .connected-page__text 
+                        |0987654321
+                    .services-page__delay-item 
+                      .services-page__card-label 
+                        |Номер телефона
+                      .connected-page__text 
+                        |+7 (990) 876-32-21
+                    .services-page__delay-item 
+                      .services-page__card-label 
+                        |Адрес подключения
+                      .connected-page__text 
+                        |г. Санкт-Петербург, ул. Оптикова 37 к1, кв 239
+            .connected-page__inner 
+              .connected-page__accordion-heading 
+                |Выберите дату приостановки услуг
+              .services-page__inner 
+                .services-page__delay-wrapper
+                  .services-page__delay-calendars 
+                    .services-page__delay-container 
+                      .services-page__delay-tooltip.tooltip.tooltip--alt
+                        .section__label.default
+                          |Дата запуска 
+                        span.tooltip__icon(data-tooltip-icon='')
+                          +tooltip-svg.tooltip__svg 
+                        .tooltip__container 
+                          |Число месяца, при наступлении которого счёт будет автоматически пополняться
+                      .services-page__delay-calendar 
+                        |CALENDAR
+                    .services-page__delay-container 
+                      .services-page__delay-tooltip.tooltip.tooltip--alt
+                        .section__label.default
+                          |Дата окончания 
+                        span.tooltip__icon(data-tooltip-icon='')
+                          +tooltip-svg.tooltip__svg 
+                        .tooltip__container 
+                          |Число месяца, при наступлении которого счёт будет автоматически пополняться
+                      .services-page__delay-calendar 
+                        |CALENDAR
+              .services-page__delay-bot 
+                .services-page__delay-btn 
+                  a.button.button--outline.button--small.button--small--alt(href="#")
+                    |Отменить
+                .services-page__delay-btn 
+                  .button.button--small.button--small--alt
+                    |Отправить
+              .connected-page__service-caption 
+                |Я ознакомлен с правилами #[a(href="#") подключения услуги Телефония]
+    section.section.section--first-panel.partners-page__section.white
+      .container
+        .partners-page__part
+          .partners-page__part-container 
+            .partners-page__part-icon 
+              +file-svg.partners-page__part-svg 
+            .section__heading.partners-page__part-title 
+              |Заявление поступило в обработку
+            .partners-page__part-btn 
+              a.button(href="#")
+                |Вернуться к услугам
+            .partners-page__part-caption 
+              |При возникновении вопросов обращайтесь в контактный центр по номеру:  8 (812) 595-81-21

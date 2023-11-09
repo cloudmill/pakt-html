@@ -5,7 +5,15 @@
   top: 0;
   bottom: 0;
   z-index: $header-index - 1;
+  @media #{media("<")} {
+    padding-top: rem(48px);
+    position: static;
+    
+    width: 100%;
 
+    border-right: none;
+    overflow-y: auto;
+  }
   display: block;
   width: calc(#{$col-part-d} * 2 - #{$col-gap-d} + #{$col-side-pad});
 
@@ -14,7 +22,9 @@
 
   &__container {
     padding: 0 rem(40px) rem(40px);
-
+    @media #{media("<")} {
+      padding: 0 rem(16px) rem(30px);
+    }
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -22,13 +32,13 @@
   }
 
   &__nav {
-    margin-bottom: rem(40px);
+    margin-bottom: rem(50px);
   }
 
   &__item {
 
     &:not(:first-child) {
-      margin-top: rem(32px);
+      margin-top: rem(34px);
     }
   }
   &__item-link {
@@ -93,6 +103,7 @@
     color: color(gray);
     font-weight: 500;
     transition: $transition;
+    line-height: 150%;
 
     &:hover {
       color: color(blue);
@@ -105,7 +116,12 @@
 
   &__block {
     padding: rem(27px) rem(32px) rem(32px);
-
+    @media #{media("<")} {
+      margin-top: rem(60px);
+      padding: rem(11px) rem(16px) rem(16px);
+      
+      height: rem(228px);
+    }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -113,16 +129,26 @@
 
     border: 1px solid color(borders);
     border-radius: rem(8px);
+    transition: $transition;
+
+    &:hover {
+      border-color: color(blue);
+    }
   }
   &__block-item {}
   &__block-title {
     margin-bottom: rem(8px);
-
+    @media #{media("<")} {
+      max-width: rem(216px);
+    }
     font-weight: 500;
     @include fsl(18px, 150%);
     letter-spacing: -0.01em;
   }
   &__block-text {
+    @media #{media("<")} {
+      max-width: rem(216px);
+    }
     color: color(gray);
     letter-spacing: -0.01em;
     line-height: 150%;

@@ -14,13 +14,13 @@ mixin header
               +logo-svg.header__logo-svg
           .header__col
             .header__item
-              .header__button
+              .header__button(data-fancy-button='phone')
                 +phone-svg.header__svg
             .header__item
-              .header__button
+              .header__button(data-fancy-button='notification')
                 +bell-svg.header__svg
             .header__item
-              .header__profile
+              .header__profile(data-fancy-button='profile')
                 .header__profile-text 
                   |Валентина В.
                 .header__profile-icon 
@@ -29,17 +29,17 @@ mixin header
         .header__row 
           .header__col
             .header__item.right 
-              .header__button
+              .header__button(data-fancy-button='menu')
                 +burger-svg.header__svg
             a.header__logo(href="#")
               +logo-svg.header__logo-svg
           .header__col
             .header__item
-              .header__button
+              .header__button(data-fancy-button='phone')
                 +phone-svg.header__svg
             .header__item
-              .header__button
+              .header__button(data-fancy-button='notification')
                 +bell-svg.header__svg
             .header__item
-              .header__button
+              .header__button(data-fancy-button='profile')
                 +user-svg.header__svg

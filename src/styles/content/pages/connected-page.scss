@@ -102,6 +102,10 @@
     }
   }
 
+  &__flex {
+    display: flex;
+  }
+
   &__contract {
     padding: 0 rem(8px);
 
@@ -193,9 +197,10 @@
     }
 
     &.underline {
-      padding-bottom: rem(2px);
 
-      border-bottom: 1px solid color(borders);
+      text-underline-offset: rem(4px);
+      text-decoration: underline;
+      text-decoration-color: color(borders);
     }
   }
 
@@ -474,7 +479,6 @@
       padding-bottom: rem(20px);
     }
     display: flex;
-    align-items: flex-end;
     @media #{media("<", m)} {
       display: block;
     }
@@ -508,9 +512,12 @@
   }
   &__service-icon {
     position: absolute;
-    bottom: rem(15px);
+    top: rem(31px);
     right: 0;
     // z-index: 1;
+    @media #{media("<")} {
+      top: rem(20px);
+    }
 
     display: flex;
     align-items: center;
@@ -520,7 +527,7 @@
     height: rem(24px);
   }
   &__service-selects {
-    margin-top: rem(10px);
+    margin-top: rem(11px);
 
     display: flex;
   }
@@ -548,7 +555,9 @@
 
     a {
       display: inline-block;
-
+      @media #{media("<", m)} {
+        display: inline;
+      }
       border-bottom: 1px solid #E1E5EA;
     }
   }

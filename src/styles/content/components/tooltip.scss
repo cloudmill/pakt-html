@@ -1,6 +1,12 @@
 .tooltip {
   $comp: &;
 
+  &--alt {
+    #{$comp}__icon {
+      transform: none;
+    }
+  }
+
   &__icon {
     margin-left: rem(2px);
     transform: translateY(rem(4px));

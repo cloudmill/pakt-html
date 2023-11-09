@@ -95,9 +95,11 @@
     cursor: pointer;
 
     &:hover {
-      #{$comp}__svg {
-        path {
-          fill: color(blue);
+      @media #{media(">")} {
+        #{$comp}__svg {
+          path {
+            fill: color(blue);
+          }
         }
       }
     }

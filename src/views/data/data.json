@@ -19,6 +19,10 @@
       "title": "Подключенные телевидение"
     },
     {
+      "href": "connected-tv-2",
+      "title": "Подключенные телевидение разные договоры"
+    },
+    {
       "href": "connected-record",
       "title": "Подключенные видео"
     },
@@ -45,6 +49,18 @@
     {
       "href": "connect-service",
       "title": "Подключенные услуг"
+    },
+    {
+      "href": "delay-application",
+      "title": "Заявление на приостановку"
+    },
+    {
+      "href": "error-application",
+      "title": "Заявление об ошибочном платеже "
+    },
+    {
+      "href": "change-tarif",
+      "title": "Смена тарифа"
     },
     {
       "href": "profile",
