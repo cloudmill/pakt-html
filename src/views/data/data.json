@@ -143,6 +143,46 @@
       "title": "Полезная информация"
     },
     {
+      "href": "conditions",
+      "title": "Страница условий (шаблон)"
+    },
+    {
+      "href": "conditions",
+      "title": "Страница условий (Абонемент)"
+    },
+    {
+      "href": "conditions",
+      "title": "Страница условий (Аренда оборудования)"
+    },
+    {
+      "href": "conditions",
+      "title": "Страница условий (Условный платеж)"
+    },
+    {
+      "href": "conditions",
+      "title": "Страница условий (ЦТВ)"
+    },
+    {
+      "href": "conditions",
+      "title": "Страница условий (Инофрмация для оплаты)"
+    },
+    {
+      "href": "conditions",
+      "title": "Страница условий (Приостановка)"
+    },
+    {
+      "href": "conditions",
+      "title": "Страница условий (REC)"
+    },
+    {
+      "href": "conditions",
+      "title": "Страница условий (VOLP)"
+    },
+    {
+      "href": "conditions",
+      "title": "Страница условий (Домофон)"
+    },
+    {
       "href": "notification",
       "title": "Уведомления"
     }

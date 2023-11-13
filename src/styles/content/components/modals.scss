@@ -726,6 +726,7 @@
 }
 
 .profile-modal {
+  $comp: &;
 
   &__inner {
     margin-top: rem(55px);
@@ -790,6 +791,17 @@
   &__item-link {
     display: flex;
     align-items: center;
+
+    &:hover {
+      #{$comp}__svg {
+        path {
+          stroke: color(blue);
+        }
+      }
+      #{$comp}__item-text {
+        color: color(blue);
+      }
+    }
   }
   &__item-text {
     font-weight: 500;
@@ -809,6 +821,10 @@
   &__svg {
     width: rem(24px);
     height: rem(24px);
+
+    path {
+      transition: $transition;
+    }
   }
 }
 

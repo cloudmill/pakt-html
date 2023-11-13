@@ -30,7 +30,7 @@ block content
                     .connected-page__service-item 
                       +select.select--small(options=['до 19:00', 'до 20:00', 'до 21:00'])
                 .connected-page__service-col
-                  +input-second(type='text' placeholder='Номер телефона')
+                  +input-second.input-wrapper--big(type='text' placeholder='Номер телефона')
                   .connected-page__service-icon 
                     +check-alt-svg.connected-page__service-svg
             .connected-page__service-inner 
@@ -48,7 +48,7 @@ block content
                   .services-page__card-label 
                     |Итоговая стоимость
                   .connected-page__heading
-                    |650 ₽/мес.
+                    |650 ₽/мес
             .connected-page__service-caption 
               |Я ознакомлен с правилами #[a(href="#") подключения услуги Телефония]
   +request-modal(id='success')

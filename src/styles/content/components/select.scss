@@ -16,6 +16,9 @@
     .select2-container {
       .select2-selection {
         min-width: rem(140px);
+        @media #{media("<")} {
+          padding-bottom: rem(9px);
+        }
         // @media #{media(">")} {
         //   padding: rem(11px) rem(20px);
         // }

@@ -107,15 +107,18 @@ block content
               .connected-page__inner 
                 .services-page__change-grid 
                   .services-page__change-wrapper 
-                    .services-page__delay-tooltip.tooltip.tooltip--alt
-                      .section__label.default
-                        |Дата
-                      span.tooltip__icon(data-tooltip-icon='')
-                        +tooltip-svg.tooltip__svg 
-                      .tooltip__container 
-                        |Число месяца, при наступлении которого счёт будет
-                    .services-page__change-inner 
-                      |CALENDAR
+                    .connected-page__accordion-heading 
+                      |Выберите дату изменения тарифного плана
+                    .connected-page__inner 
+                      .services-page__delay-tooltip.tooltip.tooltip--alt
+                        .section__label.default
+                          |Дата
+                        span.tooltip__icon(data-tooltip-icon='')
+                          +tooltip-svg.tooltip__svg 
+                        .tooltip__container 
+                          |Число месяца, при наступлении которого счёт будет
+                      .services-page__change-inner 
+                        |CALENDAR
               .services-page__delay-bot.alt.services-page__change-offset
                 .services-page__delay-btn
                   .button.button--outline.button--small.button--small--alt(data-fancy-button='confirm')
@@ -144,7 +147,7 @@ block content
                 .services-page__delay-btn
                   .button.button--outline.button--small.button--small--alt
                     |Отменить
-                .services-page__delay-btn 
+                .services-page__delay-btn.alt
                   .button.button--wide.button--small.button--small--alt(data-tarif-next='')
                     |Подтвердить смену
             .services-page__change-block(data-tarif-block='')

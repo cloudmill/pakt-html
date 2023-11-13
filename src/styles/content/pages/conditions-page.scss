@@ -1,9 +1,13 @@
 .conditions-page {
+
+  min-height: 100vh;
+
+  background-color: color(white);
   
   &__section {
-    margin: rem(136px) 0 rem(160px);
+    padding: rem(136px) 0 rem(160px);
     @media #{media("<")} {
-      margin-top: rem(91px);
+      padding-top: rem(91px);
     }
   }
 
@@ -28,8 +32,25 @@
       width: auto;
     }
 
+    h2 {
+      margin-bottom: rem(40px);
+      @media #{media("<")} {
+        margin-bottom: rem(23px);
+
+        @include fsl(18px, 140%);
+        letter-spacing: -0.01em;
+      }
+      font-weight: 600;
+      @include fsl(26px, 90%);
+    }
+
     p {
       @include fsl(16px, 150%);
+
+      &.gray {
+        color: color(gray);
+        font-style: italic;
+      }
     }
 
     br {

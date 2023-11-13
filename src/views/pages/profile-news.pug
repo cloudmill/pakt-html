@@ -46,7 +46,13 @@ block content
                 each title, i in ['Эл. почта', 'SMS', 'Telegram', ]
                   .accordion.accordion--alt(data-accordion='')
                     .accordion__top(data-accordion-button='')
-                      +checkbox(text=title  big = true)
+                      .checkbox.checkbox--flex
+                        label.checkbox__label
+                          input.checkbox__input(type="checkbox")
+                          .checkbox__box 
+                            +check-svg.checkbox__svg
+                        .checkbox__caption.big
+                          |#{title}
                       .accordion__icon 
                         +arrow-svg.accordion__svg
                     .accordion__body(data-accordion-dropdown='')

@@ -474,13 +474,19 @@
     &:not(:first-child) {
       margin-left: rem(16px);
     }
+
+    &.alt {
+      @media #{media("<")} {
+        width: auto;
+      }
+    }
   }
   &__delay-tooltip {
     display: flex;
   }
   &__delay-grid {
     display: grid;
-    grid-template-columns: rem(122px) rem(321px) rem(198px) rem(198px);
+    grid-template-columns: rem(122px) rem(321px) rem(208px) rem(188px);
     column-gap: rem(32px);
     @media #{media("<")} {
       grid-template-columns: repeat(2, 1fr);

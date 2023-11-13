@@ -1,6 +1,7 @@
 .sidebar {
   $comp: &;
-  padding-top: rem(136px);
+  padding-top: 15vh;
+  // padding-top: rem(136px);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -9,10 +10,13 @@
     padding-top: rem(48px);
     position: static;
     
-    width: 100%;
+    width: rem(300px);
 
     border-right: none;
     overflow-y: auto;
+  }
+  @media #{media("<", s)} {
+    width: 100%;
   }
   display: block;
   width: calc(#{$col-part-d} * 2 - #{$col-gap-d} + #{$col-side-pad});
@@ -32,7 +36,8 @@
   }
 
   &__nav {
-    margin-bottom: rem(50px);
+    margin-bottom: 5.5vh;
+    // margin-bottom: rem(50px);
   }
 
   &__item {
@@ -125,7 +130,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: rem(244px);
+    max-height: rem(244px);
+    height: 27vh;
+    min-height: rem(200px);
 
     border: 1px solid color(borders);
     border-radius: rem(8px);
