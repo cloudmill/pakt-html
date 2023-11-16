@@ -102,7 +102,19 @@
 
       width: 100%;
     }
-    width: rem(910px);
+    width: rem(917px);
+  }
+
+  &__wrapper {
+    margin-top: rem(70px);
+    @media #{media("<")} {
+      margin-top: rem(30px);
+    }
+  }
+  &__wrapper-title {
+    @media #{media("<")} {
+      display: none;
+    }
   }
 
   &__offer {
@@ -200,6 +212,15 @@
     @media #{media("<")} {
       margin-top: rem(24px);
     }
+
+    &.alt {
+      #{$comp}__item {
+        &:first-child {
+          padding-top: 0;
+          border-top: none;
+        }
+      }
+    }
   }
 
   &__item {
@@ -266,6 +287,17 @@
     &.small {
       min-height: auto;
     }
+
+    &.big {
+      min-height: rem(324px);
+      @media #{media("<")} {
+        min-height: rem(264px);
+      }
+
+      #{$comp}__card-link {
+        margin-top: 0;
+      }
+    }
   }
   &__card-container {
     position: relative;
@@ -296,6 +328,15 @@
 
     width: var(--size);
     height: var(--size);
+  }
+  &__card-top {
+    
+    &.second {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
   &__card-heading {
     font-weight: 500;
@@ -398,6 +439,34 @@
 
     flex-shrink: 0;
     width: rem(139px);
+  }
+  &__card-inner {
+    margin-top: rem(24px);
+  }
+  &__card-settings {
+    --size: #{rem(48px)};
+
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid color(blue-border);
+    transition: $transition;
+
+    &:hover {
+      border-color: color(blue);
+    }
+
+    svg {
+      --size: #{rem(24px)};
+
+      width: var(--size);
+      height: var(--size);
+    }
   }
 
   &__delay {
@@ -663,6 +732,84 @@
     margin-top: rem(133px);
     @media #{media("<")} {
       margin-top: rem(30px);
+    }
+  }
+
+  &__top {
+    margin-bottom: rem(24px);
+
+    display: flex;
+    justify-content: space-between;
+  }
+  &__top-speed {
+    font-weight: 500;
+    @include fsl(18px, 130%);
+    color: color(blue);
+  }
+  
+  &__rates {
+    // margin-top: rem(24px);
+    // @media #{media("<")} {
+    //   margin-top: rem(16px);
+    // }
+  }
+  &__rates-heading {
+    margin: rem(24px) 0;
+    @media #{media("<")} {
+      margin: rem(16px) 0;
+    }
+  }
+  &__rates-item {
+
+    &:not(:first-child) {
+      margin-top: rem(18px);
+      padding-top: rem(16px);
+
+      border-top: 1px solid color(borders);
+    }
+
+    &.top {
+      padding-bottom: rem(16px);
+
+      border-bottom: 1px solid color(borders);
+      
+      #{$comp}__rates-row {
+        align-items: flex-start;
+      }
+    }
+  }
+  &__rates-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__rates-col {}
+  &__rates-label {
+    font-weight: 500;
+    color: color(gray);
+    @include fsl(18px, 130%);
+  }
+  &__rates-month {
+    font-weight: 500;
+  }
+  &__rates-text {
+    margin-top: rem(8px);
+    font-weight: 500;
+  }
+  &__rates-pay {
+    margin-top: rem(8px);
+
+    display: flex;
+    align-items: center;
+
+    @include fsl(14px, 140%);
+    color: color(gray);
+
+    span {
+      margin-left: rem(8px);
+
+      @include fsl(16px);
+      color: color(black);
     }
   }
 }

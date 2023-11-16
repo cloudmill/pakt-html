@@ -10,8 +10,12 @@ mixin header
       .header__desktop
         .header__row 
           .header__col
-            a.header__logo(href="#")
-              +logo-svg.header__logo-svg
+            if (attributes.main)
+              .header__logo
+                +logo-svg.header__logo-svg
+            else
+              a.header__logo(href="#")
+                +logo-svg.header__logo-svg
           .header__col
             .header__item
               .header__button(data-fancy-button='phone')

@@ -111,3 +111,19 @@ import "./scripts/accordion";
     }
   })
 }
+
+// copy
+{
+  document.addEventListener('DOMContentLoaded', () => {
+    const copy = document.querySelectorAll('[data-copy]')
+
+    copy.forEach(item => {
+      const text = item.querySelector('[data-copy-text]')
+
+      item.onclick = function() {
+        item.classList.add('active')
+        navigator.clipboard.writeText(text.textContent);
+      }
+    })
+  })
+}

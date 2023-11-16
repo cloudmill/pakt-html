@@ -69,9 +69,9 @@ block content
                               |220 ₽/мес
                           .connected-page__grid-item 
                             .services-page__card-label 
-                              |Стоимость
+                              |Дата подключения
                             .connected-page__text 
-                              |220 ₽/мес
+                              |31.01.22 
                       .connected-page__wrapper
                         .connected-page__accordion-heading 
                           |Основные модули
@@ -86,15 +86,34 @@ block content
                               |Детектор звука
                       .connected-page__wrapper
                         .connected-page__accordion-heading 
-                          |Основные модули
+                          |Дополнительные модули
                         .connected-page__inner 
                           .connected-page__accordion-grid
-                            - for (i = 0; i < 4; i++)
+                            -
+                              var ddata = [
+                                {
+                                  label: "Название",
+                                  text: "Детектор оставленных предметов"
+                                },
+                                {
+                                  label: "Стоимость",
+                                  text: "200 ₽/мес"
+                                },
+                                {
+                                  label: "Название",
+                                  text: "Детектор дыма"
+                                },
+                                {
+                                  label: "Стоимость",
+                                  text: "100 ₽/мес"
+                                },
+                              ]
+                            each item, i in ddata  
                               .connected-page__accordion-item(class=(i === 1 ? 'border' : null))
                                 .services-page__card-label 
-                                  |Оборудование
+                                  |#{item.label}
                                 .connected-page__text 
-                                  |Название камеры
+                                  |#{item.text}
                         .connected-page__inner.big 
                           .connected-page__btn
                             button.button.button--outline.button--small(data-fancy-button='modules')
@@ -104,12 +123,31 @@ block content
                           |Оборудование
                         .connected-page__inner 
                           .connected-page__accordion-grid
-                            - for (i = 0; i < 4; i++)
+                            -
+                              var ddata = [
+                                {
+                                  label: "Оборудование",
+                                  text: "Название камеры"
+                                },
+                                {
+                                  label: "Количество камер",
+                                  text: "1"
+                                },
+                                {
+                                  label: "Статус",
+                                  text: "В собственности"
+                                },
+                                {
+                                  label: "Стоимость",
+                                  text: "3000  ₽"
+                                },
+                              ]
+                            each item, i in ddata  
                               .connected-page__accordion-item
                                 .services-page__card-label 
-                                  |Оборудование
+                                  |#{item.label}
                                 .connected-page__text 
-                                  |Название камеры
+                                  |#{item.text}
                       .connected-page__inner
                         .connected-page__bot
                           .connected-page__bot-col

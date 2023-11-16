@@ -131,12 +131,39 @@ block content
                 |Проверьте данные заявки
               .services-page__delay-wrapper.connected-page__inner 
                 .services-page__change-grid 
-                  - for (i = 0; i < 6; i++)
+                  -
+                    var ddata = [
+                      {
+                        label: "Тариф",
+                        text: "Домашний интернет до 30 Мбит/с"
+                      },
+                      {
+                        label: "Абонентская плата",
+                        text: "250 ₽/мес"
+                      },
+                      {
+                        label: "Дата изменения тарифного плана",
+                        text: "31.09.21"
+                      },
+                      {
+                        label: "Дата подключения",
+                        text: "Не установлено"
+                      },
+                      {
+                        label: "Абонемент",
+                        text: "6 мес - 3 900 ₽ (30 Мбит/с)"
+                      },
+                      {
+                        label: "Дата запуска очереди",
+                        text: "31.09.21"
+                      },
+                    ]
+                  each item in ddata
                     .services-page__change-wrapper 
                       .services-page__card-label 
-                        |Абонемент
+                        |#{item.label}
                       .connected-page__text 
-                        |6 мес - 3 900 ₽ (30 Мбит/с)
+                        |#{item.text}
                 .connected-page__inner
                   .announce
                     .announce__icon 

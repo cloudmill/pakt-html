@@ -303,4 +303,7 @@
     color: color(gray);
     @include fsl(14px, 140%);
   }
+  &__part-inner {
+    margin-top: rem(24px);
+  }
 }

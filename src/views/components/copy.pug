@@ -1,13 +1,15 @@
 mixin copy 
-  .copy 
+  .copy(data-copy='')
     .copy__icon
       +copy-svg.copy__svg 
-    .copy__text 
+      +copied-svg.copy__ok
+    .copy__text(data-copy-text)
       |0987654321
 
 mixin copy-second
-  .copy.copy--second 
+  .copy.copy--second(data-copy='')
     .copy__icon
       +copy-alt-svg.copy__svg 
-    .copy__text 
+      +copied-svg.copy__ok
+    .copy__text(data-copy-text)
       |0987654321

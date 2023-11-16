@@ -1,0 +1,34 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 1
+
+block content
+  .services-page.connected-page.connected-page--default
+    .panel
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
+          |Интернет
+      .panel__text 
+        |Смена тарифа
+    section.section.section--first-panel
+      .container
+        .section__container.services-page__change(data-tarif='')
+          .services-page__change-top 
+            .section__title 
+              |Подключение услуги Интернет
+            .partners-page__part
+              .partners-page__part-container.alt
+                .partners-page__part-icon 
+                  +file-alt-svg.partners-page__part-svg 
+                .section__heading.partners-page__part-title 
+                  |Тариф изменен
+                .partners-page__part-caption 
+                  |Тариф сменится автоматически 31.09.2023
+                .partners-page__part-inner
+                  .partners-page__part-btn 
+                    a.button(href="#")
+                      |Вернуться к услугам
+

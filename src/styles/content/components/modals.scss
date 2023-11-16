@@ -1105,9 +1105,18 @@
     justify-content: space-between;
   }
   &__call-top {}
-  &__call-form {}
+  &__call-form {
+    
+    &.hidden {
+      display: none;
+    }
+  }
   &__call-resp {
     display: none;
+
+    &.active {
+      display: block;
+    }
   }
   &__call-heading {
     margin-bottom: rem(26px);

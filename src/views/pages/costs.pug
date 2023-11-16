@@ -100,41 +100,41 @@ block content
                   .accordion__icon 
                     +arrow-svg.accordion__svg
                 .accordion__body(data-accordion-dropdown='')
-                  .costs-page__accordions-inner 
-                    .costs-page__accordions-col
-                      .costs-page__price 
-                        |Баланс на 01.05.2023
-                    .costs-page__accordions-col
-                      .costs-page__price 
-                        |500 ₽
-                  .costs-page__accordions-table 
-                    .costs-page__accordions-top 
+                  //- .costs-page__accordions-inner 
+                  //-   .costs-page__accordions-col
+                  //-     .costs-page__price 
+                  //-       |Баланс на 01.05.2023
+                  //-   .costs-page__accordions-col
+                  //-     .costs-page__price 
+                  //-       |500 ₽
+                  //- .costs-page__accordions-table 
+                  .costs-page__accordions-top 
+                    .costs-page__accordions-grid.alt
+                      .costs-page__accordions-item
+                        .section__label.default 
+                          |Дата
+                      .costs-page__accordions-item
+                        .section__label.default 
+                          |Тип платежа
+                      .costs-page__accordions-item
+                        .section__label.default 
+                          |Сумма
+                  .costs-page__accordions-body 
+                    - for (i = 0; i < 2; i++)
                       .costs-page__accordions-grid.alt
-                        .costs-page__accordions-item
-                          .section__label.default 
+                        .costs-page__accordions-item 
+                          .section__label.only-mobile
                             |Дата
-                        .costs-page__accordions-item
-                          .section__label.default 
+                          .costs-page__text 
+                            |01.09.2021 
+                        .costs-page__accordions-item 
+                          .section__label.only-mobile
                             |Тип платежа
-                        .costs-page__accordions-item
-                          .section__label.default 
+                          .costs-page__text 
+                            |Название категории начисления (?)
+                        .costs-page__accordions-item 
+                          .section__label.only-mobile
                             |Сумма
-                    .costs-page__accordions-body 
-                      - for (i = 0; i < 2; i++)
-                        .costs-page__accordions-grid.alt
-                          .costs-page__accordions-item 
-                            .section__label.only-mobile
-                              |Дата
-                            .costs-page__text 
-                              |01.09.2021 
-                          .costs-page__accordions-item 
-                            .section__label.only-mobile
-                              |Тип платежа
-                            .costs-page__text 
-                              |Название категории начисления (?)
-                          .costs-page__accordions-item 
-                            .section__label.only-mobile
-                              |Сумма
-                            .costs-page__text 
-                              |500 ₽
+                          .costs-page__text 
+                            |500 ₽
                           

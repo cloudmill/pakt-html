@@ -1,0 +1,128 @@
+extends ../app
+
+block variables
+  - var sidebarActive = 1
+
+block content
+  .services-page
+    .panel
+      a.panel__link(href="#") 
+        .panel__icon 
+          +arrow-left-svg.panel__svg 
+        .panel__label 
+          |Услуги
+      .panel__text 
+        |Интернет
+    section.section.section--first-panel
+      .container
+        h3.section__title 
+          |Онлайн ТВ «iPakt»
+        .services-page__categories 
+          .categories
+            each item, i in ['Все (2)', 'Тарифы (2)', 'Специальные предложения (1)', 'Дополнительные пакеты (2)', ]
+              .categories__item 
+                .categories__btn(class=(i===0 ? 'active' : null))
+                  |#{item}
+        .services-page__wrapper
+          .section__heading.services-page__wrapper-title
+            |Специальные предложения 
+          .services-page__offer
+            .services-page__offer-container
+              .services-page__offer-title 
+                |Онлайн ТВ «iPakt» на 5 устройствах
+              .services-page__offer-text 
+                |Вам доступен сервис онлайн ТВ «iPakt» на 5 устройстсвах. Пакет "Популярный"     
+              .services-page__offer-btn 
+                button.button.button--black 
+                  |Подключить
+              a.services-page__offer-link(href="#") 
+                |Подробнее об опции на сайте
+        .services-page__list 
+          .services-page__item
+            .services-page__item-heading 
+              |Тарифы
+            .services-page__item-grid 
+              - for (i = 0; i < 2; i++)
+                .services-page__card.big
+                  .services-page__card-container
+                    .services-page__card-top
+                      .services-page__card-heading.underline
+                        |Пакет Базовый
+                      .services-page__card-body 
+                        a.services-page__card-link(href="#")
+                          |Список каналов
+                        .services-page__card-inner
+                          +copy-second
+                    .services-page__card-bot 
+                      .services-page__card-price 
+                        |150 ₽/мес 
+                      .services-page__card-settings
+                        +settings-svg
+                .services-page__card.big
+                  .services-page__card-container
+                    .services-page__card-top
+                      .services-page__card-heading.underline
+                        |Популярный Plus 
+                      .services-page__card-body 
+                        a.services-page__card-link(href="#")
+                          |Список каналов
+                        .services-page__card-inner
+                          .services-page__card-list
+                            .services-page__card-inner 
+                              .services-page__card-item
+                                .services-page__card-label 
+                                  |Устройств
+                                .services-page__card-text 
+                                  |Просмотр на 5 устройствах
+                            .services-page__card-inner 
+                              .services-page__card-item
+                                .services-page__card-label 
+                                  |Доп. опции
+                                .services-page__card-text 
+                                  |Видеотека «iPakt»
+                    .services-page__card-bot 
+                      .services-page__card-price 
+                        |150 ₽/мес 
+                      .services-page__card-settings
+                        +settings-svg
+                .services-page__card.big
+                  .services-page__card-container
+                    .services-page__card-top
+                      .services-page__card-heading.underline
+                        |Популярный Plus 
+                      .services-page__card-body 
+                        a.services-page__card-link(href="#")
+                          |Список каналов
+                        .services-page__card-inner
+                          .services-page__card-list
+                            .services-page__card-inner 
+                              .services-page__card-item
+                                .services-page__card-label 
+                                  |Устройств
+                                .services-page__card-text 
+                                  |Просмотр на 5 устройствах
+                    .services-page__card-bot 
+                      .services-page__card-price 
+                        |150 ₽/мес 
+                      .services-page__card-settings
+                        +settings-svg
+          .services-page__item
+            .services-page__item-heading
+              |Дополнительные пакеты
+            .services-page__item-grid 
+              - for (i = 0; i < 6; i++)
+                .services-page__card
+                  .services-page__card-container
+                    if (i % 2 === 0)
+                      .services-page__card-icon 
+                        +fire-svg.services-page__card-svg
+                    .services-page__card-top
+                      .services-page__card-heading
+                        |Взрослый 
+                      a.services-page__card-link(href="#")
+                        |Список каналов
+                    .services-page__card-bot 
+                      .services-page__card-price 
+                        |150 ₽/мес 
+                      .services-page__card-btn 
+                        |Подключить

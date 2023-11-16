@@ -1,11 +1,11 @@
 extends ../app
 
-//- block header 
-  +header(tech = true)
+block header 
+  +header(main = true tech = true)
 
 block content
   .main-page
-    section.section.section--first.main
+    section.section.section--first
       .container 
         .announce
           .announce__icon 
@@ -28,8 +28,6 @@ block content
                 .main-page__balance-row 
                   .main-page__balance-label 
                     |Баланс
-                  .main-page__balance-date 
-                    |На сегодня 17:53
                 .main-page__balance-inner 
                   .main-page__balance-col
                     .main-page__balance-money 
@@ -73,86 +71,127 @@ block content
         .main-page__services-inner
           .block.active(data-tabs-block='')
             .service-grid
-              -
-                var ddata = [
-                  {
-                    title: 'Интернет',
-                    icon: "globe"
-                  },
-                  {
-                    title: "Телевидение",
-                    icon: "tv"
-                  },
-                  {
-                    title: "Телефония",
-                    icon: "call"
-                  },
-                ]
-              each item in ddata
-                a.service-card.service-card--big(href="#") 
-                  .service-card__container 
-                    .service-card__top
-                      .service-card__inner
-                        .service-card__icon.default
-                          case item.icon 
-                            when 'globe'
-                              +globe-svg.service-card__svg 
-                            when 'tv'
-                              +tv-svg.service-card__svg 
-                            when 'call'
-                              +call-svg.service-card__svg 
-                        .service-card__status 
-                          |Активна
-                      .service-card__title 
-                        |#{item.title}
-                      ul.service-card__list 
-                        li.service-card__item 
-                          .service-card__label
-                            |Тариф
-                          .service-card__text 
-                            |The Best / 100 МБ
-                        li.service-card__item 
-                          .service-card__label
-                            |Абонимент до:
-                          .service-card__text 
-                            |31.10.21
-                    .service-card__bot 
-                      .service-card__bot-row
-                        .service-card__col
-                          .service-card__label
-                            |Абонентская плата
-                          .service-card__price 
-                            |3 900 ₽/12 мес
-                        .service-card__col
-                          .service-card__settings 
-                            +settings-svg
+              a.service-card.service-card--big(href="#") 
+                .service-card__container 
+                  .service-card__top
+                    .service-card__inner
+                      .service-card__icon.default
+                        +globe-svg.service-card__svg 
+                      .service-card__status 
+                        |Активна
+                    .service-card__title 
+                      |Интернет
+                    .service-card__id 
+                      +copy-second
+                    ul.service-card__list 
+                      li.service-card__item 
+                        .service-card__label
+                          |Тариф
+                        .service-card__text 
+                          |The Best / 100 МБ
+                      li.service-card__item 
+                        .service-card__label
+                          |Абонемент до:
+                        .service-card__text 
+                          |31.10.21
+                  .service-card__bot 
+                    .service-card__bot-row
+                      .service-card__col
+                        .service-card__label
+                          |Абонентская плата
+                        .service-card__price 
+                          |3 900 ₽/12 мес
+                      .service-card__col
+                        .service-card__settings 
+                          +settings-svg
+              a.service-card.service-card--big(href="#") 
+                .service-card__container 
+                  .service-card__top
+                    .service-card__inner
+                      .service-card__icon.default
+                        +tv-svg.service-card__svg 
+                      .service-card__status 
+                        |Активна
+                    .service-card__title 
+                      |Телевидение
+                    .service-card__id 
+                      +copy-second
+                    ul.service-card__list 
+                      li.service-card__item 
+                        .service-card__label
+                          |Тариф
+                        .service-card__text 
+                          |Пакет «Базовый» коллективный договор
+                      li.service-card__item 
+                        .section__label 
+                          |Оплата вĸлючена в ĸвитанцию ЖКУ
+                  .service-card__bot 
+                    .service-card__bot-row
+                      .service-card__col
+                        .service-card__label
+                          |Абонентская плата
+                        .service-card__price 
+                          |3 900 ₽/12 мес
+                      .service-card__col
+                        .service-card__settings 
+                          +settings-svg
+              a.service-card.service-card--big(href="#") 
+                .service-card__container 
+                  .service-card__top
+                    .service-card__inner
+                      .service-card__icon.default
+                        +call-svg.service-card__svg 
+                      .service-card__status 
+                        |Активна
+                    .service-card__title 
+                      |Телефония
+                    ul.service-card__list 
+                      li.service-card__item 
+                        .service-card__label
+                          |Тариф
+                        .service-card__text 
+                          |Минуты под контролем
+                  .service-card__bot 
+                    .service-card__bot-row
+                      .service-card__col
+                        .service-card__label
+                          |Абонентская плата
+                        .service-card__price 
+                          |3 900 ₽/12 мес
+                      .service-card__col
+                        .service-card__settings 
+                          +settings-svg
           .block(data-tabs-block='')
             .service-grid.service-grid--alt
               -
                 var ddata = [
                   {
                     title: 'Онлайн ТВ "iPakt"',
-                    icon: "screen"
+                    icon: "screen",
+                    count: '1',
                   },
                   {
                     title: "Интернет",
-                    icon: "globe"
+                    icon: "globe",
+                    count: '6',
                   },
                   {
                     title: "Телевидение",
-                    icon: "tv"
+                    icon: "tv",
                   },
                   {
                     title: "Телефония",
-                    icon: "call"
+                    icon: "call",
+                    count: '1',
                   },
                   {
                     title: "Видеонаблюдение",
-                    icon: "record"
+                    icon: "record",
+                    count: '2',
                   },
                   {
                     title: "Умный домофон",
-                    icon: "record"
+                    icon: "intercome",
                   },
                 ]
               each item, i in ddata
@@ -171,11 +210,13 @@ block content
                             +call-svg.service-card__svg 
                           when 'record'
                             +record-svg.service-card__svg 
+                          when 'intercome'
+                            +intercome-svg.service-card__svg 
                       .service-card__title 
                         |#{item.title}
                       .tooltip.tooltip--big
                         .service-card__link(data-tooltip-icon='')
-                          |Подробнее 
+                          |Подробнее
                         .tooltip__container 
                           .service-card__tooltip
                             .service-card__tooltip-title 
@@ -188,9 +229,13 @@ block content
                     .service-card__bot 
                       .service-card__bot-row
                         .service-card__col
-                          .service-card__count 
-                            |6 тарифов
+                          if (item.count)
+                            .service-card__count 
+                              |#{item.count} тарифов
                         .service-card__col
                           object
                             a.service-card__btn(href="#") 
-                              |Смотреть тарифы
+                              if ((i+1) % 3 == 0)
+                                |Подключить
+                              else 
+                                |Смотреть тарифы

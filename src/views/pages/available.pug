@@ -16,145 +16,109 @@ block content
     section.section.section--first-panel
       .container
         h3.section__title 
-          |Специальные акции и предложения
+          |Интернет
         .services-page__categories 
           .categories
-            each item, i in ['Все (6)', 'Интернет (1)', 'Телевидение (4)', 'Онлайн ТВ', 'Телефония (1)', 'Облачное видеонаблюдение REC (3)', ]
+            each item, i in ['Все (6)', 'Тарифы (4)', 'Абонементы (4)', 'Специальные предложения (1)', ' Онлайн ТВ + Интернет (2) ', ]
               .categories__item 
                 .categories__btn(class=(i===0 ? 'active' : null))
                   |#{item}
-        .services-page__offer
-          .services-page__offer-container
-            .services-page__offer-title 
-              |Онлайн ТВ «iPakt» на 5 устройствах
-            .services-page__offer-text 
-              |Вам доступен сервис онлайн ТВ «iPakt» на 5 устройстсвах. Пакет "Популярный"     
-            .services-page__offer-btn 
-              button.button.button--black 
-                |Подключить
-            a.services-page__offer-link(href="#") 
-              |Подробнее об опции на сайте
-        .services-page__list 
+        .services-page__list.alt
           .services-page__item
             .services-page__item-heading 
               |Тарифы
             .services-page__item-row 
-              - for (i = 0; i < 2; i++)
+              - for (j = 0; j < 2; j++)
                 .services-page__item-col
                   .services-page__card
                     .services-page__card-container
-                      .services-page__card-top
-                        .services-page__card-heading.underline
-                          |2 Мбит
-                        .services-page__card-body 
-                          .services-page__card-list 
-                            .services-page__card-item 
-                              .services-page__card-label 
-                                |Скорость
-                              .services-page__card-text 
-                                |2 Мбит/с
-                      .services-page__card-bot 
-                        .services-page__card-price 
-                          |150 ₽/мес 
-                        .services-page__card-btn 
-                          |Подключить
+                      .services-page__top
+                        .services-page__top-col
+                          .services-page__card-heading.tooltip
+                            |Абонемент 6 месяцев
+                            span.tooltip__icon(data-tooltip-icon='')
+                              +tooltip-svg.tooltip__svg 
+                            .tooltip__container 
+                              |Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum architecto reprehenderit sed!
+                        .services-page__top-col
+                          .services-page__top-speed 
+                            |100 Мбит/с
+                      .services-page__rates
+                        .services-page__rates-item.top
+                          .services-page__rates-row
+                            .services-page__rates-col
+                              .services-page__rates-label   
+                                |Один месяц
+                              .services-page__rates-text 
+                                |450 ₽/мес 
+                            .services-page__rates-col
+                              .services-page__card-btn 
+                                |Подключить
+                      .services-page__rates-label.services-page__rates-heading  
+                        |Абонементы
+                      .services-page__rates
+                        - for (i = 0; i < 3; i++)
+                          .services-page__rates-item
+                            .services-page__rates-row.start
+                              .services-page__rates-col
+                                .services-page__rates-month.tooltip
+                                  |6 месяцев
+                                  span.tooltip__icon(data-tooltip-icon='')
+                                    +tooltip-svg.tooltip__svg 
+                                  .tooltip__container 
+                                    |Lorem ipsum dolor
+                                .services-page__rates-text 
+                                  |450 ₽/мес 
+                                .services-page__rates-pay 
+                                  |Разовый платеж #[span 2 700 ₽]
+                              .services-page__rates-col
+                                .services-page__card-btn 
+                                  |Подключить
             .services-page__item-grid 
-              .services-page__card
-                .services-page__card-container
-                  .services-page__card-top
-                    .services-page__card-heading.underline
-                      |2 Мбит
-                    .services-page__card-body 
-                      .services-page__card-list 
-                        .services-page__card-item 
-                          .services-page__card-label 
-                            |Скорость
-                          .services-page__card-text 
-                            |2 Мбит/с
-                  .services-page__card-bot 
-                    .services-page__card-price 
-                      |150 ₽/мес 
-                    .services-page__card-btn 
-                      |Подключить
-              .services-page__card
-                .services-page__card-container
-                  .services-page__card-top
-                    .services-page__card-heading.tooltip
-                      |Абонемент 6 месяцев
-                      span.tooltip__icon(data-tooltip-icon='')
-                        +tooltip-svg.tooltip__svg 
-                      .tooltip__container 
-                        |Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum architecto reprehenderit sed!
-                    .services-page__card-body 
-                      .services-page__card-list 
-                        .services-page__card-item 
-                          .services-page__card-label 
-                            |Скорость
-                          .services-page__card-text 
-                            |2 Мбит/с
-                  .services-page__card-bot 
-                    .services-page__card-price 
-                      |150 ₽/мес 
-                    .services-page__card-btn 
-                      |Подключить
-              .services-page__card
-                .services-page__card-container
-                  .services-page__card-icon 
-                    +fire-svg.services-page__card-svg
-                  .services-page__card-top
-                    .services-page__card-heading.underline
-                      |2 Мбит
-                    .services-page__card-body 
-                      .services-page__card-list 
-                        .services-page__card-item 
-                          .services-page__card-label 
-                            |Скорость
-                          .services-page__card-text 
-                            |2 Мбит/с
-                      //- a.services-page__card-link(href="#")
-                        |Список каналов
-                  .services-page__card-bot 
-                    .services-page__card-price 
-                      |150 ₽/мес 
-                    .services-page__card-btn 
-                      |Подключить
-              .services-page__card
-                .services-page__card-container
-                  .services-page__card-top
-                    .services-page__card-heading
-                      |Всегда на связи 
-                    .services-page__card-caption
-                      |Безлимитные звонки на городские номера
-                    .services-page__card-body 
-                      .services-page__card-list 
-                        .services-page__card-row 
-                          .services-page__card-col
+              - for (i = 0; i < 7; i++)
+                .services-page__card
+                  .services-page__card-container
+                    if (i % 3 === 0)
+                      .services-page__card-icon 
+                        +fire-svg.services-page__card-svg
+                    .services-page__card-top
+                      .services-page__card-heading.underline
+                        |2 Мбит
+                      .services-page__card-body 
+                        .services-page__card-list 
+                          .services-page__card-item 
+                            .services-page__card-label 
+                              |Скорость
                             .services-page__card-text 
-                              |Лен. Обл.
-                          .services-page__card-text.bold
-                            |2.00 руб./мин
-                        .services-page__card-row 
-                          .services-page__card-col
-                            .services-page__card-text 
-                              |Мобильные телефоны СПб и ЛО 
-                          .services-page__card-text.bold
-                            |2.00 руб./мин
-                  .services-page__card-bot 
-                    .services-page__card-price 
-                      |150 ₽/мес 
-                    .services-page__card-btn 
-                      |Подключить
-            .services-page__item
-              .services-page__item-heading
-                |Тарифы
-              .services-page__item-grid 
+                              |2 Мбит/с
+                        //- a.services-page__card-link(href="#")
+                          |Список каналов
+                    .services-page__card-bot 
+                      .services-page__card-price 
+                        |150 ₽/мес 
+                      .services-page__card-btn 
+                        |Подключить
+          .services-page__item
+            .services-page__item-heading
+              |Абонементы
+            .services-page__item-grid 
+              - for (i = 0; i < 4; i++)
                 .services-page__card
                   .services-page__card-container
                     .services-page__card-top
-                      .services-page__card-heading
-                        |REC 14
-                      a.services-page__card-link(href="#")
-                        |Список каналов
+                      .services-page__card-heading.tooltip
+                        |Абонемент 6 месяцев
+                        span.tooltip__icon(data-tooltip-icon='')
+                          +tooltip-svg.tooltip__svg 
+                        .tooltip__container 
+                          |Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum architecto reprehenderit sed!
+                      .services-page__card-body 
+                        .services-page__card-list 
+                          .services-page__card-item 
+                            .services-page__card-label 
+                              |Скорость
+                            .services-page__card-text 
+                              |2 Мбит/с
                     .services-page__card-bot 
                       .services-page__card-price 
                         |150 ₽/мес 

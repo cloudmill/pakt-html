@@ -409,3 +409,52 @@
     }
   }
 }
+
+.response {
+  &__title {
+    margin-bottom: rem(40px);
+    @media #{media("<")} {
+      margin-bottom: rem(20px);
+
+      @include fsl(20px);
+    }
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    @include fsl(32px, 110%);
+  }
+
+  &__icon {
+    margin-bottom: rem(24px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__svg {
+    --size: #{rem(40px)};
+
+    width: var(--size);
+    height: var(--size);
+  }
+
+  &__text {
+    text-align: center;
+    font-weight: 600;
+    @include fsl(20px, 110%);
+    letter-spacing: -0.01em;
+    @media #{media("<", m)} {
+      @include fsl(16px);
+    }
+  }
+
+  &__btn {
+    margin: rem(24px) auto 0;
+    @media #{media("<", m)} {
+      margin: rem(16px) auto 0;
+      width: 100%;
+    }
+    width: rem(182px);
+  }
+}

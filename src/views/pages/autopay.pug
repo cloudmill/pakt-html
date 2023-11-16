@@ -45,9 +45,17 @@ block content
                               +tooltip-svg.tooltip__svg 
                             .tooltip__container 
                               |Число месяца, при наступлении которого счёт будет автоматически пополняться
-                          input.input(data-input='' type='text' required)
+                          input.input(data-input='' type='text' required data-input-number='')
                       .autopay__item 
-                        +input-second(type='text' placeholder='Сумма списания')
+                        //- +input-second(type='text' placeholder='Сумма списания')
+                        .input-wrapper.input-wrapper--secondary(data-input-parent='')
+                          .input-wrapper__placeholder.tooltip
+                            |Сумма списания
+                            span.tooltip__icon(data-tooltip-icon='')
+                              +tooltip-svg.tooltip__svg 
+                            .tooltip__container 
+                              |Число месяца, при наступлении которого счёт будет автоматически пополняться
+                          input.input(data-input='' type='text' required data-input-number='')
           .payment-page__col
             .section__container.payment-page__column
               .payment-page__pay
@@ -62,7 +70,15 @@ block content
                   .payment-page__pay-heading 
                     |Адрес отправки чека
                 .payment-page__pay-offset
-                  +input-second(type='text' placeholder='Способ доставки чека')
+                  //- +input-second(type='text' placeholder='Способ доставки чека')
+                  .input-wrapper.input-wrapper--secondary(data-input-parent='')
+                    .input-wrapper__placeholder.tooltip
+                      |Способ доставки чека
+                      span.tooltip__icon(data-tooltip-icon='')
+                        +tooltip-svg.tooltip__svg 
+                      .tooltip__container 
+                        |Число месяца, при наступлении которого счёт будет автоматически пополняться
+                    input.input(data-input='' type='email' required)
                 .payment-page__pay-offset
                   button.button
                     |Подключить автоплатеж

@@ -24,23 +24,78 @@ block content
                     title: 'Интернет',
                     icon: "globe",
                     id: true,
+                    items: [
+                      {
+                        label: 'Тариф',
+                        text: 'The Best / 100 МБ'
+                      },
+                      {
+                        label: 'Абонемент до',
+                        text: '31.10.21'
+                      },
+                    ],
+                    price: "3 900 ₽/12 мес",
                   },
                   {
                     title: "Телевидение",
                     icon: "tv",
                     id: true,
+                    items: [
+                      {
+                        label: 'Тариф',
+                        text: 'Пакет «Базовый» коллективный договор'
+                      },
+                    ],
+                    price: "220 ₽/мес",
+                    caption: "Оплата вĸлючена в ĸвитанцию ЖКУ",
+                  },
+                  {
+                    title: "ЦТВ",
+                    icon: "tv",
+                    id: true,
+                    items: [
+                      {
+                        label: 'Модуль',
+                        text: 'CAM-модуль 123456789'
+                      },
+                      {
+                        label: 'Абонемент до',
+                        text: '31.10.21'
+                      },
+                    ],
+                    caption: "Оплата вĸлючена в ĸвитанцию ЖКУ",
+                  },
+                  {
+                    title: "ЦТВ",
+                    icon: "tv",
+                    items: [
+                      {
+                        label: 'Модуль',
+                        text: 'CAM-модуль 123456789'
+                      },
+                    ],
+                    price: "170 ₽/мес",
+                  },
+                  {
+                    title: "ОТТ",
+                    icon: "tv",
+                    price: "170 ₽/мес",
                   },
                   {
                     title: "Телефония",
                     icon: "call",
-                    caption: true,
+                    items: [
+                      {
+                        label: 'Тариф',
+                        text: 'Минуты под контролем'
+                      },
+                    ],
+                    price: "170 ₽/мес ",
                   },
                   {
                     title: "Видеонаблюдение",
                     icon: "record",
-                    isRefresh: true,
-                    noPrice: true,
-                    caption: true,
+                    price: "170 ₽/мес "
                   },
                 ]
               each item in ddata
@@ -65,39 +120,26 @@ block content
                       if (item.id)
                         .service-card__id 
                           +copy-second
-                      ul.service-card__list 
-                        if (item.isRefresh)
-                          li.service-card__item 
-                            .service-card__label
-                              |Модуль
-                            .service-card__refresh
-                              .service-card__refresh-icon 
-                                +clock-svg.service-card__refresh-svg
+                      if (item.items)
+                        ul.service-card__list 
+                          each module in item.items
+                            li.service-card__item 
+                              .service-card__label
+                                |#{module.label}
                               .service-card__text 
-                                |Данные обновляются
-                        else
-                          li.service-card__item 
-                            .service-card__label
-                              |Тариф
-                            .service-card__text 
-                              |The Best / 100 МБ
-                          li.service-card__item 
-                            .service-card__label
-                              |Абонемент до
-                            .service-card__text 
-                              |31.10.21
+                                |#{module.text}
                     .service-card__bot
                       if (item.caption)
                         .service-card__bot-text 
                           .section__label 
-                            |Оплата вĸлючена в ĸвитанцию ЖКУ
+                            |#{item.caption}
                       .service-card__bot-row
                         .service-card__col
-                          if (!item.noPrice)
+                          if (item.price)
                             .service-card__label
                               |Абонентская плата
                             .service-card__price 
-                              |3 900 ₽/12 мес
+                              |#{item.price}
                         .service-card__col
                           .service-card__settings 
                             +settings-svg
@@ -107,27 +149,31 @@ block content
                 var ddata = [
                   {
                     title: 'Онлайн ТВ "iPakt"',
-                    icon: "screen"
+                    icon: "screen",
+                    count: '1',
                   },
                   {
                     title: "Интернет",
-                    icon: "globe"
+                    icon: "globe",
+                    count: '6',
                   },
                   {
                     title: "Телевидение",
-                    icon: "tv"
+                    icon: "tv",
                   },
                   {
                     title: "Телефония",
-                    icon: "call"
+                    icon: "call",
+                    count: '1',
                   },
                   {
                     title: "Видеонаблюдение",
-                    icon: "record"
+                    icon: "record",
+                    count: '2',
                   },
                   {
                     title: "Умный домофон",
-                    icon: "record"
+                    icon: "intercome",
                   },
                 ]
               each item, i in ddata
@@ -146,11 +192,13 @@ block content
                             +call-svg.service-card__svg 
                           when 'record'
                             +record-svg.service-card__svg 
+                          when 'intercome'
+                            +intercome-svg.service-card__svg 
                       .service-card__title 
                         |#{item.title}
                       .tooltip.tooltip--big
                         .service-card__link(data-tooltip-icon='')
-                          |Подробнее 
+                          |Подробнее
                         .tooltip__container 
                           .service-card__tooltip
                             .service-card__tooltip-title 
@@ -163,12 +211,16 @@ block content
                     .service-card__bot 
                       .service-card__bot-row
                         .service-card__col
-                          .service-card__count 
-                            |6 тарифов
+                          if (item.count)
+                            .service-card__count 
+                              |#{item.count} тарифов
                         .service-card__col
                           object
                             a.service-card__btn(href="#") 
-                              |Смотреть тарифы
+                              if ((i+1) % 3 == 0)
+                                |Подключить
+                              else 
+                                |Смотреть тарифы
           .services-page__block(data-tabs-block='')
             h3.section__title 
               |Специальные акции и&nbsp;предложения

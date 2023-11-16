@@ -191,16 +191,16 @@ mixin feedback-modal
             input.feedback-modal__chat-input(type="text" placeholder='Напишите сообщение')
             button.feedback-modal__button
               +send-svg.feedback-modal__button-svg
-      .feedback-modal__block(data-feedback-block='')
+      .feedback-modal__block(data-feedback-block='' data-response-container='')
         .feedback-modal__call
           .feedback-modal__call-top
-            form.feedback-modal__call-form(action="#")
+            form.feedback-modal__call-form(action="#" data-form='phone')
               .feedback-modal__call-heading 
                 |Перезвоним в ближайшее время!
               .feedback-modal__call-text 
                 |Укажите номер, на который можно перезвонить
               .feedback-modal__call-input 
-                +input-second(type='text' placeholder='Контактный телефон')
+                +input-second(type='text' placeholder='Контактный телефон' data-mask-phone='')
               .feedback-modal__call-btns 
                 .feedback-modal__call-btn 
                   button.button
@@ -212,13 +212,20 @@ mixin feedback-modal
                 |Нажимая “Продолжить” я соглашаюсь с 
                 a.feedback-modal__call-link(href="#") 
                   |политикой конфиденциальности
-            .feedback-modal__call-resp 
-              |RESPONSE
+            .feedback-modal__call-resp(data-response='phone')
+              .reponse
+                .response__icon 
+                  +ok-svg.response__svg
+                .response__text
+                  |Заявка на обратный звонок #[br] отправлена
+                .response__btn
+                  .button(data-fancybox-close) 
+                    |Ок
           .feedback-modal__call-bot
             .feedback-modal__call-item 
               |Контактый центр: #[a(href="#")  8 (812) 595-81-21]
             .feedback-modal__call-item 
-              |Техническая поддержка: #[a(href="#")  8 (812) 595-81-21]
+              |Техническая поддержка: #[a(href="#")  8 (812) 595-81-22]
       .feedback-modal__block(data-feedback-block='')
         .feedback-modal__contacts
           .feedback-modal__contacts-blocks

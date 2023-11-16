@@ -15,6 +15,26 @@
       "title": "Доступные"
     },
     {
+      "href": "available-tv",
+      "title": "Доступные телевидение"
+    },
+    {
+      "href": "available-phone",
+      "title": "Доступные телефония"
+    },
+    {
+      "href": "available-record",
+      "title": "Доступные видеонаблюдение"
+    },
+    {
+      "href": "available-intercome",
+      "title": "Доступные домофон"
+    },
+    {
+      "href": "available-pakt",
+      "title": "Доступные pakt"
+    },
+    {
       "href": "connected-tv",
       "title": "Подключенные телевидение"
     },
@@ -55,12 +75,24 @@
       "title": "Заявление на приостановку"
     },
     {
+      "href": "delay-application-2",
+      "title": "Заявление на приостановку поступило"
+    },
+    {
       "href": "error-application",
       "title": "Заявление об ошибочном платеже "
     },
     {
+      "href": "error-application-2",
+      "title": "Заявление об ошибочном платеже поступило"
+    },
+    {
       "href": "change-tarif",
       "title": "Смена тарифа"
+    },
+    {
+      "href": "change-tarif-2",
+      "title": "Смена тарифа, тариф изменен"
     },
     {
       "href": "profile",
@@ -147,35 +179,35 @@
       "title": "Страница условий (шаблон)"
     },
     {
-      "href": "conditions",
+      "href": "conditions-subs",
       "title": "Страница условий (Абонемент)"
     },
     {
-      "href": "conditions",
+      "href": "conditions-equip",
       "title": "Страница условий (Аренда оборудования)"
     },
     {
-      "href": "conditions",
+      "href": "conditions-pay",
       "title": "Страница условий (Условный платеж)"
     },
     {
-      "href": "conditions",
+      "href": "conditions-tv",
       "title": "Страница условий (ЦТВ)"
     },
     {
-      "href": "conditions",
+      "href": "conditions-pay-info",
       "title": "Страница условий (Инофрмация для оплаты)"
     },
     {
-      "href": "conditions",
+      "href": "conditions-stop",
       "title": "Страница условий (Приостановка)"
     },
     {
-      "href": "conditions",
+      "href": "conditions-rec",
       "title": "Страница условий (REC)"
     },
     {
-      "href": "conditions",
+      "href": "conditions-volp",
       "title": "Страница условий (VOLP)"
     },
     {

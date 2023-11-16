@@ -244,21 +244,6 @@
 									</div>
 								</div>
 							</section>
-							<section class="section section--first-panel partners-page__section white">
-								<div class="container">
-									<div class="partners-page__part">
-										<div class="partners-page__part-container">
-											<div class="partners-page__part-icon"><svg class="partners-page__part-svg" xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
-													<path fill-rule="evenodd" clip-rule="evenodd" d="M37.1673 31.6667V17.475C37.1673 17.2392 37.151 17.006 37.1347 16.773C37.1322 16.7376 37.1297 16.7021 37.1273 16.6667H25.5007C24.1746 16.6667 22.9028 16.1399 21.9651 15.2022C21.0274 14.2645 20.5007 12.9927 20.5007 11.6667V0.04C20.4652 0.0375781 20.4298 0.0350981 20.3943 0.0326176C20.1614 0.0163204 19.9281 0 19.6923 0H12.1673C9.95799 0.00264643 7.83991 0.88147 6.27768 2.4437C4.71545 4.00593 3.83663 6.12401 3.83398 8.33333V31.6667C3.83663 33.876 4.71545 35.9941 6.27768 37.5563C7.83991 39.1185 9.95799 39.9974 12.1673 40H28.834C31.0433 39.9974 33.1614 39.1185 34.7236 37.5563C36.2859 35.9941 37.1647 33.876 37.1673 31.6667ZM22.8721 23.9179C22.2745 23.3442 21.325 23.3636 20.7513 23.9612C20.1775 24.5588 20.1969 25.5084 20.7945 26.0821L22.2715 27.5H16C15.1716 27.5 14.5 28.1716 14.5 29C14.5 29.8284 15.1716 30.5 16 30.5H22.2715L20.7945 31.9179C20.1969 32.4916 20.1775 33.4412 20.7513 34.0388C21.325 34.6364 22.2745 34.6558 22.8721 34.0821L27.0388 30.0821L28.166 29L27.0388 27.9179L22.8721 23.9179Z" fill="#0076D8"></path>
-													<path d="M23.834 0.765625V11.6656C23.834 12.1077 24.0096 12.5316 24.3221 12.8441C24.6347 13.1567 25.0586 13.3323 25.5007 13.3323H36.4007C35.8188 11.7905 34.9148 10.3904 33.749 9.22563L27.9423 3.41562C26.7761 2.25114 25.3757 1.34785 23.834 0.765625Z" fill="#EC003E"></path>
-												</svg></div>
-											<div class="section__heading partners-page__part-title">Заявление поступило в обработку</div>
-											<div class="partners-page__part-btn"><a class="button" href="#">Вернуться к услугам</a></div>
-											<div class="partners-page__part-caption">При возникновении вопросов обращайтесь в контактный центр по номеру: 8 (812) 595-81-21</div>
-										</div>
-									</div>
-								</div>
-							</section>
 						</div>
 					</main>
 				</div>
@@ -360,15 +345,15 @@
 									</svg></button></form>
 						</div>
 					</div>
-					<div class="feedback-modal__block" data-feedback-block="">
+					<div class="feedback-modal__block" data-feedback-block="" data-response-container="">
 						<div class="feedback-modal__call">
 							<div class="feedback-modal__call-top">
-								<form class="feedback-modal__call-form" action="#">
+								<form class="feedback-modal__call-form" action="#" data-form="phone">
 									<div class="feedback-modal__call-heading">Перезвоним в ближайшее время!</div>
 									<div class="feedback-modal__call-text">Укажите номер, на который можно перезвонить</div>
 									<div class="feedback-modal__call-input">
 										<div class="input-wrapper input-wrapper--secondary" data-input-parent="">
-											<div class="input-wrapper__placeholder">Контактный телефон</div><input class="input" data-input="" required placeholder="Контактный телефон">
+											<div class="input-wrapper__placeholder">Контактный телефон</div><input class="input" data-input="" required placeholder="Контактный телефон" data-mask-phone="">
 										</div>
 									</div>
 									<div class="feedback-modal__call-btns">
@@ -379,11 +364,29 @@
 									</div>
 									<div class="feedback-modal__call-caption">Нажимая “Продолжить” я соглашаюсь с <a class="feedback-modal__call-link" href="#">политикой конфиденциальности</a></div>
 								</form>
-								<div class="feedback-modal__call-resp">RESPONSE</div>
+								<div class="feedback-modal__call-resp" data-response="phone">
+									<div class="reponse">
+										<div class="response__icon"><svg class="response__svg" xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+												<g clip-path="url(#clip0_3552_71092)">
+													<circle cx="20.5" cy="20" r="20" fill="#56BD68"></circle>
+													<path d="M17.6056 23.9211L13.3523 19.8476C13.1488 19.6527 12.8728 19.5432 12.585 19.5432C12.2973 19.5432 12.0213 19.6527 11.8178 19.8476C11.6143 20.0425 11.5 20.3068 11.5 20.5824C11.5 20.8581 11.6143 21.1224 11.8178 21.3173L16.071 25.3908C16.2725 25.584 16.5119 25.7372 16.7753 25.8417C17.0387 25.9462 17.321 26 17.6061 26C17.8912 26 18.1735 25.9462 18.4369 25.8417C18.7003 25.7372 18.9397 25.584 19.1412 25.3908L29.1822 15.7741C29.3857 15.5792 29.5 15.3148 29.5 15.0392C29.5 14.7636 29.3857 14.4992 29.1822 14.3043C28.9787 14.1095 28.7027 14 28.415 14C28.1272 14 27.8512 14.1095 27.6477 14.3043L17.6056 23.9211Z" fill="white"></path>
+												</g>
+												<defs>
+													<clippath id="clip0_3552_71092">
+														<rect width="40" height="40" fill="white" transform="translate(0.5)"></rect>
+													</clippath>
+												</defs>
+											</svg></div>
+										<div class="response__text">Заявка на обратный звонок<br>отправлена</div>
+										<div class="response__btn">
+											<div class="button" data-fancybox-close>Ок</div>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="feedback-modal__call-bot">
 								<div class="feedback-modal__call-item">Контактый центр: <a href="#">8 (812) 595-81-21</a></div>
-								<div class="feedback-modal__call-item">Техническая поддержка: <a href="#">8 (812) 595-81-21</a></div>
+								<div class="feedback-modal__call-item">Техническая поддержка: <a href="#">8 (812) 595-81-22</a></div>
 							</div>
 						</div>
 					</div>
