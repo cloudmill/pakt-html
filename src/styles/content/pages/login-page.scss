@@ -192,6 +192,15 @@
     letter-spacing: -0.01em;
     font-weight: 600;
   }
+  &__form-error {
+    margin-top: rem(28px);
+    @media #{media("<")} {
+      margin-top: rem(18px);
+    }
+    text-align: center;
+    @include fsl(12px, 120%);
+    color: color(error);
+  }
 
   &__container {
     position: relative;

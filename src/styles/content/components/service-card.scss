@@ -48,7 +48,11 @@
   &--big {
     height: rem(420px);
     @media #{media("<")} {
-      height: rem(340px);
+      height: auto;
+
+      #{$comp}__bot {
+        margin-top: rem(16px);
+      }
     }
   }
 

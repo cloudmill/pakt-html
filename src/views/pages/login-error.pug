@@ -1,0 +1,45 @@
+extends ../layouts/secondary
+
+
+
+block header
+
+
+
+block content
+  .login-page
+    .login-page__row 
+      .login-page__col
+        .login-page__logo 
+          a.login-page__logo-link(href="#") 
+            .only-desktop
+              +logo-white-svg
+            .only-mobile
+              +logo-svg
+        .login-page__title 
+          |Добро пожаловать #[br] #[span в личный кабинет ПАКТ]
+        .login-page__bot 
+          .login-page__caption 
+            |© 2023 ООО «ПАКТ» Пользовательское соглашение и политика конфиденциальности 
+          .login-page__icons 
+            a.login-page__item(href="#") 
+              +vk-svg.login-page__svg
+            a.login-page__item(href="#") 
+              +yt-svg.login-page__svg
+      .login-page__col
+        form.login-page__form(action="/")
+          .login-page__form-title 
+            |Войти в личный кабинет
+          .form-item 
+            +input(type = 'text' placeholder = 'Номер договора' data-parsley-contract=''  data-input-number='')
+          .form-item.password(data-password='')
+            +input(type = 'password' placeholder = 'Пароль')
+            button.password__icon(data-password-btn='' type="button")
+              +eye-svg.password__svg
+          .login-page__form-error 
+            |Логин или пароль не зарегистрированы
+          .login-page__form-btn 
+            button.button 
+              |Войти
+          a.login-page__form-link(href="#")
+            |Забыли пароль?
