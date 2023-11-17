@@ -103,12 +103,26 @@ block content
                       .accordion__body(data-accordion-dropdown='')
                         .connected-page__inner 
                           .connected-page__accordion-grid
-                            - for (i = 0; i < 4; i++)
-                              .connected-page__accordion-item(class=(i === 1 ? 'border' : null))
-                                .services-page__card-label 
-                                  |Название пакета
-                                .connected-page__text 
-                                  |Настрой Кино
+                            .connected-page__accordion-item
+                              .services-page__card-label 
+                                |Название пакета
+                              .connected-page__text 
+                                |Дождь
+                            .connected-page__accordion-item.border
+                              .services-page__card-label 
+                                |Стоимость
+                              .connected-page__text 
+                                |240 ₽/мес
+                            .connected-page__accordion-item
+                              .services-page__card-label 
+                                |Название пакета
+                              .connected-page__text 
+                                |Настрой Кино
+                            .connected-page__accordion-item
+                              .services-page__card-label 
+                                |Стоимость
+                              .connected-page__text 
+                                |380 ₽/мес
                           .connected-page__inner
                             .connected-page__buttons
                               .connected-page__buttons-item
@@ -149,12 +163,26 @@ block content
                     |Онлайн ТВ «iPakt»
                 .connected-page__inner
                   .connected-page__accordion-grid.small
-                    - for (i = 0; i < 4; i++)
-                      .connected-page__accordion-item(class=(i === 1 ? 'border' : null))
-                        .services-page__card-label 
-                          |Название пакета
-                        .connected-page__text 
-                          |Дождь
+                    .connected-page__accordion-item
+                      .services-page__card-label 
+                        |Название пакета
+                      .connected-page__text 
+                        |Дождь
+                    .connected-page__accordion-item.border
+                      .services-page__card-label 
+                        |Стоимость
+                      .connected-page__text 
+                        |240 ₽/мес
+                    .connected-page__accordion-item
+                      .services-page__card-label 
+                        |Название пакета
+                      .connected-page__text 
+                        |Настрой Кино
+                    .connected-page__accordion-item
+                      .services-page__card-label 
+                        |Стоимость
+                      .connected-page__text 
+                        |380 ₽/мес
                 .connected-page__inner 
                   .connected-page__btn
                     button.button.button--outline.button--small

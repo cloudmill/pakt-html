@@ -150,32 +150,32 @@ block content
                   {
                     title: 'Онлайн ТВ "iPakt"',
                     icon: "screen",
-                    count: '1',
+                    count: '1 тариф',
                   },
                   {
                     title: "Интернет",
                     icon: "globe",
-                    count: '6',
+                    count: '6 тарифов',
                   },
                   {
                     title: "Телевидение",
                     icon: "tv",
-                    count: '1',
+                    count: '1 тариф',
                   },
                   {
                     title: "Телефония",
                     icon: "call",
-                    count: '1',
+                    count: '1 тариф',
                   },
                   {
                     title: "Видеонаблюдение",
                     icon: "record",
-                    count: '2',
+                    count: '2 тарифа',
                   },
                   {
                     title: "Умный домофон",
                     icon: "intercome",
-                    count: '2',
+                    count: '2 тарифа',
                   },
                 ]
               each item, i in ddata
@@ -215,7 +215,7 @@ block content
                         .service-card__col
                           if (item.count)
                             .service-card__count 
-                              |#{item.count} тарифов
+                              |#{item.count}
                         .service-card__col
                           object
                             a.service-card__btn(href="#") 

@@ -53,6 +53,10 @@
       #{$comp}__bot {
         margin-top: rem(16px);
       }
+
+      #{$comp}__container {
+        padding: rem(32px);
+      }
     }
   }
 
